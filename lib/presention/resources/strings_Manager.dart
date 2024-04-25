@@ -1,9 +1,13 @@
+import 'package:health_state/presention/forgot_password/forgotPasswordScreen.dart';
+
 class AppStrings{
   static const noRouteFound='No Route Found';
   static const startpage='Welcome To Health State';
   static const startpage2='Best Free Health Morning App';
   static const getStart='Get Started';
   static const login='LOGIN';
+  static const signin='signin';
+  static const forgotPassword='forgot Password ?';
   static const onBoardingTitle1='THE APP IS NEW MOVIE 1';
   static const onBoardingTitle2='THE APP IS NEW MOVIE 2';
   static const onBoardingTitle3='THE APP IS NEW MOVIE 3';

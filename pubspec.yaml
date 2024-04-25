@@ -38,6 +38,8 @@ dependencies:
   flutter_svg: ^2.0.9
   smooth_page_indicator: ^1.1.0
   animated_splash_screen: ^1.3.0
+  font_awesome_flutter: ^10.5.0
+  numberpicker: ^2.1.2
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +69,13 @@ flutter:
      - assets/images/splash.png
      - assets/images/logo.png
      - assets/images/logo.svg
+     - assets/images/on1.png
+     - assets/images/on2.png
+     - assets/images/on3.png
+     - assets/images/forgotpassword.png
+     - assets/images/verfy.png
+     - assets/images/newpass.png
+     - assets/images/googleicon.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

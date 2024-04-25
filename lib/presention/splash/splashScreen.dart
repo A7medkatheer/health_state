@@ -19,7 +19,7 @@ class _splashViewState extends State<splashView> {
     _timer=Timer(const Duration(seconds: AppConstants.splashDelay), _goNext);
   }
   _goNext(){
-    Navigator.pushReplacementNamed(context, Routes.startRoute);
+    Navigator.pushReplacementNamed(context, Routes.onBoardingRoute);
   }
   @override
   void initState() {
@@ -32,8 +32,11 @@ class _splashViewState extends State<splashView> {
       backgroundColor:ColorManager.white,
         // SvgPicture.asset( ImagesAssets.SplashLogo,)
         // Image(image: AssetImage(ImagesAssets.SplashLogo2))
-      body: Center(child:Image(image: AssetImage(ImagesAssets.SplashLogo2)),
-    ));
+      body: Container(decoration: BoxDecoration(gradient: LinearGradient(
+        colors: [Colors.white38, Colors.grey,]),),
+        child: Center(child:Image(image: AssetImage(ImagesAssets.SplashLogo2)),
+    ),
+      ));
   }
   @override
   void dispose() {

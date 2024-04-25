@@ -65,7 +65,7 @@ class startView extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
-                      Navigator.pushReplacementNamed(context,Routes.mainRoute);
+                      Navigator.pushNamed(context,Routes.mainRoute);
                     }),
                 decoration: BoxDecoration(
                     color: ColorManager.black,
@@ -85,7 +85,7 @@ class startView extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
-                      Navigator.pushReplacementNamed(context,Routes.loginRoute);
+                      Navigator.pushNamed(context,Routes.loginRoute);
                     }),
                 decoration: BoxDecoration(
                     border: Border.all(color: ColorManager.black),

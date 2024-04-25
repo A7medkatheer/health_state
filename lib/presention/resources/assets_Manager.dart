@@ -4,9 +4,9 @@ class ImagesAssets{
  static const String SplashLogo2 ='$Imagepath/splash.png';
  static const String Logo ='$Imagepath/logo.png';
  static const String Logo2 ='$Imagepath/logo.svg';
- static const String onboarding_logo1 ='$Imagepath/onboarding_logo1.svg';
- static const String onboarding_logo2 ='$Imagepath/onboarding_logo2.svg';
- static const String onboarding_logo3 ='$Imagepath/onboarding_logo3.svg';
- static const String onboarding_logo4 ='$Imagepath/onboarding_logo4.svg';
+ static const String onboarding_logo1 ='$Imagepath/on1.png';
+ static const String onboarding_logo2 ='$Imagepath/on2.png';
+ static const String onboarding_logo3 ='$Imagepath/on3.png';
+ static const String forgotpassword='$Imagepath/forgotpassword.png';
 
 }
