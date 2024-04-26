@@ -208,9 +208,9 @@ Widget BuildItem (BoardingModel model)=>Column(
   children: [
     Expanded(child: Image.asset(model.image)),
     const SizedBox(height:30,),
-    Text('${model.title}',style: const TextStyle(fontSize: 40,fontWeight: FontWeight.bold,),),
+    Text(model.title,style: const TextStyle(fontSize: 40,fontWeight: FontWeight.bold,),),
     const SizedBox(height:15,),
-    Text('${model.body}',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.grey[300]),),
+    Text(model.body,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.grey[300]),),
 
 
   ],
