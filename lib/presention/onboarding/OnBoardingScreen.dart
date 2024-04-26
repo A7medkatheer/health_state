@@ -206,7 +206,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
 Widget BuildItem (BoardingModel model)=>Column(
   crossAxisAlignment: CrossAxisAlignment.start,
   children: [
-    Expanded(child: Image.asset('${model.image}')),
+    Expanded(child: Image.asset(model.image)),
     const SizedBox(height:30,),
     Text('${model.title}',style: const TextStyle(fontSize: 40,fontWeight: FontWeight.bold,),),
     const SizedBox(height:15,),
