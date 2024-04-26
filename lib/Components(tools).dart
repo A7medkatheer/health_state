@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:health_state/presention/resources/color_manager.dart';
-import 'package:health_state/presention/resources/color_manager.dart';
+
 
 ///////////////////////////////defultTextForm//////////////////////////
 Widget defultTextForm(
@@ -19,7 +19,7 @@ Widget defultTextForm(
       bool showpassword=false,
     }
     )=>Padding(
-      padding:  EdgeInsets.all(8.0),
+      padding:  const EdgeInsets.all(8.0),
       child: TextFormField(
   controller:controller,
   validator: validate,
@@ -33,19 +33,19 @@ Widget defultTextForm(
       prefixIconColor: ColorManager.primary ,
       enabledBorder:  OutlineInputBorder(
           borderSide: BorderSide(color: ColorManager.primary,width: 1),
-          borderRadius: BorderRadius.all(Radius.circular(30.0))
+          borderRadius: const BorderRadius.all(const Radius.circular(30.0))
       ),
       focusedBorder: OutlineInputBorder(
         borderSide: BorderSide(color: ColorManager.primary,style: BorderStyle.solid,width: 2),
-        borderRadius: BorderRadius.all(Radius.circular(30.0)),
+        borderRadius: const BorderRadius.all(Radius.circular(30.0)),
       ),
     errorBorder:   OutlineInputBorder(
         borderSide: BorderSide(color: ColorManager.red,width: 1),
-        borderRadius: BorderRadius.all(Radius.circular(30))
+        borderRadius: const BorderRadius.all(Radius.circular(30))
     ),
     focusedErrorBorder:   OutlineInputBorder(
         borderSide: BorderSide(color: ColorManager.red,width: 1),
-        borderRadius: BorderRadius.all(Radius.circular(30))
+        borderRadius: const BorderRadius.all(Radius.circular(30))
     ),
       labelStyle:(TextStyle(color:ColorManager.button2 )) ,
       prefixIcon: prefixIcon,
@@ -63,11 +63,11 @@ Widget defultTextForm(
     labelText: label,
     prefixIcon: icon,
     labelStyle:(TextStyle(color:ColorManager.button2 )) ,
-    enabledBorder:  OutlineInputBorder(
+    enabledBorder:  const OutlineInputBorder(
         borderSide: BorderSide(color: Colors.green,width: 1.5),
         borderRadius: BorderRadius.all(Radius.circular(30.0))
     ),
-    focusedBorder: OutlineInputBorder(
+    focusedBorder: const OutlineInputBorder(
       borderSide: BorderSide(color: Colors.green,style: BorderStyle.solid,width: 3),
       borderRadius: BorderRadius.all(Radius.circular(30.0)),
     ),
@@ -84,7 +84,7 @@ Widget defultButton({
   height: 50,
   decoration:BoxDecoration(
     color: defultcolor ,
-    borderRadius:BorderRadius.all(Radius.circular(40.0)),
+    borderRadius:const BorderRadius.all(Radius.circular(40.0)),
     boxShadow: [
       // BoxShadow(
       //   color: Colors.orange,
@@ -99,7 +99,7 @@ Widget defultButton({
   ),
   child: TextButton(
     onPressed: (){},
-    child: Text(label,style: TextStyle(color: Colors.white) ,),
+    child: Text(label,style: const TextStyle(color: Colors.white) ,),
   ),);
 Widget defultElvatedButton({
   required label,
@@ -109,7 +109,7 @@ Widget defultElvatedButton({
   width: 185,
   height: 50,
   color: defultcolor ,
-  decoration:BoxDecoration(
+  decoration:const BoxDecoration(
 
     borderRadius:BorderRadius.all(Radius.circular(50.0)),
     boxShadow: [
@@ -126,7 +126,7 @@ Widget defultElvatedButton({
   ),
   child: ElevatedButton(
     onPressed: (){},
-    child: Text(label,style: TextStyle(color: Colors.white) ,),
+    child: Text(label,style: const TextStyle(color: Colors.white) ,),
   ),);
 //////////////////////////////////
 // void displayErrorMotionToast(context) {

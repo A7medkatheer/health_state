@@ -5,7 +5,8 @@ import 'package:health_state/presention/resources/color_manager.dart';
 import 'package:health_state/presention/resources/fonts_manager.dart';
 import 'package:health_state/presention/resources/routes_Manager.dart';
 import 'package:health_state/presention/resources/strings_Manager.dart';
-import 'package:health_state/presention/resources/values_Manager.dart';
+import 'package:health_state/presention/resources/values_manager.dart';
+
 
 class startView extends StatelessWidget {
   const startView({super.key});
@@ -15,7 +16,7 @@ class startView extends StatelessWidget {
     return Scaffold(
       backgroundColor: ColorManager.white,
       appBar: AppBar(
-        systemOverlayStyle: SystemUiOverlayStyle(
+        systemOverlayStyle: const SystemUiOverlayStyle(
           statusBarColor: Colors.transparent,
           statusBarBrightness: Brightness.dark,
         ),
@@ -23,15 +24,15 @@ class startView extends StatelessWidget {
         elevation: 0,
       ),
       body: Padding(
-        padding: EdgeInsets.all(AppSize.s20),
+        padding: const EdgeInsets.all(AppSize.s20),
         child: Center(
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: AppSize.s50,
               ),
-              Image(image: AssetImage(ImagesAssets.SplashLogo2)),
-              SizedBox(
+              const Image(image: AssetImage(ImagesAssets.SplashLogo2)),
+              const SizedBox(
                 height: AppSize.s50,
               ),
               Text(
@@ -41,7 +42,7 @@ class startView extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     fontSize: FontSize.s30),
               ),
-              SizedBox(
+              const SizedBox(
                 height: AppSize.s8,
               ),
               Text(
@@ -51,12 +52,15 @@ class startView extends StatelessWidget {
                     fontWeight: FontWeight.w300,
                     fontSize: FontSize.s20),
               ),
-              SizedBox(
+              const SizedBox(
                 height: AppSize.s50,
               ),
               Container(
                 height: AppSize.s50,
                 width: double.infinity,
+                decoration: BoxDecoration(
+                    color: ColorManager.black,
+                    borderRadius: BorderRadius.circular(AppSize.s50)),
                 child: TextButton(
                     child: Text(
                       AppStrings.getStart,
@@ -67,16 +71,20 @@ class startView extends StatelessWidget {
                     onPressed: () {
                       Navigator.pushNamed(context,Routes.mainRoute);
                     }),
-                decoration: BoxDecoration(
-                    color: ColorManager.black,
-                    borderRadius: BorderRadius.circular(AppSize.s50)),
               ),
-              SizedBox(
+              const SizedBox(
                 height: AppSize.s20,
               ),
               Container(
                 height: AppSize.s50,
                 width: double.infinity,
+                decoration: BoxDecoration(
+                    border: Border.all(color: ColorManager.black),
+                    color: ColorManager.white,
+                    borderRadius: BorderRadius.circular(
+                      AppSize.s50,
+                    ),
+                    shape: BoxShape.rectangle),
                 child: TextButton(
                     child: Text(
                       AppStrings.login,
@@ -87,13 +95,6 @@ class startView extends StatelessWidget {
                     onPressed: () {
                       Navigator.pushNamed(context,Routes.loginRoute);
                     }),
-                decoration: BoxDecoration(
-                    border: Border.all(color: ColorManager.black),
-                    color: ColorManager.white,
-                    borderRadius: BorderRadius.circular(
-                      AppSize.s50,
-                    ),
-                    shape: BoxShape.rectangle),
               ),
             ],
           ),

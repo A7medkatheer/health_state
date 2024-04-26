@@ -1,5 +1,6 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
-import 'package:health_state/presention/forgot_password/verification.dart';
 import 'package:health_state/presention/resources/color_manager.dart';
 import 'package:health_state/presention/resources/routes_Manager.dart';
 
@@ -13,34 +14,34 @@ class forgotPasswordView extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 100,
               ),
-              Text(
+              const Text(
                 'Forgot Your Password ?',
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Center(
+              const Center(
                   child: Text(
                 'Enter your registered email below to receive password reset instruction',
                 style: TextStyle(fontSize: 18, color: Colors.grey),
               )),
-              Image(image: AssetImage('assets/images/forgotpassword.png')),
-              SizedBox(
+              const Image(image: AssetImage('assets/images/forgotpassword.png')),
+              const SizedBox(
                 height: 20,
               ),
               defultTextForm(
                 controller: EmailController,
                 keyboardType: TextInputType.emailAddress,
-                prefixIcon: Icon(Icons.mail),
+                prefixIcon: const Icon(Icons.mail),
                 label: 'Enter E-mail or Phone Number',
                 onTab: () {},
                 validate: (String? value) {
@@ -49,13 +50,13 @@ class forgotPasswordView extends StatelessWidget {
                   }
                 },
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     'Remember password ? ',
                     style: TextStyle(
                       fontSize: 15,
@@ -68,7 +69,7 @@ class forgotPasswordView extends StatelessWidget {
                   //     defultButton(label: 'Send', onPressed: (){}),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Container(
@@ -77,7 +78,7 @@ class forgotPasswordView extends StatelessWidget {
                     color: ColorManager.primary,
                     borderRadius: BorderRadiusDirectional.circular(20)),
                 child: TextButton(
-                    child: Text(
+                    child: const Text(
                       'send',
                       style: TextStyle(color: Colors.white),
                     ),

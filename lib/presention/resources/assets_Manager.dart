@@ -1,3 +1,6 @@
+ // ignore: constant_identifier_names
+ // ignore_for_file: constant_identifier_names
+
  const String Imagepath ='assets/images';
 class ImagesAssets{
  static const String SplashLogo ='$Imagepath/HealthState.svg';

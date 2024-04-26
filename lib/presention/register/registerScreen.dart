@@ -1,13 +1,16 @@
+// ignore_for_file: file_names, camel_case_types, non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:health_state/presention/resources/values_manager.dart';
 
 import '../../Components(tools).dart';
 import '../resources/assets_Manager.dart';
 import '../resources/color_manager.dart';
 import '../resources/routes_Manager.dart';
 import '../resources/strings_Manager.dart';
-import '../resources/values_Manager.dart';
+
 
 class registerView extends StatelessWidget {
   const registerView({super.key});

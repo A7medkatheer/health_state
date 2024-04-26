@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -18,7 +20,7 @@ class LoginView extends StatelessWidget {
     return Scaffold(
       backgroundColor: ColorManager.white,
       appBar: AppBar(
-        systemOverlayStyle: SystemUiOverlayStyle(
+        systemOverlayStyle: const SystemUiOverlayStyle(
           statusBarColor: Colors.transparent,
           statusBarBrightness: Brightness.dark,
         ),
@@ -26,21 +28,21 @@ class LoginView extends StatelessWidget {
         elevation: 0,
       ),
       body: Padding(
-        padding: EdgeInsets.all(AppSize.s20),
+        padding: const EdgeInsets.all(AppSize.s20),
         child: Center(
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: AppSize.s50,
               ),
-              Image(image: AssetImage(ImagesAssets.Logo)),
-              SizedBox(
+              const Image(image: AssetImage(ImagesAssets.Logo)),
+              const SizedBox(
                 height: AppSize.s60,
               ),
               defultTextForm(
                 controller: EmailController,
                 keyboardType: TextInputType.emailAddress,
-                prefixIcon: Icon(Icons.mail),
+                prefixIcon: const Icon(Icons.mail),
                 label: 'Enter E-mail or Phone Number',
                 onTab: () {},
                 validate: (String? value) {
@@ -49,12 +51,12 @@ class LoginView extends StatelessWidget {
                   }
                 },
               ),
-              SizedBox(height: 30,),
+              const SizedBox(height: 30,),
               defultTextForm(
                 showpassword: true,
                 controller: PasswordController,
                 keyboardType: TextInputType.visiblePassword,
-                prefixIcon: Icon(Icons.lock),
+                prefixIcon: const Icon(Icons.lock),
                 label: 'Enter Your Password',
                 onTab: () {},
                 validate: (String? value) {
@@ -63,15 +65,15 @@ class LoginView extends StatelessWidget {
                   }
                 },
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
 
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               defultButton(label: 'LOGIN', onPressed: () {}),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               TextButton(child:Text(
@@ -82,7 +84,7 @@ class LoginView extends StatelessWidget {
                     fontWeight: FontWeight.bold),
               ),onPressed: (){Navigator.pushReplacementNamed(context,Routes.forgotPasswordRoute);
               },),
-              Spacer(),
+              const Spacer(),
               Container(
                   decoration: BoxDecoration(
 
@@ -105,31 +107,31 @@ class LoginView extends StatelessWidget {
                               TextStyle(color: ColorManager.blue, fontSize: 20),
                         ),
                       ])),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Container(
                 height: 50,
                   decoration: BoxDecoration(
-                    border: Border.symmetric(vertical: BorderSide(color: Colors.black,),horizontal:BorderSide(color:  Colors.black,)  ),
+                    border: const Border.symmetric(vertical: BorderSide(color: Colors.black,),horizontal:BorderSide(color:  Colors.black,)  ),
                     borderRadius: BorderRadius.circular(30),
                   ),
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image.asset('assets/images/googleicon.jpeg',width: 30),
-                        SizedBox(width: 15,),
+                        const SizedBox(width: 15,),
                         Text(
                           'log in with google',
                           style: TextStyle(
                               color: ColorManager.black, fontSize: 22),
                         ),
                       ])),
-              Spacer(),
+              const Spacer(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Dont\' have an account?'),
+                  const Text('Dont\' have an account?'),
                   TextButton(
                       onPressed: () {
                         Navigator.pushNamed((context), Routes.registerRoute);

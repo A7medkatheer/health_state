@@ -107,8 +107,9 @@
 //     }
 //   }
 //
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:health_state/presention/resources/color_manager.dart';
 import 'package:health_state/presention/resources/routes_Manager.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -162,8 +163,8 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(height: 60,),
-              Image(image: AssetImage(ImagesAssets.Logo)),
+              const SizedBox(height: 60,),
+              const Image(image: AssetImage(ImagesAssets.Logo)),
               Expanded(
                 child: PageView.builder(
                   onPageChanged: (int index){
@@ -182,19 +183,19 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                   SmoothPageIndicator(
                     controller: boardController,
                     count: boarding.length,
-                    effect: ExpandingDotsEffect(dotHeight: 10,dotWidth: 10,spacing: 5,activeDotColor: Colors.green),),
-                  Spacer(),
+                    effect: const ExpandingDotsEffect(dotHeight: 10,dotWidth: 10,spacing: 5,activeDotColor: Colors.green),),
+                  const Spacer(),
                   FloatingActionButton(onPressed: (){
                     if(isLast==true){
                       Navigator.pushReplacementNamed(context, Routes.startRoute);
 
                     }else{
-                      boardController.nextPage(duration:Duration(seconds: 1),curve: Curves.easeInOutCubicEmphasized);
+                      boardController.nextPage(duration:const Duration(seconds: 1),curve: Curves.easeInOutCubicEmphasized);
                     }
-                  },child: Icon(Icons.arrow_forward_outlined),splashColor: Colors.green,)
+                  },child: const Icon(Icons.arrow_forward_outlined),splashColor: Colors.green,)
                 ],
               ),
-              SizedBox(height: 50,),
+              const SizedBox(height: 50,),
 
             ],
           ),
@@ -206,9 +207,9 @@ Widget BuildItem (BoardingModel model)=>Column(
   crossAxisAlignment: CrossAxisAlignment.start,
   children: [
     Expanded(child: Image.asset('${model.image}')),
-    SizedBox(height:30,),
-    Text('${model.title}',style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold,),),
-    SizedBox(height:15,),
+    const SizedBox(height:30,),
+    Text('${model.title}',style: const TextStyle(fontSize: 40,fontWeight: FontWeight.bold,),),
+    const SizedBox(height:15,),
     Text('${model.body}',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.grey[300]),),
 
 
