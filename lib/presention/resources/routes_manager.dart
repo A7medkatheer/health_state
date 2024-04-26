@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:health_state/presention/login/login_screen.dart';
+import 'package:health_state/presention/main/screens/dashboard.dart';
 import 'package:health_state/presention/splash/splash_screen.dart';
 import 'package:health_state/presention/start/start.dart';
 import '../forgot_password/forgot_password_screen.dart';
 import '../forgot_password/newpass.dart';
 import '../forgot_password/verification.dart';
-import '../main/main_screen.dart';
 import '../onboarding/on_boarding_screen.dart';
 import '../register/registerScreen.dart';
 import '../store_details/store_details_screen.dart';

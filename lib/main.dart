@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Health State',
       debugShowCheckedModeBanner: false,
       onGenerateRoute: RouteGenerator.getRoutes,
-      initialRoute: Routes.splashRoute,
+      initialRoute: Routes.mainRoute,
     );
   }
 }
