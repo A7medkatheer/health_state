@@ -6,8 +6,9 @@ import 'package:health_state/presention/resources/routes_Manager.dart';
 
 import '../../Components(tools).dart';
 
-class forgotPasswordView extends StatelessWidget {
-  forgotPasswordView({super.key});
+// ignore: must_be_immutable
+class ForgotPasswordView extends StatelessWidget {
+  ForgotPasswordView({super.key});
   var EmailController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -34,7 +35,8 @@ class forgotPasswordView extends StatelessWidget {
                 'Enter your registered email below to receive password reset instruction',
                 style: TextStyle(fontSize: 18, color: Colors.grey),
               )),
-              const Image(image: AssetImage('assets/images/forgotpassword.png')),
+              const Image(
+                  image: AssetImage('assets/images/forgotpassword.png')),
               const SizedBox(
                 height: 20,
               ),
