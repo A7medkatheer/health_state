@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:health_state/presention/resources/color_manager.dart';
-import 'package:health_state/presention/resources/routes_Manager.dart';
-import 'package:health_state/presention/resources/strings_Manager.dart';
-import '../../Components(tools).dart';
-import '../resources/assets_Manager.dart';
+import 'package:health_state/presention/resources/routes_manager.dart';
+import 'package:health_state/presention/resources/strings_manager.dart';
+import '../../components_tools.dart';
+import '../resources/assets_manager.dart';
 import '../resources/values_manager.dart';
 
 class LoginView extends StatelessWidget {

@@ -5,11 +5,11 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:health_state/presention/resources/values_manager.dart';
 
-import '../../Components(tools).dart';
-import '../resources/assets_Manager.dart';
+import '../../components_tools.dart';
+import '../resources/assets_manager.dart';
 import '../resources/color_manager.dart';
-import '../resources/routes_Manager.dart';
-import '../resources/strings_Manager.dart';
+import '../resources/routes_manager.dart';
+import '../resources/strings_manager.dart';
 
 
 class registerView extends StatelessWidget {
@@ -23,7 +23,7 @@ class registerView extends StatelessWidget {
     return Scaffold(
       backgroundColor: ColorManager.white,
       appBar: AppBar(
-        systemOverlayStyle: SystemUiOverlayStyle(
+        systemOverlayStyle: const SystemUiOverlayStyle(
           statusBarColor: Colors.transparent,
           statusBarBrightness: Brightness.dark,
         ),
@@ -32,20 +32,20 @@ class registerView extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(AppSize.s20),
+          padding: const EdgeInsets.all(AppSize.s20),
           child: Center(
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: AppSize.s50,
                 ),
-                Image(image: AssetImage(ImagesAssets.Logo)),
-                SizedBox(
+                const Image(image: AssetImage(ImagesAssets.Logo)),
+                const SizedBox(
                   height: AppSize.s60,
                 ),defultTextForm(
                   controller: NameController,
                   keyboardType: TextInputType.name,
-                  prefixIcon: Icon(Icons.person),
+                  prefixIcon: const Icon(Icons.person),
                   label: 'Enter full name ',
                   onTab: () {},
                   validate: (String? value) {
@@ -54,11 +54,11 @@ class registerView extends StatelessWidget {
                     }
                   },
                 ),
-                SizedBox(height: 30,),
+                const SizedBox(height: 30,),
                 defultTextForm(
                   controller: EmailController,
                   keyboardType: TextInputType.emailAddress,
-                  prefixIcon: Icon(Icons.mail),
+                  prefixIcon: const Icon(Icons.mail),
                   label: 'Enter E-mail or Phone Number',
                   onTab: () {},
                   validate: (String? value) {
@@ -67,12 +67,12 @@ class registerView extends StatelessWidget {
                     }
                   },
                 ),
-                SizedBox(height: 30,),
+                const SizedBox(height: 30,),
                 defultTextForm(
                   showpassword: true,
                   controller: PasswordController,
                   keyboardType: TextInputType.visiblePassword,
-                  prefixIcon: Icon(Icons.lock),
+                  prefixIcon: const Icon(Icons.lock),
                   label: 'Enter Your Password',
                   onTab: () {},
                   validate: (String? value) {
@@ -81,15 +81,15 @@ class registerView extends StatelessWidget {
                     }
                   },
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
 
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 defultButton(label: 'REGISTER', onPressed: () {}),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 TextButton(child:Text(
@@ -100,7 +100,7 @@ class registerView extends StatelessWidget {
                       fontWeight: FontWeight.bold),
                 ),onPressed: (){                        Navigator.pushReplacementNamed(context,Routes.forgotPasswordRoute);
                 },),
-                Spacer(),
+                const Spacer(),
                 Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
@@ -122,7 +122,7 @@ class registerView extends StatelessWidget {
                             TextStyle(color: ColorManager.blue, fontSize: 20),
                           ),
                         ])),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Container(
@@ -133,7 +133,7 @@ class registerView extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           IconButton(
-                              icon: FaIcon(
+                              icon: const FaIcon(
                                 FontAwesomeIcons.google,
                                 color: Colors.red,
                                 size: 30,
@@ -145,11 +145,11 @@ class registerView extends StatelessWidget {
                                 color: ColorManager.black, fontSize: 20),
                           ),
                         ])),
-                Spacer(),
+                const Spacer(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Have an account?'),
+                    const Text('Have an account?'),
                     TextButton(
                         onPressed: () {
                           Navigator.pushReplacementNamed(context,Routes.loginRoute);

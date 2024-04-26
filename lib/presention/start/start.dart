@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:health_state/presention/resources/assets_Manager.dart';
+import 'package:health_state/presention/resources/assets_manager.dart';
 import 'package:health_state/presention/resources/color_manager.dart';
 import 'package:health_state/presention/resources/fonts_manager.dart';
-import 'package:health_state/presention/resources/routes_Manager.dart';
-import 'package:health_state/presention/resources/strings_Manager.dart';
+import 'package:health_state/presention/resources/routes_manager.dart';
+import 'package:health_state/presention/resources/strings_manager.dart';
 import 'package:health_state/presention/resources/values_manager.dart';
 
-
-class startView extends StatelessWidget {
-  const startView({super.key});
+class StartView extends StatelessWidget {
+  const StartView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +68,7 @@ class startView extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
-                      Navigator.pushNamed(context,Routes.mainRoute);
+                      Navigator.pushNamed(context, Routes.mainRoute);
                     }),
               ),
               const SizedBox(
@@ -93,7 +92,7 @@ class startView extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
-                      Navigator.pushNamed(context,Routes.loginRoute);
+                      Navigator.pushNamed(context, Routes.loginRoute);
                     }),
               ),
             ],

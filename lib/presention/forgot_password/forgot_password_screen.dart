@@ -2,9 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:health_state/presention/resources/color_manager.dart';
-import 'package:health_state/presention/resources/routes_Manager.dart';
+import 'package:health_state/presention/resources/routes_manager.dart';
 
-import '../../Components(tools).dart';
+import '../../components_tools.dart';
 
 // ignore: must_be_immutable
 class ForgotPasswordView extends StatelessWidget {

@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:health_state/presention/resources/color_manager.dart';
 
@@ -33,7 +33,7 @@ Widget defultTextForm(
       prefixIconColor: ColorManager.primary ,
       enabledBorder:  OutlineInputBorder(
           borderSide: BorderSide(color: ColorManager.primary,width: 1),
-          borderRadius: const BorderRadius.all(const Radius.circular(30.0))
+          borderRadius: const BorderRadius.all( Radius.circular(30.0))
       ),
       focusedBorder: OutlineInputBorder(
         borderSide: BorderSide(color: ColorManager.primary,style: BorderStyle.solid,width: 2),
@@ -85,7 +85,7 @@ Widget defultButton({
   decoration:BoxDecoration(
     color: defultcolor ,
     borderRadius:const BorderRadius.all(Radius.circular(40.0)),
-    boxShadow: [
+    boxShadow: const [
       // BoxShadow(
       //   color: Colors.orange,
       //   blurRadius: 5.0, // soften the shadow

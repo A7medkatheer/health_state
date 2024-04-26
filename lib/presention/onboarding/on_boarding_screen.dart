@@ -110,11 +110,9 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'package:flutter/material.dart';
-import 'package:health_state/presention/resources/color_manager.dart';
-import 'package:health_state/presention/resources/routes_Manager.dart';
+import 'package:health_state/presention/resources/routes_manager.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
-import '../resources/assets_Manager.dart';
+import '../resources/assets_manager.dart';
 
 class BoardingModel{
   final String title;
@@ -126,6 +124,8 @@ class BoardingModel{
     required this.image});
 }
 class OnBoardingView extends StatefulWidget {
+  const OnBoardingView({super.key});
+
   @override
   State<OnBoardingView> createState() => _OnBoardingViewState();
 }
@@ -170,7 +170,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                   onPageChanged: (int index){
                     if(index==boarding.length -1){
                       isLast=true;
-                    };
+                    }
                   },
                   controller: boardController,
                   itemBuilder: (context,index)=>BuildItem(boarding[index]),

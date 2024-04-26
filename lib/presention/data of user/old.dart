@@ -1,12 +1,17 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:numberpicker/numberpicker.dart';
 
-class olduser extends StatefulWidget {
+class Olduser extends StatefulWidget {
+  const Olduser({super.key});
+
   @override
-  _olduser createState() => _olduser();
+
+  _Olduser createState() => _Olduser();
 }
 
-class _olduser extends State<olduser> {
+class _Olduser extends State<Olduser> {
   int _currentValue = 3;
 
   @override
