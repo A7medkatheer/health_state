@@ -192,7 +192,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                     }else{
                       boardController.nextPage(duration:const Duration(seconds: 1),curve: Curves.easeInOutCubicEmphasized);
                     }
-                  },child: const Icon(Icons.arrow_forward_outlined),splashColor: Colors.green,)
+                  },splashColor: Colors.green,child: const Icon(Icons.arrow_forward_outlined),)
                 ],
               ),
               const SizedBox(height: 50,),
