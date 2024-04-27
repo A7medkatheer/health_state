@@ -8,11 +8,8 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(10),
       margin: const EdgeInsets.only(top: 10),
-      decoration: const BoxDecoration(
-          // color: Color(0xff1C1C1E),
-          ),
       child: Column(
         children: [
           Row(

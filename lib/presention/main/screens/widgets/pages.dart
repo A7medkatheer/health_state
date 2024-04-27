@@ -26,26 +26,4 @@ class ChatPage extends StatelessWidget {
   }
 }
 
-class SearchPage extends StatelessWidget {
-  const SearchPage({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Search'),
-      ),
-      body:Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            
-            image: AssetImage('assets/images/health.png'),
-            
-            fit: BoxFit.cover,
-          ),
-        ),
-
-      )
-    );
-  }
-}

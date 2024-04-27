@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:health_state/presention/main/screens/widgets/cubit/cubit.dart';
 import 'package:health_state/presention/resources/routes_manager.dart';
 
 void main() {
@@ -10,12 +12,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return BlocProvider(create: (context)=>AppCubit(),
+    child: MaterialApp(
       theme: ThemeData(primarySwatch: Colors.green),
       title: 'Health State',
       debugShowCheckedModeBanner: false,
       onGenerateRoute: RouteGenerator.getRoutes,
-      initialRoute: Routes.mainRoute,
-    );
+      initialRoute: Routes.splashRoute,
+    ));
   }
 }

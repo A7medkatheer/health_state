@@ -1,95 +1,46 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:health_state/presention/main/screens/widgets/home_page.dart';
-import 'package:health_state/presention/main/screens/widgets/pages.dart';
-import 'package:iconsax/iconsax.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:health_state/presention/main/screens/widgets/cubit/cubit.dart';
+import 'widgets/cubit/state.dart';
+class MainView extends StatelessWidget {
+  const MainView({Key? key}) : super(key: key);
 
-class MainView extends StatefulWidget {
-  const MainView({super.key});
-  // static String id = 'home_page';
-
-  @override
-  State<MainView> createState() => _MainViewState();
-}
-
-class _MainViewState extends State<MainView> {
-  final List<Widget> pages = [
-    const HomePage(),
-    const SearchPage(),
-    const ChatPage(),
-    const ProfilePage(),
-  ];
-  int currentPage = 0;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      // backgroundColor: Color(0xff000000),
-      appBar: AppBar(
-          leading: Row(
-            children: [
+    var cubit =AppCubit.get(context);
+    return BlocConsumer<AppCubit, AppState>(
+        builder: (context, state) {  return Scaffold(
+        // backgroundColor: Color(0xff000000),
+        appBar: AppBar(
+            leading: Row(
+              children: [
+                IconButton(
+                  icon: const Icon(Icons.menu),
+                  onPressed: () {},
+                ),
+              ],
+            ),
+            title: const Text('Health State'),
+            actions: [
               IconButton(
-                icon: const Icon(Icons.menu),
+                icon: Image.asset(
+                  'assets/images/health.png',
+                  height: 50,
+                  width: 50,
+                ),
                 onPressed: () {},
               ),
-            ],
-          ),
-          title: const Text('Health State'),
-          actions: [
-            IconButton(
-              icon: Image.asset(
-                'assets/images/health.png',
-                height: 50,
-                width: 50,
+              IconButton(
+                icon: const Icon(Icons.more_vert),
+                onPressed: () {},
               ),
-              onPressed: () {},
-            ),
-            IconButton(
-              icon: const Icon(Icons.more_vert),
-              onPressed: () {},
-            ),
-          ]),
-      body: pages[currentPage],
-      bottomNavigationBar: NavigationBar(
-        onDestinationSelected: (value) {
-          setState(() {
-            currentPage = value;
-          });
-        },
-        // backgroundColor: Color(0xff1C1C1E),
-        //        height: 60,
-        elevation: 0,
-        animationDuration: const Duration(seconds: 4),
-        selectedIndex: currentPage,
-        destinations: const [
-          NavigationDestination(
-            icon: Icon(
-              Iconsax.home,
-              color: Colors.black,
-            ),
-            label: 'home',
-          ),
-          NavigationDestination(
-            icon: Image(
-              image: AssetImage('assets/images/hat.png'),
-              color: Colors.black,
-            ),
-            label: 'Coach',
-          ),
-          NavigationDestination(
-            icon: Icon(
-              Iconsax.messages,
-              color: Colors.black,
-            ),
-            label: 'chat',
-          ),
-          NavigationDestination(
-            icon: Icon(
-              Iconsax.user,
-              color: Colors.black,
-            ),
-            label: 'user',
-          ),
-        ],
-      ),
+            ]),
+        body: cubit.pages[cubit.currentPage],
+        bottomNavigationBar:cubit.BottomNav(),
+      );},
+      listener: (context,state){},
     );
   }
 }
+

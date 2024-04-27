@@ -45,6 +45,7 @@ dependencies:
   equatable: ^2.0.5
   flutter_bloc: ^8.1.5
   bloc: ^8.1.4
+  curved_labeled_navigation_bar: ^2.0.2
 
 dev_dependencies:
   flutter_test:
