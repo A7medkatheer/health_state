@@ -6,7 +6,7 @@ import 'package:health_state/presention/start/start.dart';
 import '../forgot_password/forgot_password_screen.dart';
 import '../forgot_password/newpass.dart';
 import '../forgot_password/verification.dart';
-import '../main/screens/widgets/exPrivate.dart';
+import '../main/screens/widgets/ex_private.dart';
 import '../main/screens/widgets/exercises.dart';
 import '../onboarding/on_boarding_screen.dart';
 import '../register/registerScreen.dart';
@@ -49,10 +49,10 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => ForgotPasswordView());
       case Routes.mainRoute:
         return MaterialPageRoute(builder: (_) => const MainView());
-        case Routes.exercisespageRoute:
-        return MaterialPageRoute(builder: (_) =>  exercisespage());
-        case Routes.exPrivateRoute:
-        return MaterialPageRoute(builder: (_) =>  exPrivate());
+      case Routes.exercisespageRoute:
+        return MaterialPageRoute(builder: (_) => const Exercisespage());
+      case Routes.exPrivateRoute:
+        return MaterialPageRoute(builder: (_) => const ExPrivate());
       case Routes.storeRoute:
         return MaterialPageRoute(builder: (_) => const StoreDetailsView());
       default:

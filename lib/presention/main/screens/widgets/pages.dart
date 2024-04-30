@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -15,8 +14,8 @@ class ProfilePage extends StatelessWidget {
   }
 }
 
-class ChatPage extends StatelessWidget {
-  const ChatPage({super.key});
+class DietsPage extends StatelessWidget {
+  const DietsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -63,14 +62,15 @@ class CardsDiet extends StatelessWidget {
         //     style: TextStyle(fontSize: 30, color: Colors.black)),
         Container(
           padding: const EdgeInsets.only(left: 30, top: 30),
-          margin: const EdgeInsets.only(left: 10),
-          height: 400.h,
-          width: 336.w,
+          margin: const EdgeInsets.only(left: 30, top: 30),
           alignment: Alignment.topLeft,
+          // height: 400.h,
+          // width: 336.w,
           child: const Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                textAlign: TextAlign.left,
+                // textAlign: TextAlign.start,
                 'Premium',
                 style: TextStyle(
                     color: Colors.white,
@@ -78,7 +78,7 @@ class CardsDiet extends StatelessWidget {
                     fontSize: 33.0),
               ),
               Text(
-                // textAlign: TextAlign.left,
+                // textAlign: TextAlign.start,
                 'CALORIE COUNTING',
                 style: TextStyle(
                     color: Color(0xffE4FF74),
@@ -98,5 +98,14 @@ class CardsDiet extends StatelessWidget {
         ),
       ],
     );
+  }
+}
+
+class StartDiet extends StatelessWidget {
+  const StartDiet({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }

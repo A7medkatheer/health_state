@@ -17,7 +17,7 @@ class AppCubit extends Cubit<AppState> {
   final List<Widget> pages = [
     const HomePage(),
     const Exercisespage(),
-    const ChatPage(),
+    const DietsPage(),
     const ProfilePage(),
   ];
   int currentPage = 1;
