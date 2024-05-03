@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:interactive_bottom_sheet/interactive_bottom_sheet.dart';
 
 class ExPrivate extends StatelessWidget {
   const ExPrivate({Key? key}) : super(key: key);
@@ -27,7 +26,7 @@ class ExPrivate extends StatelessWidget {
               child: ListView.separated(
                   scrollDirection: Axis.vertical,
                   itemBuilder: (context, index) =>  GestureDetector(
-                    child: Padding(
+                    child: const Padding(
                           padding: EdgeInsets.all(20.0),
                           child: Row(
                             children: [

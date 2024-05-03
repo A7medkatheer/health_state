@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:healthystate/presention/resources/routes_manager.dart';
-import 'package:healthystate/presention/resources/routes_manager.dart';
 class Image{
  final String images;
 

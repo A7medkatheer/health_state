@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:healthystate/presention/login/login_screen.dart';
 import 'package:healthystate/presention/main/screens/dashboard.dart';
+import 'package:healthystate/presention/main/screens/widgets/pages.dart';
 import 'package:healthystate/presention/splash/splash_screen.dart';
 import 'package:healthystate/presention/start/start.dart';
 import '../forgot_password/forgot_password_screen.dart';
@@ -17,6 +18,7 @@ class Routes {
   static const String splashRoute = "/";
   static const String startRoute = "/start";
   static const String loginRoute = "/login";
+  static const String startDiets = "/sdgvsdv";
   static const String registerRoute = "/register";
   static const String onBoardingRoute = "/onBoarding";
   static const String forgotPasswordRoute = "/forgotPassword";
@@ -33,6 +35,9 @@ class RouteGenerator {
     switch (settings.name) {
       case Routes.splashRoute:
         return MaterialPageRoute(builder: (_) => const SplashView());
+      case Routes.startDiets:
+        return MaterialPageRoute(
+            builder: (_) => StartDiet(diet: settings.arguments as Diets));
       case Routes.startRoute:
         return MaterialPageRoute(builder: (_) => const StartView());
       case Routes.loginRoute:
