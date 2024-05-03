@@ -16,8 +16,8 @@ class AppCubit extends Cubit<AppState> {
   static AppCubit get(context) => BlocProvider.of(context);
   final List<Widget> pages = [
     const HomePage(),
-    const exercisespage(),
-    const ChatPage(),
+    const Exercisespage(),
+    const DietsPage(),
     const ProfilePage(),
   ];
   int currentPage = 1;

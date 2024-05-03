@@ -1,8 +1,8 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'package:flutter/material.dart';
-import 'package:health_state/presention/resources/color_manager.dart';
-import 'package:health_state/presention/resources/routes_manager.dart';
+import 'package:healthystate/presention/resources/color_manager.dart';
+import 'package:healthystate/presention/resources/routes_manager.dart';
 
 import '../../components_tools.dart';
 

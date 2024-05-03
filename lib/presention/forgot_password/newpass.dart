@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:health_state/presention/forgot_password/verification.dart';
+import 'package:healthystate/presention/forgot_password/verification.dart';
 import '../../components_tools.dart';
 import '../resources/color_manager.dart';
 

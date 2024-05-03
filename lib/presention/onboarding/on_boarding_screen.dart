@@ -110,7 +110,7 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'package:flutter/material.dart';
-import 'package:health_state/presention/resources/routes_manager.dart';
+import 'package:healthystate/presention/resources/routes_manager.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../resources/assets_manager.dart';
 
@@ -192,7 +192,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                     }else{
                       boardController.nextPage(duration:const Duration(seconds: 1),curve: Curves.easeInOutCubicEmphasized);
                     }
-                  },splashColor: Colors.green,child: const Icon(Icons.arrow_forward_outlined),)
+                  },backgroundColor: Colors.green,child: const Icon(Icons.arrow_forward_outlined),)
                 ],
               ),
               const SizedBox(height: 50,),

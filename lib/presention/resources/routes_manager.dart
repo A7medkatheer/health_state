@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:health_state/presention/login/login_screen.dart';
-import 'package:health_state/presention/main/screens/dashboard.dart';
-import 'package:health_state/presention/splash/splash_screen.dart';
-import 'package:health_state/presention/start/start.dart';
+import 'package:healthystate/presention/login/login_screen.dart';
+import 'package:healthystate/presention/main/screens/dashboard.dart';
+import 'package:healthystate/presention/splash/splash_screen.dart';
+import 'package:healthystate/presention/start/start.dart';
 import '../forgot_password/forgot_password_screen.dart';
 import '../forgot_password/newpass.dart';
 import '../forgot_password/verification.dart';
-import '../main/screens/widgets/exPrivate.dart';
+import '../main/screens/widgets/ex_private.dart';
 import '../main/screens/widgets/exercises.dart';
 import '../onboarding/on_boarding_screen.dart';
 import '../register/registerScreen.dart';
@@ -49,10 +49,10 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => ForgotPasswordView());
       case Routes.mainRoute:
         return MaterialPageRoute(builder: (_) => const MainView());
-        case Routes.exercisespageRoute:
-        return MaterialPageRoute(builder: (_) =>  exercisespage());
-        case Routes.exPrivateRoute:
-        return MaterialPageRoute(builder: (_) =>  exPrivate());
+      case Routes.exercisespageRoute:
+        return MaterialPageRoute(builder: (_) => const Exercisespage());
+      case Routes.exPrivateRoute:
+        return MaterialPageRoute(builder: (_) => const ExPrivate());
       case Routes.storeRoute:
         return MaterialPageRoute(builder: (_) => const StoreDetailsView());
       default:

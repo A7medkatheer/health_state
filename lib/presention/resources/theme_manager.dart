@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:health_state/presention/resources/values_manager.dart';
+import 'package:healthystate/presention/resources/values_manager.dart';
 import 'color_manager.dart';
 import 'styles_manager.dart';
 import 'fonts_manager.dart';

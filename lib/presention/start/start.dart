@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:health_state/presention/resources/assets_manager.dart';
-import 'package:health_state/presention/resources/color_manager.dart';
-import 'package:health_state/presention/resources/fonts_manager.dart';
-import 'package:health_state/presention/resources/routes_manager.dart';
-import 'package:health_state/presention/resources/strings_manager.dart';
-import 'package:health_state/presention/resources/values_manager.dart';
+import 'package:healthystate/presention/resources/assets_manager.dart';
+import 'package:healthystate/presention/resources/color_manager.dart';
+import 'package:healthystate/presention/resources/fonts_manager.dart';
+import 'package:healthystate/presention/resources/routes_manager.dart';
+import 'package:healthystate/presention/resources/strings_manager.dart';
+import 'package:healthystate/presention/resources/values_manager.dart';
 
 class StartView extends StatelessWidget {
   const StartView({super.key});
