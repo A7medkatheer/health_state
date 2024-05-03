@@ -48,6 +48,7 @@ class CardsDiet extends StatelessWidget {
 class StartDiet extends StatelessWidget {
   const StartDiet({super.key, required this.diet});
   final Diets diet;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -137,87 +138,123 @@ class StartDiet extends StatelessWidget {
                     fontSize: 20.0),
               ),
             ),
+            const CheckText(
+                text:
+                    ' Protein-rich foods keep you full longer\n and reduce hunger,making it easier to\n stick to your weight loss plan'),
+            const CheckText(
+              text:
+                  ' Helps prevent muscle loss accompanying\n weight loss, maintaining a higher\n metabolic rate',
+            ),
+            const CheckText(
+              text:
+                  ' Enjoy flavorful and filling protein-rich\n foods and recipes',
+            ),
+            const CheckText(
+              text:
+                  ' Perfect for athletes-get strong and\n energized with high-quality carbs and\n healthy fats',
+            ),
             const Padding(
               padding: EdgeInsets.fromLTRB(30, 20, 30, 0),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.check_sharp,
-                    color: Colors.green,
+              child: SizedText(
+                text: 'Sample Recipes',
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 20, 0, 0),
+              child: SizedBox(
+                height: 200,
+                width: double.infinity,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 10,
+                  itemBuilder: (context, index) => Container(
+                    margin: const EdgeInsets.only(right: 10),
+                    width: 200,
+                    height: 200,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        image: const DecorationImage(
+                            image: AssetImage('assets/images/e1.jpeg'),
+                            fit: BoxFit.fill)),
                   ),
-                  Column(
-                    children: [
-                      Text(
-                          ' Protein-rich foods keep you full longer\n and reduce hunger,making it easier to\n stick to your weight loss plan'),
-                    ],
-                  )
-                ],
+                ),
               ),
             ),
             const Padding(
               padding: EdgeInsets.fromLTRB(30, 20, 30, 0),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.check_sharp,
-                    color: Colors.green,
-                  ),
-                  Column(
-                    children: [
-                      Text(
-                          ' Helps prevent muscle loss accompanying\n weight loss, maintaining a higher\n metabolic rate')
-                    ],
-                  )
-                ],
+              child: SizedText(
+                text: 'Includes',
               ),
+            ),
+            const CheckText(
+              text:
+                  ' Planning protein target, selecting your\n macros and planning your diet',
+            ),
+            const CheckText(
+              text: ' Personalized vitamin, and mineral targets',
+            ),
+            const CheckText(
+              text: ' AutoPilot to guide your weight loss',
+            ),
+            const CheckText(
+              text:
+                  ' Advice and feedback tailored for high-\n protein lifestyle',
+            ),
+            const CheckText(
+              text: ' Easy and delicious high-protein recipes',
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 40),
+              child: Center(child: Image.asset('assets/images/error.png')),
             ),
             const Padding(
               padding: EdgeInsets.fromLTRB(30, 20, 30, 0),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.check_sharp,
-                    color: Colors.green,
-                  ),
-                  Column(
-                    children: [
-                      Text(
-                          ' Enjoy flavorful and filling protein-rich\n foods and recipes')
-                    ],
-                  )
-                ],
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.fromLTRB(30, 20, 30, 0),
-              child: Row(
-                // crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Icon(
-                    Icons.check_sharp,
-                    color: Colors.green,
-                  ),
-                  Column(
-                    children: [
-                      Text(
-                          ' Perfect for athletes-get strong and\n energized with high-quality carbs and\n healthy fats')
-                    ],
-                  )
-                ],
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.fromLTRB(30, 20, 30, 0),
-              child: Text('Sample Recipes',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20.0)),
-            ),
+              child: Text(
+                  "If you have a chronic health condition, including kidney disease or liver disease, consult your healthcare provider before starting a high-protein diet plan."),
+            )
           ],
         ),
       ),
     );
+  }
+}
+
+class CheckText extends StatelessWidget {
+  const CheckText({
+    super.key,
+    required this.text,
+  });
+  final String text;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(30, 20, 30, 0),
+      child: Row(
+        children: [
+          const Icon(
+            Icons.check_sharp,
+            color: Colors.green,
+          ),
+          Column(
+            children: [Text(text)],
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class SizedText extends StatelessWidget {
+  const SizedText({
+    super.key,
+    required this.text,
+  });
+  final String text;
+  @override
+  Widget build(BuildContext context) {
+    return Text(text,
+        style: const TextStyle(
+            color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20.0));
   }
 }
 
