@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 
@@ -47,8 +45,8 @@ class CardsDiet extends StatelessWidget {
           children: [
             Container(
               padding: const EdgeInsets.only(left: 30, top: 30),
-              height: 400.h,
-              width: 336.w,
+              height: 400,
+              width: 336,
 
               // margin: const EdgeInsets.only(left: 30, top: 30),
               // alignment: Alignment.center,
@@ -64,8 +62,8 @@ class CardsDiet extends StatelessWidget {
         Container(
           padding: const EdgeInsets.only(left: 30, top: 30),
           margin: const EdgeInsets.only(left: 10),
-          height: 400.h,
-          width: 336.w,
+          height: 400,
+          width: 336,
           alignment: Alignment.topLeft,
           child: const Column(
             children: [
