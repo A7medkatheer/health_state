@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:healthystate/presention/resources/routes_manager.dart';
+import 'package:healthystate/presention/resources/routes_manager.dart';
 class Image{
  final String images;
 
@@ -7,7 +8,8 @@ class Image{
 
 }
 List<Image>photo=[
-  // Image('assets/images/e1.jpeg'),
+
+  Image('assets/images/e1.jpeg'),
   Image('assets/images/e2.jpeg'),
   Image('assets/images/e3.jpeg'),
   Image('assets/images/e5.jpeg'),
