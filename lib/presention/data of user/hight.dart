@@ -15,7 +15,7 @@ class hightuser extends StatefulWidget {
 }
 
 class _hightuser extends State<hightuser> {
-  // int _currentValue = 3;
+  // int _currentValue = 3; 
   int integerValue = 20;
   double decimalValue = 0;
 

@@ -8,6 +8,7 @@ import 'package:iconsax/iconsax.dart';
 import '../exercises.dart';
 import '../home_page.dart';
 import '../pages.dart';
+import '../profilePage.dart';
 import 'state.dart';
 
 class AppCubit extends Cubit<AppState> {

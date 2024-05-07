@@ -2,18 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:healthystate/presention/resources/routes_manager.dart';
 
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Profile'),
-      ),
-    );
-  }
-}
 
 class DietsPage extends StatelessWidget {
   const DietsPage({super.key});

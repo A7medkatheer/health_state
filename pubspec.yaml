@@ -49,6 +49,7 @@ dependencies:
   flutter_screenutil:
   interactive_bottom_sheet: ^1.0.0
   awesome_number_picker: ^0.0.4
+  pretty_animated_buttons: ^0.0.1
   account_picker: ^2.1.0
   lottie: ^3.1.0
 dev_dependencies:

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../../resources/routes_manager.dart';
 
@@ -28,11 +29,11 @@ class ExPrivate extends StatelessWidget {
               child: ListView.separated(
                   scrollDirection: Axis.vertical,
                   itemBuilder: (context, index) =>  GestureDetector(
-                    child: const Padding(
+                    child:  Padding(
                           padding: EdgeInsets.all(20.0),
                           child: Row(
                             children: [
-                              Icon(Icons.fitness_center_outlined),
+                              Lottie.asset('assets/images/lottie1.json',height: 50,fit: BoxFit.fill ),
                               SizedBox(
                                 width: 20,
                               ),
@@ -47,27 +48,6 @@ class ExPrivate extends StatelessWidget {
                         ),
                     onTap: (){
                       Navigator.pushNamed(context, Routes.itemExRoute);                      // bottomSheet:  InteractiveBottomSheet(
-                      // bottomSheet:  InteractiveBottomSheet(
-                      //   options: InteractiveBottomSheetOptions(),
-                      //   child: Card(
-                      //   child: Container(
-                      //     width: double.infinity,
-                      //     child: Column(children: [
-                      //       Image(image:AssetImage('assets/images/e2.jpeg',),
-                      //       )
-                      //     ],),
-                      //   ),
-                      // ),
-                      // );
-                      // showBottomSheet(context:context , builder: (context) => Card(
-                      //   child: Container(
-                      //     width: double.infinity,
-                      //     child: Column(children: [
-                      //       Image(image:AssetImage('assets/images/e2.jpeg',),
-                      //       )
-                      //     ],),
-                      //   ),
-                      // ),);
                     },
                   ),
                   
