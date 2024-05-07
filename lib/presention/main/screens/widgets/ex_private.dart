@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../resources/routes_manager.dart';
+
 class ExPrivate extends StatelessWidget {
   const ExPrivate({Key? key}) : super(key: key);
 
@@ -44,6 +46,7 @@ class ExPrivate extends StatelessWidget {
                           ),
                         ),
                     onTap: (){
+                      Navigator.pushNamed(context, Routes.itemExRoute);                      // bottomSheet:  InteractiveBottomSheet(
                       // bottomSheet:  InteractiveBottomSheet(
                       //   options: InteractiveBottomSheetOptions(),
                       //   child: Card(

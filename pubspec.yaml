@@ -48,6 +48,9 @@ dependencies:
   curved_labeled_navigation_bar: ^2.0.2
   flutter_screenutil:
   interactive_bottom_sheet: ^1.0.0
+  awesome_number_picker: ^0.0.4
+  account_picker: ^2.1.0
+  lottie: ^3.1.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
