@@ -1,4 +1,3 @@
-
 // ignore_for_file: constant_identifier_names
 
 import 'package:flutter/material.dart';
@@ -14,7 +13,7 @@ import '../forgot_password/newpass.dart';
 import '../forgot_password/verification.dart';
 import '../main/screens/widgets/ex_private.dart';
 import '../main/screens/widgets/exercises.dart';
-import '../main/screens/widgets/itemEx.dart';
+import '../main/screens/widgets/item_ex.dart';
 import '../main/screens/widgets/pages.dart';
 import '../onboarding/on_boarding_screen.dart';
 import '../register/registerScreen.dart';
@@ -23,6 +22,7 @@ import 'strings_manager.dart';
 
 class Routes {
   static const String splashRoute = "/";
+  static const String  ListOfFood = "sdvvvvvvzx";
   static const String startDiets = "/sdgvsdv";
   static const String startRoute = "/start";
   static const String loginRoute = "/login";
@@ -46,6 +46,8 @@ class RouteGenerator {
     switch (settings.name) {
       case Routes.splashRoute:
         return MaterialPageRoute(builder: (_) => const SplashView());
+      case Routes.ListOfFood:
+        return MaterialPageRoute(builder: (_) => const ListOfFood());
       case Routes.startDiets:
         return MaterialPageRoute(
             builder: (_) => StartDiet(diet: settings.arguments as Diets));
@@ -58,7 +60,7 @@ class RouteGenerator {
       case Routes.weightuserRoute:
         return MaterialPageRoute(builder: (_) => const weightuser());
       case Routes.itemExRoute:
-        return MaterialPageRoute(builder: (_) => const itemEx());
+        return MaterialPageRoute(builder: (_) => const ItemEx());
       case Routes.hightuserRoute:
         return MaterialPageRoute(builder: (_) => const hightuser());
       case Routes.onBoardingRoute:
@@ -87,12 +89,12 @@ class RouteGenerator {
   static Route<dynamic> unDefinedRoute() {
     return MaterialPageRoute(
         builder: (_) => Scaffold(
-          appBar: AppBar(
-            title: const Text(AppStrings.noRouteFound),
-          ),
-          body: const Center(
-            child: Text(AppStrings.noRouteFound),
-          ),
-        ));
+              appBar: AppBar(
+                title: const Text(AppStrings.noRouteFound),
+              ),
+              body: const Center(
+                child: Text(AppStrings.noRouteFound),
+              ),
+            ));
   }
 }

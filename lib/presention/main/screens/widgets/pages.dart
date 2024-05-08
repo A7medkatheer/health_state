@@ -1,7 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:healthystate/presention/resources/routes_manager.dart';
-
 
 class DietsPage extends StatelessWidget {
   const DietsPage({super.key});
@@ -147,27 +147,12 @@ class StartDiet extends StatelessWidget {
                 text: 'Sample Recipes',
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20, 20, 0, 0),
-              child: SizedBox(
-                height: 200,
-                width: double.infinity,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 10,
-                  itemBuilder: (context, index) => Container(
-                    margin: const EdgeInsets.only(right: 10),
-                    width: 200,
-                    height: 200,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        image: const DecorationImage(
-                            image: AssetImage('assets/images/e1.jpeg'),
-                            fit: BoxFit.fill)),
-                  ),
-                ),
-              ),
-            ),
+            const FoodList(),
+            TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, Routes.ListOfFood);
+                },
+                child: const Text("More Recipes")),
             const Padding(
               padding: EdgeInsets.fromLTRB(30, 20, 30, 0),
               child: SizedText(
@@ -196,11 +181,62 @@ class StartDiet extends StatelessWidget {
               child: Center(child: Image.asset('assets/images/error.png')),
             ),
             const Padding(
-              padding: EdgeInsets.fromLTRB(30, 20, 30, 0),
+              padding: EdgeInsets.fromLTRB(30, 20, 30, 30),
               child: Text(
                   "If you have a chronic health condition, including kidney disease or liver disease, consult your healthcare provider before starting a high-protein diet plan."),
-            )
+            ),
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+              height: 50,
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  // Navigator.pushNamed(context, Routes.dietPlan);
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xff7BB3E8),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                ),
+                child: const Text(
+                  'Start Diet Plan',
+                  style: TextStyle(color: Colors.black),
+                ),
+              ),
+            ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class FoodList extends StatelessWidget {
+  const FoodList({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(20, 10, 0, 10),
+      child: SizedBox(
+        height: 200,
+        width: double.infinity,
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: 10,
+          itemBuilder: (context, index) => Container(
+            margin: const EdgeInsets.only(right: 10),
+            width: 200,
+            height: 200,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                image: const DecorationImage(
+                    image: AssetImage('assets/images/food.jpg'),
+                    fit: BoxFit.fill)),
+          ),
         ),
       ),
     );
@@ -351,6 +387,95 @@ class CardDiet extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class ListOfFood extends StatelessWidget {
+  const ListOfFood({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: const CupertinoNavigationBar(),
+        body: SingleChildScrollView(
+          child: Column(
+            // mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 40,
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const TextCustom(
+                        text: 'Breakfast',
+                      ),
+                      TextButton(
+                          onPressed: () {}, child: const Text('See All')),
+                    ]),
+              ),
+              const FoodList(),
+              SizedBox(
+                height: 40,
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const TextCustom(
+                        text: 'Lunch',
+                      ),
+                      TextButton(
+                          onPressed: () {}, child: const Text('See All')),
+                    ]),
+              ),
+              const FoodList(),
+              SizedBox(
+                height: 40,
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const TextCustom(
+                        text: 'Dinner',
+                      ),
+                      TextButton(
+                          onPressed: () {}, child: const Text('See All')),
+                    ]),
+              ),
+              const FoodList(),
+              SizedBox(
+                height: 40,
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const TextCustom(
+                        text: 'Snacks',
+                      ),
+                      TextButton(
+                          onPressed: () {}, child: const Text('See All')),
+                    ]),
+              ),
+              const FoodList(),
+            ],
+          ),
+        ));
+  }
+}
+
+class TextCustom extends StatelessWidget {
+  const TextCustom({
+    super.key,
+    required this.text,
+  });
+  final String text;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 20),
+      child: Text(
+        text,
+        style: const TextStyle(
+            color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20.0),
+      ),
     );
   }
 }

@@ -51,7 +51,7 @@ class HomePage extends StatelessWidget {
                       radius: 90,
                       lineWidth: 12,
                       percent: 0.6,
-                      center: const Text('     0 \n   left   \n  2000'),
+                      center: const Text('   500   \n   left   \n  1500'),
                       progressColor: Colors.green,
                       animation: true,
                       animationDuration: 1000,
@@ -64,13 +64,13 @@ class HomePage extends StatelessWidget {
               const Column(
                 children: [
                   Text('breakfast'),
-                  Text('0'),
+                  Text('100'),
                   Text('lunch'),
-                  Text('0'),
+                  Text('300'),
                   Text('Dinner'),
-                  Text('0'),
+                  Text('50'),
                   Text('Snacks'),
-                  Text('0'),
+                  Text('50'),
                 ],
               ),
             ],
@@ -85,7 +85,7 @@ class HomePage extends StatelessWidget {
                   const Row(
                     children: [
                       Text("Carbs   "),
-                      Text("0%"),
+                      Text("60%"),
                     ],
                   ),
                   LinearPercentIndicator(
@@ -97,7 +97,7 @@ class HomePage extends StatelessWidget {
                   ),
                   const Row(
                     children: [
-                      Text("0g     "),
+                      Text("50g     "),
                       Text("left 301g"),
                     ],
                   ),
@@ -108,14 +108,14 @@ class HomePage extends StatelessWidget {
                   const Row(
                     children: [
                       Text("Protein   "),
-                      Text("0%"),
+                      Text("50%"),
                     ],
                   ),
                   LinearPercentIndicator(
                     animation: true,
                     width: 120,
                     lineHeight: 8,
-                    percent: 0.6,
+                    percent: 0.5,
                     progressColor: Colors.green,
                   ),
                   const Row(
@@ -131,19 +131,19 @@ class HomePage extends StatelessWidget {
                   const Row(
                     children: [
                       Text("Fat   "),
-                      Text("0%"),
+                      Text("30%"),
                     ],
                   ),
                   LinearPercentIndicator(
                     animation: true,
                     width: 120,
                     lineHeight: 8,
-                    percent: 0.6,
+                    percent: 0.3,
                     progressColor: Colors.green,
                   ),
                   const Row(
                     children: [
-                      Text("0g     "),
+                      Text("30g     "),
                       Text("left 104g"),
                     ],
                   ),
