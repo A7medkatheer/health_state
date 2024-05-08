@@ -30,14 +30,14 @@ class ExPrivate extends StatelessWidget {
                   scrollDirection: Axis.vertical,
                   itemBuilder: (context, index) =>  GestureDetector(
                     child:  Padding(
-                          padding: EdgeInsets.all(20.0),
+                          padding: const EdgeInsets.all(20.0),
                           child: Row(
                             children: [
                               Lottie.asset('assets/images/lottie1.json',height: 50,fit: BoxFit.fill ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 20,
                               ),
-                              Text(
+                              const Text(
                                 'TRICEPS DIEPS',
                                 style: TextStyle(
                                     color: Colors.black,

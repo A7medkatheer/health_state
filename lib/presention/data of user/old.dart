@@ -2,8 +2,6 @@
 import 'package:awesome_number_picker/awesome_number_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:healthystate/components_tools.dart';
-import 'package:healthystate/presention/resources/color_manager.dart';
-import 'package:numberpicker/numberpicker.dart';
 
 class Olduser extends StatefulWidget {
   const Olduser({super.key});
@@ -30,17 +28,17 @@ class _Olduser extends State<Olduser> {
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(width: 50,),
+              const SizedBox(width: 50,),
               IconButton(onPressed: (){
                 Navigator.pop(context);
-              }, icon:Icon(Icons.arrow_back_ios_new_outlined)),
+              }, icon:const Icon(Icons.arrow_back_ios_new_outlined)),
             ],
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Text("How old Are you ?",style: TextStyle(fontSize:30,fontWeight: FontWeight.bold),),
+              Text("How old Are you ?",style: TextStyle(fontSize:30,fontWeight: FontWeight.bold),),
               // Text(integerValue.toString()),
             ],
           ),

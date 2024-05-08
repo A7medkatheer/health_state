@@ -1,8 +1,6 @@
-// ignore_for_file: library_private_types_in_public_api
+// ignore_for_file: library_private_types_in_public_api, camel_case_types
 import 'package:awesome_number_picker/awesome_number_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:healthystate/presention/resources/color_manager.dart';
-import 'package:numberpicker/numberpicker.dart';
 
 import '../../components_tools.dart';
 
@@ -31,17 +29,17 @@ class _weightuser extends State<weightuser> {
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(width: 50,),
+              const SizedBox(width: 50,),
               IconButton(onPressed: (){
                 Navigator.pop(context);
-              }, icon:Icon(Icons.arrow_back_ios_new_outlined)),
+              }, icon:const Icon(Icons.arrow_back_ios_new_outlined)),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Text("what\'s your weight ",style: TextStyle(fontSize:30,fontWeight: FontWeight.bold),),
+              const Text("what's your weight ",style: TextStyle(fontSize:30,fontWeight: FontWeight.bold),),
               Text(integerValue.toString()),
             ],
           ),

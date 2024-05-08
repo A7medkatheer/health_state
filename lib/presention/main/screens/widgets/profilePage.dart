@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pretty_animated_buttons/widgets/pretty_neumorphic_button.dart';
@@ -24,9 +26,9 @@ class ProfilePage extends StatelessWidget {
                         IconButton(onPressed: () {},
                             iconSize: 40,
                             color: ColorManager.primary,
-                            icon: Icon(CupertinoIcons.person_circle)),
-                        SizedBox(width: 20,),
-                        PrettyNeumorphicButton(duration: Duration(
+                            icon: const Icon(CupertinoIcons.person_circle)),
+                        const SizedBox(width: 20,),
+                        PrettyNeumorphicButton(duration: const Duration(
                             milliseconds: 20),
                           label: 'person',
                           onPressed: () {
@@ -34,33 +36,33 @@ class ProfilePage extends StatelessWidget {
                           },
                         ),
                       ],),
-                    SizedBox(height: 40,),
+                    const SizedBox(height: 40,),
                     Row(
                       children: [
                         IconButton(onPressed: () {},
                             iconSize: 40,
                             color: ColorManager.orange,
-                            icon: Icon(CupertinoIcons.settings_solid)),
-                        SizedBox(width: 20,),
-                        PrettyNeumorphicButton(duration: Duration(
+                            icon: const Icon(CupertinoIcons.settings_solid)),
+                        const SizedBox(width: 20,),
+                        PrettyNeumorphicButton(duration: const Duration(
                             milliseconds: 20),
                           label: 'language',
                           onPressed: () {},
                         ),
                       ],),
-                    SizedBox(height: 40,),
+                    const SizedBox(height: 40,),
                     Row(
                       children: [
                         IconButton(onPressed: () {},
                             iconSize: 40,
                             color: ColorManager.orange,
-                            icon: Icon(CupertinoIcons.phone_circle)),
-                        SizedBox(width: 20,),
-                        PrettyNeumorphicButton(duration: Duration(
+                            icon: const Icon(CupertinoIcons.phone_circle)),
+                        const SizedBox(width: 20,),
+                        PrettyNeumorphicButton(duration: const Duration(
                             milliseconds: 20),
                           label: 'call center',
                           onPressed: () {
-                            BottomSheet(onClosing: ()=>{}, builder: (context)=>Column(children: [
+                            BottomSheet(onClosing: ()=>{}, builder: (context)=>const Column(children: [
                               Row(
                                 children: [Text('01205193855')],
                               )
@@ -69,16 +71,16 @@ class ProfilePage extends StatelessWidget {
                           },
                         ),
                       ],),
-                    SizedBox(height: 40,),
+                    const SizedBox(height: 40,),
                     Row(
                       children: [
                         IconButton(onPressed: () {},
                             iconSize: 40,
                             color: ColorManager.orange,
-                            icon: Icon(CupertinoIcons.arrow_turn_up_right
+                            icon: const Icon(CupertinoIcons.arrow_turn_up_right
                             )),
-                        SizedBox(width: 20,),
-                        PrettyNeumorphicButton(duration: Duration(
+                        const SizedBox(width: 20,),
+                        PrettyNeumorphicButton(duration: const Duration(
                             milliseconds: 20),
                           label: 'logOut',
                           onPressed: () {
