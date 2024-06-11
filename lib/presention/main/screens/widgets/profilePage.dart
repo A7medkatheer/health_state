@@ -13,7 +13,7 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(elevation: 0, backgroundColor: Colors.transparent,),
+      // appBar: AppBar(elevation: 0, backgroundColor: Colors.transparent,),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -21,6 +21,11 @@ class ProfilePage extends StatelessWidget {
                 padding: const EdgeInsets.all(18.0),
                 child: Column(
                   children: [
+                    CircleAvatar(
+                      backgroundImage: AssetImage('assets/images/e1.jpeg'),
+                      radius: 70,
+                    ),
+                    SizedBox(height: 20),
                     Row(
                       children: [
                         IconButton(onPressed: () {},
@@ -97,3 +102,57 @@ class ProfilePage extends StatelessWidget {
 
   }
 }
+//
+// import 'package:flutter/material.dart';
+// import 'package:healthystate/presention/resources/color_manager.dart';
+//
+// class ProfilePage extends StatelessWidget {
+//   const ProfilePage({super.key});
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('my profile'),
+//       ),
+//       body: ListView(
+//         children: <Widget>[
+//           UserAccountsDrawerHeader(
+//             decoration: BoxDecoration(
+//               color: ColorManager.move
+//             ),
+//             accountName: Text('user name'),
+//             accountEmail: Text('user@example.com'),
+//             currentAccountPicture: CircleAvatar(
+//               backgroundColor: Colors.white,
+//               child:  CircleAvatar(
+//                 backgroundImage: AssetImage('assets/images/e1.jpeg'),
+//                 radius: 70,
+//               ),
+//             ),
+//           ),
+//           ListTile(
+//             leading: Icon(Icons.person),
+//             title: Text('profile'),
+//             onTap: () {
+//               // التنقل إلى شاشة تعديل الحساب
+//             },
+//           ),
+//           ListTile(
+//             leading: Icon(Icons.settings),
+//             title: Text('setting'),
+//             onTap: () {
+//               // التنقل إلى شاشة الإعدادات
+//             },
+//           ),
+//           ListTile(
+//             leading: Icon(Icons.exit_to_app),
+//             title: Text('تسجيل الخروج'),
+//             onTap: () {
+//               // تسجيل خروج المستخدم
+//             },
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }

@@ -22,14 +22,14 @@ class registerView extends StatelessWidget {
     var PasswordController = TextEditingController();
     return Scaffold(
       backgroundColor: ColorManager.white,
-      appBar: AppBar(
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarColor: Colors.transparent,
-          statusBarBrightness: Brightness.dark,
-        ),
-        backgroundColor: ColorManager.white,
-        elevation: 0,
-      ),
+      // appBar: AppBar(
+      //   systemOverlayStyle: const SystemUiOverlayStyle(
+      //     statusBarColor: Colors.transparent,
+      //     statusBarBrightness: Brightness.dark,
+      //   ),
+      //   backgroundColor: ColorManager.white,
+      //   elevation: 0,
+      // ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(AppSize.s20),
@@ -98,9 +98,9 @@ class registerView extends StatelessWidget {
                       color: ColorManager.black,
                       fontSize: 15,
                       fontWeight: FontWeight.bold),
-                ),onPressed: (){                        Navigator.pushReplacementNamed(context,Routes.forgotPasswordRoute);
+                ),onPressed: (){  Navigator.pushReplacementNamed(context,Routes.forgotPasswordRoute);
                 },),
-                const Spacer(),
+                // const Spacer(),
                 Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
@@ -145,7 +145,7 @@ class registerView extends StatelessWidget {
                                 color: ColorManager.black, fontSize: 20),
                           ),
                         ])),
-                const Spacer(),
+                // const Spacer(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
