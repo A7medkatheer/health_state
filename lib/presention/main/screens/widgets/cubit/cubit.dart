@@ -21,7 +21,7 @@ class AppCubit extends Cubit<AppState> {
     const DietsPage(),
     const ProfilePage(),
   ];
-  int currentPage = 1;
+  int currentPage = 0;
 
   void changeBottomNav(index) {
     currentPage = index;

@@ -44,7 +44,7 @@ class HomePage extends StatelessWidget {
               //   width: 50,
               // ),
               Padding(
-                padding: const EdgeInsets.only(left: 30, right: 30),
+                padding: const EdgeInsets.only(left: 60, right: 30),
                 child: Column(
                   children: [
                     CircularPercentIndicator(

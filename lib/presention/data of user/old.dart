@@ -7,7 +7,6 @@ class Olduser extends StatefulWidget {
   const Olduser({super.key});
 
   @override
-
   _Olduser createState() => _Olduser();
 }
 
@@ -19,26 +18,19 @@ class _Olduser extends State<Olduser> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      body:
-      Column(
+      appBar: AppBar(),
+      body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              const SizedBox(width: 50,),
-              IconButton(onPressed: (){
-                Navigator.pop(context);
-              }, icon:const Icon(Icons.arrow_back_ios_new_outlined)),
-            ],
-          ),
           const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("How old Are you ?",style: TextStyle(fontSize:30,fontWeight: FontWeight.bold),),
+              Text(
+                "How old Are you ?",
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              ),
               // Text(integerValue.toString()),
             ],
           ),
@@ -53,8 +45,9 @@ class _Olduser extends State<Olduser> {
               }),
             ),
           ),
-          Container(child: defultButton(label: 'continue', onPressed: (){}))// Row(
-          ],
+          Container(
+              child: defultButton(label: 'continue', onPressed: () {})) // Row(
+        ],
       ),
     );
   }

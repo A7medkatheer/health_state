@@ -1,7 +1,8 @@
 // ignore_for_file: library_private_types_in_public_api, camel_case_types
 
-import 'package:awesome_number_picker/awesome_number_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:healthystate/presention/resources/routes_manager.dart';
+import 'package:numberpicker/numberpicker.dart';
 
 import '../../components_tools.dart';
 
@@ -14,30 +15,28 @@ class hightuser extends StatefulWidget {
 
 class _hightuser extends State<hightuser> {
   // int _currentValue = 3;
-  int integerValue = 20;
-  double decimalValue = 0;
+  // int integerValue = 20;
+  // double decimalValue = 0;
+  int selectedHeightCm = 30;
+  int selectedHeightM = 1;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              const SizedBox(
-                width: 50,
-              ),
-              IconButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  icon: const Icon(Icons.arrow_back_ios_new_outlined),
-                  alignment: AlignmentDirectional.topStart),
-            ],
-          ),
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.start,
+          //   children: [
+          //     const SizedBox(
+          //       width: 50,
+          //     ),
+
+          //   ],
+          // ),
           const SizedBox(
             height: 30,
           ),
@@ -46,7 +45,7 @@ class _hightuser extends State<hightuser> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                "What/'s your height  ?",
+                "What's your height  ?",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
               // Text(integerValue.toString()),
@@ -55,20 +54,51 @@ class _hightuser extends State<hightuser> {
 
           SizedBox(
             height: 400,
-            // width: 100,
-            child: IntegerNumberPicker(
-              initialValue: 120,
-              minValue: 100,
-              maxValue: 200,
-              onChanged: (i) => setState(() {
-                integerValue = i;
-              }),
+            width: 400,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                NumberPicker(
+                    minValue: 1,
+                    maxValue: 2,
+                    value: selectedHeightM,
+                    selectedTextStyle: const TextStyle(
+                        color: Color.fromARGB(255, 46, 190, 82), fontSize: 25),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.black),
+                    ),
+                    onChanged: (value) {
+                      setState(() {
+                        selectedHeightM = value;
+                      });
+                    }),
+                const Text(" m", style: TextStyle(fontSize: 25)),
+                const SizedBox(width: 20), // Add some space between the pickers
+                NumberPicker(
+                    minValue: 30,
+                    maxValue: 99,
+                    value: selectedHeightCm,
+                    selectedTextStyle: const TextStyle(
+                        color: Color.fromARGB(255, 46, 190, 82), fontSize: 25),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.black),
+                    ),
+                    onChanged: (value) {
+                      setState(() {
+                        selectedHeightCm = value;
+                      });
+                    }),
+                const Text(" cm", style: TextStyle(fontSize: 25)),
+              ],
             ),
           ),
-
-          Container(
-              child: defultButton(
-                  label: 'continue', onPressed: () {})) // Row(// Row(
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, Routes.weightuserRoute);
+              },
+              child: const Text('Next')),
         ],
       ),
     );

@@ -12,15 +12,16 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(create: (context)=>AppCubit(),
-    child: ScreenUtilInit(
-      child: MaterialApp(
-        theme: ThemeData(primarySwatch: Colors.green),
-        title: 'Health State',
-        debugShowCheckedModeBanner: false,
-        onGenerateRoute: RouteGenerator.getRoutes,
-        initialRoute: Routes.splashRoute,
-      ),
-    ));
+    return BlocProvider(
+        create: (context) => AppCubit(),
+        child: ScreenUtilInit(
+          child: MaterialApp(
+            theme: ThemeData(primarySwatch: Colors.green),
+            title: 'Health State',
+            debugShowCheckedModeBanner: false,
+            onGenerateRoute: RouteGenerator.getRoutes,
+            initialRoute: Routes.splashRoute,
+          ),
+        ));
   }
 }

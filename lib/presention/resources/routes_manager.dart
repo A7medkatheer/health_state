@@ -22,7 +22,7 @@ import 'strings_manager.dart';
 
 class Routes {
   static const String splashRoute = "/";
-  static const String  ListOfFood = "sdvvvvvvzx";
+  static const String ListOfFood = "sdvvvvvvzx";
   static const String startDiets = "/sdgvsdv";
   static const String startRoute = "/start";
   static const String loginRoute = "/login";
@@ -58,7 +58,7 @@ class RouteGenerator {
       case Routes.OlduserRoute:
         return MaterialPageRoute(builder: (_) => const Olduser());
       case Routes.weightuserRoute:
-        return MaterialPageRoute(builder: (_) => const weightuser());
+        return MaterialPageRoute(builder: (_) => const WeightUser());
       case Routes.itemExRoute:
         return MaterialPageRoute(builder: (_) => const ItemEx());
       case Routes.hightuserRoute:

@@ -114,15 +114,13 @@ import 'package:healthystate/presention/resources/routes_manager.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../resources/assets_manager.dart';
 
-class BoardingModel{
+class BoardingModel {
   final String title;
   final String body;
   final String image;
-  BoardingModel({
-    required this.title,
-    required this.body,
-    required this.image});
+  BoardingModel({required this.title, required this.body, required this.image});
 }
+
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({super.key});
 
@@ -131,87 +129,123 @@ class OnBoardingView extends StatefulWidget {
 }
 
 class _OnBoardingViewState extends State<OnBoardingView> {
-  var boardController=PageController();
+  var boardController = PageController();
 
-  bool isLast=false;
+  bool isLast = false;
 
   // void submit (){
-    // CacheHelper.saveData(Key: 'boarding', value:true ).then((value) {
-    //   if(value){
-    //     Navigator.pushReplacementNamed(context, Routes.loginRoute);
-    //   }
-    // });
+  // CacheHelper.saveData(Key: 'boarding', value:true ).then((value) {
+  //   if(value){
+  //     Navigator.pushReplacementNamed(context, Routes.loginRoute);
+  //   }
+  // });
   // }
-  List<BoardingModel>boarding=[
-    BoardingModel(title: 'Fitness ', body: 'Keep your body fit', image: 'assets/images/on1.png'),
-    BoardingModel(title: 'Diet', body: 'Choose the appropriate diet', image: 'assets/images/on2.png'),
-    BoardingModel(title: 'Food System', body: 'make your life more healthy', image: 'assets/images/on3.png'),
+  List<BoardingModel> boarding = [
+    BoardingModel(
+        title: 'Fitness ',
+        body: 'Keep your body fit',
+        image: 'assets/images/on1.png'),
+    BoardingModel(
+        title: 'Diet',
+        body: 'Choose the appropriate diet',
+        image: 'assets/images/on2.png'),
+    BoardingModel(
+        title: 'Food System',
+        body: 'make your life more healthy',
+        image: 'assets/images/on3.png'),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    //   // appBar: AppBar(),
-    //     appBar: AppBar(
-    //     systemOverlayStyle: SystemUiOverlayStyle(
-    //     statusBarColor: Colors.transparent,
-    //     statusBarBrightness: Brightness.dark,
-    // ),),
-        body:Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
+        //   // appBar: AppBar(),
+        //     appBar: AppBar(
+        //     systemOverlayStyle: SystemUiOverlayStyle(
+        //     statusBarColor: Colors.transparent,
+        //     statusBarBrightness: Brightness.dark,
+        // ),),
+        body: Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const SizedBox(
+            height: 60,
+          ),
+          const Image(image: AssetImage(ImagesAssets.Logo)),
+          Expanded(
+            child: PageView.builder(
+              onPageChanged: (int index) {
+                if (index == boarding.length - 1) {
+                  isLast = true;
+                }
+              },
+              controller: boardController,
+              itemBuilder: (context, index) => BuildItem(boarding[index]),
+              itemCount: boarding.length,
+            ),
+          ),
+          Row(
             children: [
-              const SizedBox(height: 60,),
-              const Image(image: AssetImage(ImagesAssets.Logo)),
-              Expanded(
-                child: PageView.builder(
-                  onPageChanged: (int index){
-                    if(index==boarding.length -1){
-                      isLast=true;
-                    }
-                  },
-                  controller: boardController,
-                  itemBuilder: (context,index)=>BuildItem(boarding[index]),
-                  itemCount:boarding.length,
-                ),
+              //لخطوط بتاعت البوردينج بتاعت الصفحات
+              SmoothPageIndicator(
+                controller: boardController,
+                count: boarding.length,
+                effect: const ExpandingDotsEffect(
+                    dotHeight: 10,
+                    dotWidth: 10,
+                    spacing: 5,
+                    activeDotColor: Colors.green),
               ),
-              Row(
-                children: [
-                  //لخطوط بتاعت البوردينج بتاعت الصفحات
-                  SmoothPageIndicator(
-                    controller: boardController,
-                    count: boarding.length,
-                    effect: const ExpandingDotsEffect(dotHeight: 10,dotWidth: 10,spacing: 5,activeDotColor: Colors.green),),
-                  const Spacer(),
-                  FloatingActionButton(onPressed: (){
-                    if(isLast==true){
-                      Navigator.pushReplacementNamed(context, Routes.startRoute);
-
-                    }else{
-                      boardController.nextPage(duration:const Duration(seconds: 1),curve: Curves.easeInOutCubicEmphasized);
-                    }
-                  },backgroundColor: Colors.green,child: const Icon(Icons.arrow_forward_outlined),)
-                ],
-              ),
-              const SizedBox(height: 50,),
-
+              const Spacer(),
+              FloatingActionButton(
+                onPressed: () {
+                  if (isLast == true) {
+                    Navigator.pushNamed(context, Routes.hightuserRoute);
+                  } else {
+                    boardController.nextPage(
+                        duration: const Duration(seconds: 1),
+                        curve: Curves.easeInOutCubicEmphasized);
+                  }
+                },
+                backgroundColor: Colors.green,
+                child: const Icon(Icons.arrow_forward_outlined),
+              )
             ],
           ),
-        ));
-
+          const SizedBox(
+            height: 50,
+          ),
+        ],
+      ),
+    ));
   }
 }
-Widget BuildItem (BoardingModel model)=>Column(
-  crossAxisAlignment: CrossAxisAlignment.start,
-  children: [
-    Expanded(child: Image.asset(model.image)),
-    const SizedBox(height:30,),
-    Text(model.title,style: const TextStyle(fontSize: 40,fontWeight: FontWeight.bold,),),
-    const SizedBox(height:15,),
-    Text(model.body,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.grey[300]),),
 
-
-  ],
-);
+Widget BuildItem(BoardingModel model) => Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Expanded(child: Image.asset(model.image)),
+        const SizedBox(
+          height: 30,
+        ),
+        Text(
+          model.title,
+          style: const TextStyle(
+            fontSize: 40,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        const SizedBox(
+          height: 15,
+        ),
+        Text(
+          model.body,
+          style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.grey[300]),
+        ),
+      ],
+    );
