@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:healthystate/presention/resources/routes_manager.dart';
 import 'package:numberpicker/numberpicker.dart';
 
-import '../../components_tools.dart';
-
 class hightuser extends StatefulWidget {
   const hightuser({super.key});
 
