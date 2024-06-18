@@ -43,28 +43,7 @@ Widget buildItem (Image model,context)=>Column(
         height: 200,
         decoration: BoxDecoration(borderRadius:BorderRadius.circular(15),
             image: DecorationImage(image: AssetImage(model.images),fit: BoxFit.fill)),
-
       ),
     ),),
   ],
 );
-//
-// class exModel{
-//   final String title;
-//   final String body;
-//   final String image;
-//   exModel({
-//     required this.title,
-//     required this.body,
-//     required this.image});
-// }
-//
-// List<exModel>boarding=[
-//   exModel(title: 'Fitness ', body: 'Keep your body fit', image: 'assets/images/e1.jpeg'),
-//   exModel(title: 'Diet', body: 'Choose the appropriate diet', image: 'assets/images/e1.jpeg'),
-//   exModel(title: 'Food System', body: 'make your life more healthy', image: 'assets/images/e1.jpeg'),
-//   exModel(title: 'Food System', body: 'make your life more healthy', image: 'assets/images/e1.jpeg'),
-//   exModel(title: 'Food System', body: 'make your life more healthy', image: 'assets/images/e1.jpeg'),
-//   exModel(title: 'Food System', body: 'make your life more healthy', image: 'assets/images/e1.jpeg'),
-//   exModel(title: 'Food System', body: 'make your life more healthy', image: 'assets/images/e1.jpeg'),
-// ];
