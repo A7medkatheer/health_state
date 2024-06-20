@@ -2,6 +2,7 @@
 import 'package:awesome_number_picker/awesome_number_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:healthystate/components_tools.dart';
+import 'package:numberpicker/numberpicker.dart';
 
 class Olduser extends StatefulWidget {
   const Olduser({super.key});
@@ -13,7 +14,7 @@ class Olduser extends StatefulWidget {
 class _Olduser extends State<Olduser> {
   // int _currentValue = 3;
   int integerValue = 20;
-  double decimalValue = 0;
+  // double decimalValue = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -36,13 +37,29 @@ class _Olduser extends State<Olduser> {
           ),
           SizedBox(
             height: 400,
-            child: IntegerNumberPicker(
-              initialValue: 20,
-              minValue: 1,
-              maxValue: 90,
-              onChanged: (i) => setState(() {
-                integerValue = i;
-              }),
+            width: 350,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Expanded(
+                  child: NumberPicker(
+                      minValue: 10,
+                      maxValue: 99,
+                      value: integerValue,
+                      selectedTextStyle: const TextStyle(
+                          color: Color.fromARGB(255, 46, 190, 82),
+                          fontSize: 30),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: Colors.black),
+                      ),
+                      onChanged: (value) {
+                        setState(() {
+                          integerValue = value;
+                        });
+                      }),
+                ),
+              ],
             ),
           ),
           Container(
