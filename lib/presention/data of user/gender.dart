@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:healthystate/presention/resources/color_manager.dart';
 import 'package:healthystate/presention/resources/routes_manager.dart';
 
 class GenderSelectionScreen extends StatefulWidget {
@@ -156,7 +157,7 @@ class _GenderSelectionScreenState extends State<GenderSelectionScreen> {
               onPressed: () {
                 Navigator.pushNamed(context, Routes.hightuserRoute);
               },
-              child: const Text('Submit'),
+              child:  Text('Submit',style: TextStyle(color: ColorManager.primary),),
             ),
           ],
         ),

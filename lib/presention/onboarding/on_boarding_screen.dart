@@ -202,7 +202,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               FloatingActionButton(
                 onPressed: () {
                   if (isLast == true) {
-                    Navigator.pushNamed(context, Routes.hightuserRoute);
+                    Navigator.pushNamed(context, Routes.GenderSelectionScreenRoute);
                   } else {
                     boardController.nextPage(
                         duration: const Duration(seconds: 1),

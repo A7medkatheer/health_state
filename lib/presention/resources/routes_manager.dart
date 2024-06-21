@@ -5,6 +5,7 @@ import 'package:healthystate/presention/login/login_screen.dart';
 import 'package:healthystate/presention/main/screens/dashboard.dart';
 import 'package:healthystate/presention/splash/splash_screen.dart';
 import 'package:healthystate/presention/start/start.dart';
+import '../data of user/gender.dart';
 import '../data of user/hight.dart';
 import '../data of user/old.dart';
 import '../data of user/weight.dart';
@@ -28,6 +29,7 @@ class Routes {
   static const String loginRoute = "/login";
   static const String registerRoute = "/register";
   static const String OlduserRoute = "/Olduser";
+  static const String GenderSelectionScreenRoute = "/GenderSelectionScreen";
   static const String weightuserRoute = "/weightuser";
   static const String hightuserRoute = "/hightuser";
   // static const String itemExRoute = "/itemEx";
@@ -46,6 +48,8 @@ class RouteGenerator {
     switch (settings.name) {
       case Routes.splashRoute:
         return MaterialPageRoute(builder: (_) => const SplashView());
+        case Routes.GenderSelectionScreenRoute:
+        return MaterialPageRoute(builder: (_) => const GenderSelectionScreen());
       case Routes.ListOfFood:
         return MaterialPageRoute(builder: (_) => const ListOfFood());
       case Routes.startDiets:
