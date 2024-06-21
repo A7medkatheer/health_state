@@ -65,6 +65,8 @@ import 'package:animated_weight_picker/animated_weight_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:healthystate/presention/resources/routes_manager.dart';
 
+import '../resources/color_manager.dart';
+
 class WeightUser extends StatefulWidget {
   const WeightUser({super.key});
 
@@ -87,6 +89,7 @@ class _WeightUserState extends State<WeightUser> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: ColorManager.primary,
         title: const Text('Animated Weight Picker'),
       ),
       body: Column(
@@ -116,10 +119,13 @@ class _WeightUserState extends State<WeightUser> {
             onPressed: () {
               Navigator.pushNamed(context, Routes.OlduserRoute);
             },
-            child: const Text('Continue'),
+            child:  Text('Continue',style: TextStyle(color:ColorManager.primary,)),
           ),
         ],
       ),
     );
   }
 }
+
+
+

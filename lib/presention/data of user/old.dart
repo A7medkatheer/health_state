@@ -1,7 +1,10 @@
 // ignore_for_file: library_private_types_in_public_api
+
+
 import 'package:awesome_number_picker/awesome_number_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:healthystate/components_tools.dart';
+import 'package:healthystate/presention/resources/color_manager.dart';
+import 'package:healthystate/presention/resources/routes_manager.dart';
 
 class Olduser extends StatefulWidget {
   const Olduser({super.key});
@@ -18,7 +21,9 @@ class _Olduser extends State<Olduser> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: ColorManager.primary,
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -46,7 +51,9 @@ class _Olduser extends State<Olduser> {
             ),
           ),
           Container(
-              child: defultButton(label: 'continue', onPressed: () {})) // Row(
+              child: ElevatedButton( child:Text ('continue',style: TextStyle(color:ColorManager.primary,)), onPressed: () {
+                Navigator.pushReplacementNamed(context, Routes.startRoute);
+              })) // Row(
         ],
       ),
     );

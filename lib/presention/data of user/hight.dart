@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:healthystate/presention/resources/routes_manager.dart';
 import 'package:numberpicker/numberpicker.dart';
 
+import '../resources/color_manager.dart';
+
 class hightuser extends StatefulWidget {
   const hightuser({super.key});
 
@@ -21,7 +23,10 @@ class _hightuser extends State<hightuser> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: ColorManager.primary,
+
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -96,7 +101,7 @@ class _hightuser extends State<hightuser> {
               onPressed: () {
                 Navigator.pushNamed(context, Routes.weightuserRoute);
               },
-              child: const Text('Next')),
+              child:  Text('Next',style: TextStyle(color:ColorManager.primary,))),
         ],
       ),
     );
