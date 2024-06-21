@@ -30,7 +30,7 @@ class Routes {
   static const String OlduserRoute = "/Olduser";
   static const String weightuserRoute = "/weightuser";
   static const String hightuserRoute = "/hightuser";
-  static const String itemExRoute = "/itemEx";
+  // static const String itemExRoute = "/itemEx";
   static const String onBoardingRoute = "/onBoarding";
   static const String forgotPasswordRoute = "/forgotPassword";
   static const String mainRoute = "/main";
@@ -59,8 +59,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const Olduser());
       case Routes.weightuserRoute:
         return MaterialPageRoute(builder: (_) => const WeightUser());
-      case Routes.itemExRoute:
-        return MaterialPageRoute(builder: (_) => const ItemEx());
+      // case Routes.itemExRoute:
+      //   return MaterialPageRoute(builder: (_) => const ItemEx());
       case Routes.hightuserRoute:
         return MaterialPageRoute(builder: (_) => const hightuser());
       case Routes.onBoardingRoute:
