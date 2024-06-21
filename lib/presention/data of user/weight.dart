@@ -99,6 +99,7 @@ class _WeightUserState extends State<WeightUser> {
             child: SizedBox(
               width: 500,
               child: AnimatedWeightPicker(
+                
                 min: 50,
                 max: 150,
                 onChange: (newValue) {

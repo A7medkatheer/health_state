@@ -83,6 +83,7 @@ class _ExPrivateState extends State<ExPrivate> {
                   itemBuilder: (context, index) =>
                       buildItemex(exs[index], context),
                   separatorBuilder: (context, index) => Padding(
+<<<<<<< HEAD
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: Container(
                       width: double.infinity,
@@ -90,6 +91,15 @@ class _ExPrivateState extends State<ExPrivate> {
                       color: Colors.grey,
                     ),
                   ),
+=======
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: Container(
+                          width: double.infinity,
+                          height: 1,
+                          color: Colors.grey,
+                        ),
+                      ),
+>>>>>>> 62c1e8d6e0b9d01686b47afd9e38e55555179702
                   itemCount: 6),
             )
           ],
@@ -100,6 +110,7 @@ class _ExPrivateState extends State<ExPrivate> {
 }
 
 Widget buildItemex(exModel model, context) => GestureDetector(
+<<<<<<< HEAD
   child: Padding(
     padding: const EdgeInsets.all(12.0),
     child: Row(
@@ -126,3 +137,31 @@ Widget buildItemex(exModel model, context) => GestureDetector(
         Routes.itemExRoute); // bottomSheet:  InteractiveBottomSheet(
   },
 );
+=======
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Row(
+          children: [
+            Lottie.asset(
+              model.image,
+              height: 90,
+            ),
+            const SizedBox(
+              width: 30,
+            ),
+            Text(
+              model.title,
+              style: const TextStyle(
+                  fontSize: 30,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
+      ),
+      onTap: () {
+        Navigator.pushNamed(context,
+            Routes.itemExRoute); // bottomSheet:  InteractiveBottomSheet(
+      },
+    );
+>>>>>>> 62c1e8d6e0b9d01686b47afd9e38e55555179702
