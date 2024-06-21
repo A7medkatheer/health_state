@@ -479,3 +479,4 @@ class TextCustom extends StatelessWidget {
     );
   }
 }
+ 
