@@ -3,6 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:healthystate/presention/login/login_screen.dart';
 import 'package:healthystate/presention/main/screens/dashboard.dart';
+import 'package:healthystate/presention/main/screens/diets/widgets/list_of_food.dart';
+import 'package:healthystate/presention/main/screens/diets/widgets/model_diets.dart';
+import 'package:healthystate/presention/main/screens/diets/widgets/start_diets.dart';
 import 'package:healthystate/presention/splash/splash_screen.dart';
 import 'package:healthystate/presention/start/start.dart';
 import '../data of user/hight.dart';
@@ -13,8 +16,6 @@ import '../forgot_password/newpass.dart';
 import '../forgot_password/verification.dart';
 import '../main/screens/widgets/ex_private.dart';
 import '../main/screens/widgets/exercises.dart';
-import '../main/screens/widgets/item_ex.dart';
-import '../main/screens/widgets/pages.dart';
 import '../onboarding/on_boarding_screen.dart';
 import '../register/registerScreen.dart';
 import '../store_details/store_details_screen.dart';

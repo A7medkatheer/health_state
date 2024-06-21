@@ -1,42 +1,38 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:healthystate/presention/main/screens/widgets/exercises.dart';
 import 'package:lottie/lottie.dart';
 
-import '../../../resources/routes_manager.dart';
-import 'package:flutter/material.dart';
-import 'package:healthystate/presention/resources/color_manager.dart';
-import 'package:lottie/lottie.dart'; // Add this line to import the 'lottie' package
+// Add this line to import the 'lottie' package
 
-class exModel {
+class ExModel {
   final String title;
   final String body;
   final String image;
-  exModel({required this.title, required this.body, required this.image});
+  ExModel({required this.title, required this.body, required this.image});
 }
 
-List<exModel> exs = [
-  exModel(
+List<ExModel> exs = [
+  ExModel(
       title: 'jump ',
       body: 'Keep your body fit',
       image: 'assets/images/lottie1.json'),
-  exModel(
+  ExModel(
       title: 'pushing',
       body: 'Choose the appropriate diet',
       image: 'assets/images/lotte1.json'),
-  exModel(
+  ExModel(
       title: 'leg',
       body: 'Choose the appropriate diet',
       image: 'assets/images/lotte2.json'),
-  exModel(
+  ExModel(
       title: 'jump ',
       body: 'Keep your body fit',
       image: 'assets/images/lottie1.json'),
-  exModel(
+  ExModel(
       title: 'pushing',
       body: 'Choose the appropriate diet',
       image: 'assets/images/lotte1.json'),
-  exModel(
+  ExModel(
       title: 'leg',
       body: 'Choose the appropriate diet',
       image: 'assets/images/lotte2.json'),
@@ -104,7 +100,7 @@ class _ExPrivateState extends State<ExPrivate> {
   }
 }
 
-Widget buildItemex(exModel model, context) => GestureDetector(
+Widget buildItemex(ExModel model, context) => GestureDetector(
       child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Row(
