@@ -57,10 +57,9 @@ class FoodImage extends StatelessWidget {
 
 class SimpleRecipeModel {
   final String image;
-  final String intgredients;
-  final String steps;
-  SimpleRecipeModel(
-      {required this.image, required this.intgredients, required this.steps});
+  final String? intgredients;
+  final String? steps;
+  SimpleRecipeModel({required this.image, this.intgredients, this.steps});
 }
 
 List<SimpleRecipeModel> recipes = [
@@ -70,31 +69,38 @@ List<SimpleRecipeModel> recipes = [
       steps:
           "   2 steps\n 1.  Combine all ingredients in blender.\n\n 2.  Blend until smooth. Serve immediately or \n  store in refrigerator.  Enjoy!"),
   SimpleRecipeModel(
-      image: "assets/food/IMG_20240621_203952.jpg",
-      steps: '',
-      intgredients: ''),
+    image: "assets/food/IMG_20240621_203952.jpg",
+    // steps: '',
+    // intgredients: ''
+  ),
   SimpleRecipeModel(
-      image: "assets/food/IMG_20240621_204026.jpg",
-      intgredients: '',
-      steps: ''),
+    image: "assets/food/IMG_20240621_204026.jpg",
+    // intgredients: '',
+    // steps: '',
+  ),
   SimpleRecipeModel(
-      image: "assets/food/IMG_20240621_204101.jpg",
-      intgredients: '',
-      steps: ''),
+    image: "assets/food/IMG_20240621_204101.jpg",
+    // intgredients: '',
+    // steps: '',
+  ),
   SimpleRecipeModel(
-      image: "assets/food/IMG_20240621_204127.jpg",
-      intgredients: '',
-      steps: ''),
+    image: "assets/food/IMG_20240621_204127.jpg",
+    // intgredients: '',
+    // steps: '',
+  ),
   SimpleRecipeModel(
-      image: "assets/food/IMG_20240621_204148.jpg",
-      intgredients: '',
-      steps: ''),
+    image: "assets/food/IMG_20240621_204148.jpg",
+    // intgredients: '',
+    // steps: '',
+  ),
   SimpleRecipeModel(
-      image: "assets/food/IMG_20240621_204208.jpg",
-      intgredients: '',
-      steps: ''),
+    image: "assets/food/IMG_20240621_204208.jpg",
+    // intgredients: '',
+    // steps: '',
+  ),
   SimpleRecipeModel(
-      image: "assets/food/IMG_20240621_234942.jpg",
-      intgredients: '',
-      steps: ''),
+    image: "assets/food/IMG_20240621_234942.jpg",
+    // intgredients: '',
+    // steps: '',
+  ),
 ];
