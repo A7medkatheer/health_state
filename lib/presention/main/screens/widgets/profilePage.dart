@@ -113,118 +113,147 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      body:  SingleChildScrollView(
-        child: Column(
-          children: [
-            Card(color: Colors.white,
-                margin: const EdgeInsetsDirectional.all(13.0),
-              child: Container(
-                height: 210,
-                width: double.infinity,
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                    CircleAvatar(
-                      radius: 55,
-                      backgroundImage: AssetImage('assets/images/e3.jpeg'),
-                    ),
-                      SizedBox(height: 15,),
-                      Text('moemen ali',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25,color: Colors.green),),
-                      // Text('E_mail : moemmen ali @yahoo.com'),
-                      // Text('Hieght : 177 cm'),
-                      // Text('Weight : 85 kg'),
-                                  ],),
+        body: SingleChildScrollView(
+            child: Column(children: [
+      const Card(
+        color: Colors.white,
+        margin: EdgeInsetsDirectional.all(13.0),
+        child: SizedBox(
+          height: 210,
+          width: double.infinity,
+          child: Padding(
+            padding: EdgeInsets.all(20.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CircleAvatar(
+                  radius: 55,
+                  backgroundImage: AssetImage('assets/images/e3.jpeg'),
                 ),
-              ),
-        
+                SizedBox(
+                  height: 15,
+                ),
+                Text(
+                  'moemen ali',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                      color: Colors.green),
+                ),
+                // Text('E_mail : moemmen ali @yahoo.com'),
+                // Text('Hieght : 177 cm'),
+                // Text('Weight : 85 kg'),
+              ],
             ),
-            Card(
-            color: Colors.white,
-            margin: const EdgeInsetsDirectional.all(13.0),
-            child: Container(
+          ),
+        ),
+      ),
+      Card(
+          color: Colors.white,
+          margin: const EdgeInsetsDirectional.all(13.0),
+          child: SizedBox(
             height: 400,
             width: double.infinity,
             child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Column(children: [
-              Row(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
                 children: [
-                  IconButton(onPressed: () {},
-                      iconSize: 40,
-                      color: ColorManager.primary,
-                      icon: const Icon(CupertinoIcons.person_circle)),
-                  const SizedBox(width: 20,),
-                  PrettyNeumorphicButton(duration: const Duration(
-                      milliseconds: 20),
-                    label: 'Edit info',
-                    onPressed: () {
-                      // Navigator.pushNamed(context, routes.adminRoute);
-                    },
+                  Row(
+                    children: [
+                      IconButton(
+                          onPressed: () {},
+                          iconSize: 40,
+                          color: ColorManager.primary,
+                          icon: const Icon(CupertinoIcons.person_circle)),
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      PrettyNeumorphicButton(
+                        duration: const Duration(milliseconds: 20),
+                        label: 'Edit info',
+                        onPressed: () {
+                          // Navigator.pushNamed(context, routes.adminRoute);
+                        },
+                      ),
+                    ],
                   ),
-                ],),
-              const SizedBox(height: 40,),
-              Row(
-                children: [
-                  IconButton(onPressed: () {},
-                      iconSize: 40,
-                      color: ColorManager.orange,
-                      icon: const Icon(CupertinoIcons.settings_solid)),
-                  const SizedBox(width: 20,),
-                  PrettyNeumorphicButton(duration: const Duration(
-                      milliseconds: 20),
-                    label: 'language',
-                    onPressed: () {},
+                  const SizedBox(
+                    height: 40,
                   ),
-                ],),
-              const SizedBox(height: 40,),
-              Row(
-                children: [
-                  IconButton(onPressed: () {},
-                      iconSize: 40,
-                      color: ColorManager.orange,
-                      icon: const Icon(CupertinoIcons.phone_circle)),
-                  const SizedBox(width: 20,),
-                  PrettyNeumorphicButton(duration: const Duration(
-                      milliseconds: 20),
-                    label: 'call center',
-                    onPressed: () {
-                      BottomSheet(onClosing: ()=>{}, builder: (context)=>const Column(children: [
-                        Row(
-                          children: [Text('01205193855')],
-                        )
-
-                      ],),);
-                    },
+                  Row(
+                    children: [
+                      IconButton(
+                          onPressed: () {},
+                          iconSize: 40,
+                          color: ColorManager.orange,
+                          icon: const Icon(CupertinoIcons.settings_solid)),
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      PrettyNeumorphicButton(
+                        duration: const Duration(milliseconds: 20),
+                        label: 'language',
+                        onPressed: () {},
+                      ),
+                    ],
                   ),
-                ],),
-              const SizedBox(height: 40,),
-              Row(
-                children: [
-                  IconButton(onPressed: () {},
-                      iconSize: 40,
-                      color: ColorManager.orange,
-                      icon: const Icon(CupertinoIcons.arrow_turn_up_right
-                      )),
-                  const SizedBox(width: 20,),
-                  PrettyNeumorphicButton(duration: const Duration(
-                      milliseconds: 20),
-                    label: 'logOut',
-                    onPressed: () {
-                    },
+                  const SizedBox(
+                    height: 40,
                   ),
-                ],),
-            ],
+                  Row(
+                    children: [
+                      IconButton(
+                          onPressed: () {},
+                          iconSize: 40,
+                          color: ColorManager.orange,
+                          icon: const Icon(CupertinoIcons.phone_circle)),
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      PrettyNeumorphicButton(
+                        duration: const Duration(milliseconds: 20),
+                        label: 'call center',
+                        onPressed: () {
+                          BottomSheet(
+                            onClosing: () => {},
+                            builder: (context) => const Column(
+                              children: [
+                                Row(
+                                  children: [Text('01205193855')],
+                                )
+                              ],
+                            ),
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  Row(
+                    children: [
+                      IconButton(
+                          onPressed: () {},
+                          iconSize: 40,
+                          color: ColorManager.orange,
+                          icon: const Icon(CupertinoIcons.arrow_turn_up_right)),
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      PrettyNeumorphicButton(
+                        duration: const Duration(milliseconds: 20),
+                        label: 'logOut',
+                        onPressed: () {},
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
-            ),
-            )
-            )]))
-
-
-      );
+          ))
+    ])));
   }
 }
 
