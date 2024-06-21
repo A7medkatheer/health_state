@@ -88,6 +88,7 @@ class _ExPrivateState extends State<ExPrivate> {
                   itemBuilder: (context, index) =>
                       buildItemex(exs[index], context),
                   separatorBuilder: (context, index) => Padding(
+<<<<<<< HEAD
                         padding: const EdgeInsets.symmetric(horizontal: 8.0),
                         child: Container(
                           width: double.infinity,
@@ -98,6 +99,18 @@ class _ExPrivateState extends State<ExPrivate> {
                   itemCount: exs.length),
             )
           ],
+=======
+
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Container(
+                      width: double.infinity,
+                      height: 1,
+                      color: Colors.grey,
+                    )),
+                  itemCount: exs.length),
+            ),
+          ] 
+>>>>>>> 0aeb2eb998133f6363fe5a21e6889f99499f4e92
         ),
       ),
     );
@@ -105,6 +118,7 @@ class _ExPrivateState extends State<ExPrivate> {
 }
 
 Widget buildItemex(exModel model, context) => GestureDetector(
+<<<<<<< HEAD
       child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Row(
@@ -203,4 +217,32 @@ Widget buildItemex(exModel model, context) => GestureDetector(
         //     Routes.itemExRoute); // bottomSheet:  InteractiveBottomSheet(
       },
     );
+=======
+  child: Padding(
+    padding: const EdgeInsets.all(12.0),
+    child: Row(
+      children: [
+        Lottie.asset(
+          model.image,
+          height: 90,
+        ),
+        const SizedBox(
+          width: 30,
+        ),
+        Text(
+          model.title,
+          style: const TextStyle(
+              fontSize: 30,
+              color: Colors.black,
+              fontWeight: FontWeight.bold),
+        ),
+      ],
+    ),
+  ),
+  onTap: () {
+    Navigator.pushNamed(context,
+        Routes.itemExRoute); // bottomSheet:  InteractiveBottomSheet(
+  },
+);
+>>>>>>> 0aeb2eb998133f6363fe5a21e6889f99499f4e92
 
