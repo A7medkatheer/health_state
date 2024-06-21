@@ -3,13 +3,11 @@
 
 import 'package:awesome_number_picker/awesome_number_picker.dart';
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import 'package:healthystate/presention/resources/color_manager.dart';
 import 'package:healthystate/presention/resources/routes_manager.dart';
-=======
 import 'package:healthystate/components_tools.dart';
 import 'package:numberpicker/numberpicker.dart';
->>>>>>> 62c1e8d6e0b9d01686b47afd9e38e55555179702
+
 
 class Olduser extends StatefulWidget {
   const Olduser({super.key});
