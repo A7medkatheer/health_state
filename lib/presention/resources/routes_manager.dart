@@ -3,8 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:healthystate/presention/login/login_screen.dart';
 import 'package:healthystate/presention/main/screens/dashboard.dart';
+import 'package:healthystate/presention/main/screens/diets/widgets/intgredients.dart';
 import 'package:healthystate/presention/main/screens/diets/widgets/list_of_food.dart';
 import 'package:healthystate/presention/main/screens/diets/widgets/model_diets.dart';
+import 'package:healthystate/presention/main/screens/diets/widgets/simple_recipes.dart';
 import 'package:healthystate/presention/main/screens/diets/widgets/start_diets.dart';
 import 'package:healthystate/presention/splash/splash_screen.dart';
 import 'package:healthystate/presention/start/start.dart';
@@ -22,6 +24,7 @@ import '../store_details/store_details_screen.dart';
 import 'strings_manager.dart';
 
 class Routes {
+  static const String intgredients = "intgredients";
   static const String splashRoute = "/";
   static const String ListOfFood = "sdvvvvvvzx";
   static const String startDiets = "/sdgvsdv";
@@ -49,6 +52,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const SplashView());
       case Routes.ListOfFood:
         return MaterialPageRoute(builder: (_) => const ListOfFood());
+      case Routes.intgredients:
+        return MaterialPageRoute(builder: (_) =>  Intgredients(recipe: settings.arguments as SimpleRecipeModel));
       case Routes.startDiets:
         return MaterialPageRoute(
             builder: (_) => StartDiet(diet: settings.arguments as Diets));
