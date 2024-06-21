@@ -56,5 +56,5 @@ List<SimpleRecipeModel> recipes = [
   SimpleRecipeModel(image: "assets/food/IMG_20240621_204127.jpg"),
   SimpleRecipeModel(image: "assets/food/IMG_20240621_204148.jpg"),
   SimpleRecipeModel(image: "assets/food/IMG_20240621_204208.jpg"),
-  SimpleRecipeModel(image: "assets/food/IMG_20240621_204945.jpg"),
+  SimpleRecipeModel(image: "assets/food/IMG_20240621_234942.jpg"),
 ];
