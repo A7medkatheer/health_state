@@ -3,15 +3,10 @@
 
 import 'package:awesome_number_picker/awesome_number_picker.dart';
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-
 import 'package:healthystate/presention/resources/color_manager.dart';
 import 'package:healthystate/presention/resources/routes_manager.dart';
-
-=======
 import 'package:healthystate/presention/resources/color_manager.dart';
 import 'package:healthystate/presention/resources/routes_manager.dart';
->>>>>>> 0aeb2eb998133f6363fe5a21e6889f99499f4e92
 import 'package:healthystate/components_tools.dart';
 import 'package:numberpicker/numberpicker.dart';
 
