@@ -6,6 +6,7 @@ class GenderSelectionScreen extends StatefulWidget {
   const GenderSelectionScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _GenderSelectionScreenState createState() => _GenderSelectionScreenState();
 }
 

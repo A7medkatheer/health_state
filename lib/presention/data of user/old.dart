@@ -1,13 +1,10 @@
 // ignore_for_file: library_private_types_in_public_api
 
 
-import 'package:awesome_number_picker/awesome_number_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:healthystate/presention/resources/color_manager.dart';
 import 'package:healthystate/presention/resources/routes_manager.dart';
-import 'package:healthystate/presention/resources/color_manager.dart';
-import 'package:healthystate/presention/resources/routes_manager.dart';
-import 'package:healthystate/components_tools.dart';
+
 import 'package:numberpicker/numberpicker.dart';
 
 
@@ -71,10 +68,9 @@ class _Olduser extends State<Olduser> {
               ],
             ),
           ),
-          Container(
-              child: ElevatedButton( child:Text ('continue',style: TextStyle(color:ColorManager.primary,)), onPressed: () {
-                Navigator.pushReplacementNamed(context, Routes.startRoute);
-              })) // Row(
+          ElevatedButton( child:Text ('continue',style: TextStyle(color:ColorManager.primary,)), onPressed: () {
+            Navigator.pushReplacementNamed(context, Routes.startRoute);
+          }) // Row(
         ],
       ),
     );

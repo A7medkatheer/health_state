@@ -1,42 +1,38 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:healthystate/presention/main/screens/widgets/exercises.dart';
 import 'package:lottie/lottie.dart';
 
-import '../../../resources/routes_manager.dart';
-import 'package:flutter/material.dart';
-import 'package:healthystate/presention/resources/color_manager.dart';
-import 'package:lottie/lottie.dart'; // Add this line to import the 'lottie' package
+// Add this line to import the 'lottie' package
 
-class exModel {
+class ExModel {
   final String title;
   final String body;
   final String image;
-  exModel({required this.title, required this.body, required this.image});
+  ExModel({required this.title, required this.body, required this.image});
 }
 
-List<exModel> exs = [
-  exModel(
+List<ExModel> exs = [
+  ExModel(
       title: 'jump ',
       body: 'Keep your body fit',
       image: 'assets/images/lottie1.json'),
-  exModel(
+  ExModel(
       title: 'pushing',
       body: 'Choose the appropriate diet',
       image: 'assets/images/lotte1.json'),
-  exModel(
+  ExModel(
       title: 'leg',
       body: 'Choose the appropriate diet',
       image: 'assets/images/lotte2.json'),
-  exModel(
+  ExModel(
       title: 'jump ',
       body: 'Keep your body fit',
       image: 'assets/images/lottie1.json'),
-  exModel(
+  ExModel(
       title: 'pushing',
       body: 'Choose the appropriate diet',
       image: 'assets/images/lotte1.json'),
-  exModel(
+  ExModel(
       title: 'leg',
       body: 'Choose the appropriate diet',
       image: 'assets/images/lotte2.json'),
@@ -65,7 +61,7 @@ class _ExPrivateState extends State<ExPrivate> {
               height: 200,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  image: DecorationImage(
+                  image: const DecorationImage(
                       image: AssetImage('assets/images/exa.jpeg'),
                       fit: BoxFit.fill)),
             ),
@@ -88,7 +84,6 @@ class _ExPrivateState extends State<ExPrivate> {
                   itemBuilder: (context, index) =>
                       buildItemex(exs[index], context),
                   separatorBuilder: (context, index) => Padding(
-
                         padding: const EdgeInsets.symmetric(horizontal: 8.0),
                         child: Container(
                           width: double.infinity,
@@ -99,15 +94,13 @@ class _ExPrivateState extends State<ExPrivate> {
                   itemCount: exs.length),
             )
           ],
-            
-    ),
+        ),
       ),
     );
   }
 }
 
-Widget buildItemex(exModel model, context) => GestureDetector(
-
+Widget buildItemex(ExModel model, context) => GestureDetector(
       child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Row(
@@ -143,7 +136,7 @@ Widget buildItemex(exModel model, context) => GestureDetector(
                     height: 400,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        image: DecorationImage(
+                        image: const DecorationImage(
                           image: AssetImage('assets/images/arm.jpg'),
                           fit: BoxFit.fill,
                         ),
@@ -151,32 +144,34 @@ Widget buildItemex(exModel model, context) => GestureDetector(
                   ),
                   Row(
                     children: [
-                      Text(
+                      const Text(
                         'Duration',
                         style: TextStyle(
                             fontSize: 30,
                             fontWeight: FontWeight.bold,
                             color: Colors.greenAccent),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Row(
                         children: [
                           IconButton(
                               onPressed: () {},
-                              icon: Icon(CupertinoIcons.minus_circle)),
-                          Text(
+                              icon: const Icon(CupertinoIcons.minus_circle)),
+                          const Text(
                             '00:30',
                             style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.greenAccent),
                           ),
-                          IconButton(onPressed: () {}, icon: Icon(CupertinoIcons.add_circled)),
+                          IconButton(
+                              onPressed: () {},
+                              icon: const Icon(CupertinoIcons.add_circled)),
                         ],
                       )
                     ],
                   ),
-                  Row(
+                  const Row(
                     children: [
                       Text(
                         'Instructor',
@@ -187,11 +182,11 @@ Widget buildItemex(exModel model, context) => GestureDetector(
                       ),
                     ],
                   ),
-                  Text(
+                  const Text(
                     'You should reach the Miami naturally in front of the straight lure a'
-                        ' good distance away'
-                        ' and then hold the double braided handle'
-                        ' holding it steady just as you keep your back arched.',
+                    ' good distance away'
+                    ' and then hold the double braided handle'
+                    ' holding it steady just as you keep your back arched.',
                     style: TextStyle(
                         fontSize: 13,
                         fontWeight: FontWeight.bold,
@@ -206,4 +201,3 @@ Widget buildItemex(exModel model, context) => GestureDetector(
         //     Routes.itemExRoute); // bottomSheet:  InteractiveBottomSheet(
       },
     );
-
