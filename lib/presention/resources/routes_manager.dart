@@ -6,7 +6,7 @@ import 'package:healthystate/presention/main/screens/dashboard.dart';
 import 'package:healthystate/presention/main/screens/diets/widgets/intgredients.dart';
 import 'package:healthystate/presention/main/screens/diets/widgets/list_of_food.dart';
 import 'package:healthystate/presention/main/screens/diets/widgets/model_diets.dart';
-import 'package:healthystate/presention/main/screens/diets/widgets/simple_recipes.dart';
+import 'package:healthystate/presention/main/screens/diets/widgets/simple_recipe_model.dart';
 import 'package:healthystate/presention/main/screens/diets/widgets/start_diets.dart';
 import 'package:healthystate/presention/splash/splash_screen.dart';
 import 'package:healthystate/presention/start/start.dart';
