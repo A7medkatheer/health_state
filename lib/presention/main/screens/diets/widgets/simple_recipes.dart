@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:healthystate/presention/main/screens/diets/widgets/simple_recipe_model.dart';
 import 'package:healthystate/presention/resources/routes_manager.dart';
 
 class SimpleRecipes extends StatelessWidget {
@@ -54,53 +55,3 @@ class FoodImage extends StatelessWidget {
     );
   }
 }
-
-class SimpleRecipeModel {
-  final String image;
-  final String? intgredients;
-  final String? steps;
-  SimpleRecipeModel({required this.image, this.intgredients, this.steps});
-}
-
-List<SimpleRecipeModel> recipes = [
-  SimpleRecipeModel(
-      image: "assets/food/IMG_20240621_203739.jpg",
-      intgredients: "assets/food/IMG_20240622_002938.jpg",
-      steps:
-          "   2 steps\n 1.  Combine all ingredients in blender.\n\n 2.  Blend until smooth. Serve immediately or \n  store in refrigerator.  Enjoy!"),
-  SimpleRecipeModel(
-    image: "assets/food/IMG_20240621_203952.jpg",
-    // steps: '',
-    // intgredients: ''
-  ),
-  SimpleRecipeModel(
-    image: "assets/food/IMG_20240621_204026.jpg",
-    // intgredients: '',
-    // steps: '',
-  ),
-  SimpleRecipeModel(
-    image: "assets/food/IMG_20240621_204101.jpg",
-    // intgredients: '',
-    // steps: '',
-  ),
-  SimpleRecipeModel(
-    image: "assets/food/IMG_20240621_204127.jpg",
-    // intgredients: '',
-    // steps: '',
-  ),
-  SimpleRecipeModel(
-    image: "assets/food/IMG_20240621_204148.jpg",
-    // intgredients: '',
-    // steps: '',
-  ),
-  SimpleRecipeModel(
-    image: "assets/food/IMG_20240621_204208.jpg",
-    // intgredients: '',
-    // steps: '',
-  ),
-  SimpleRecipeModel(
-    image: "assets/food/IMG_20240621_234942.jpg",
-    // intgredients: '',
-    // steps: '',
-  ),
-];

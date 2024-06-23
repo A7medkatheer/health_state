@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:healthystate/presention/main/screens/diets/widgets/simple_recipes.dart';
+import 'package:healthystate/presention/main/screens/diets/widgets/simple_recipe_model.dart';
 
 class Intgredients extends StatelessWidget {
   const Intgredients({
@@ -10,6 +10,8 @@ class Intgredients extends StatelessWidget {
   final SimpleRecipeModel recipe;
   @override
   Widget build(BuildContext context) {
+    final weight = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -17,26 +19,46 @@ class Intgredients extends StatelessWidget {
             Container(
               // padding: const EdgeInsets.only(left: 20, top: 30),
               height: 366.h,
-              width: MediaQuery.of(context).size.width,
+              width: weight,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   image: DecorationImage(
                       image: AssetImage(recipe.image), fit: BoxFit.fill)),
             ),
+            // Container(
+            //   // padding: const EdgeInsets.only(left: 20, top: 30),
+            //   height:
+            //       recipe.intgredients == "assets/food/IMG_20240622_002938.jpg"
+            //           ? height * .55
+            //           : height * .83,
+            //   width: MediaQuery.of(context).size.width,
+            //   decoration: BoxDecoration(
+            //       borderRadius: BorderRadius.circular(15),
+            //       image: const DecorationImage(
+            //           image: AssetImage("assets/food/IMG_20240622_191104.jpg"),
+            //           fit: BoxFit.fitWidth)),
+            // ),
             Container(
               // padding: const EdgeInsets.only(left: 20, top: 30),
-              height: 366.h,
+              height:
+                  // recipe.intgredients == "assets/food/berry_chia_smoothie.jpg"
+                  //     ? height * .75,1.75,1.95,1.22,1.8,1.89
+                  //     :
+                  height * recipe.height,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   image: DecorationImage(
-                      image: AssetImage(recipe.intgredients!),
-                      fit: BoxFit.fill)),
+                      image: AssetImage(recipe.intgredients),
+                      fit: BoxFit.fitWidth)),
             ),
-            Text(
-              recipe.steps!,
-              style: const TextStyle(fontSize: 19),
-            ),
+            // Padding(
+            //   padding: const EdgeInsets.symmetric(horizontal: 20),
+            //   child: Text(
+            //     recipe.steps!,
+            //     style: const TextStyle(fontSize: 19),
+            //   ),
+            // ),
             SizedBox(
               height: 20.h,
             ),
