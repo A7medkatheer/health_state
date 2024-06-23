@@ -8,29 +8,36 @@ class HomePage extends StatelessWidget {
     int weight = 70;
     int height = 170;
     int age = 10;
+    int gend;
+    String gender = "male"; // Assign an initial value to the 'gender' variable
+    if (gender == "male") {
+      gend = 5;
+    } else {
+      gend = -161;
+    }
     return (10 * weight.toDouble()) +
         (15 * height.toDouble()) -
-        (25 * age.toDouble());
+        (25 * age.toDouble() + gend);
   }
 
   @override
   Widget build(BuildContext context) {
-    Food food = Food(lunch: 100, breakFast: 500, dinner: 200, snacks: 100);
+    Food food = Food(lunch: 300, breakFast: 300, dinner: 200, snacks: 100);
     int totalEat() {
       return food.breakFast + food.lunch + food.dinner + food.snacks;
     }
 
-    int currentCarb = 70;
-    int totalCarb = 350; // Adjusted to include the initial 50g in the total
+    int currentCarb = 80;
+    int totalCarb = 130; // Adjusted to include the initial 50g in the total
     double percentCarb = currentCarb / totalCarb;
-    int currentFat = 30;
-    int totalFat = 134;
-    double percentFat = currentFat / totalFat;
     int currentProtein = 101;
-    int totalProtein = 201;
-    double percentProtein;
+    int totalProtein = 260;
+    double percentProtein = currentProtein / totalProtein;
+    int currentFat = 30;
+    int totalFat = 101;
+    double percentFat = currentFat / totalFat;
+
     double budget = calculateBudget();
-    percentProtein = currentProtein / totalProtein * 100;
     return Container(
       padding: const EdgeInsets.all(10),
       margin: const EdgeInsets.only(top: 10),
@@ -93,7 +100,7 @@ class HomePage extends StatelessWidget {
                       ),
                       progressColor: Colors.green,
                       animation: true,
-                      animationDuration: 1000,
+                      animationDuration: 1100,
                       circularStrokeCap: CircularStrokeCap.round,
                     ),
                   ],
@@ -159,6 +166,7 @@ class HomePage extends StatelessWidget {
                   ),
                   LinearPercentIndicator(
                     animation: true,
+                    animationDuration: 1000,
                     width: 120,
                     lineHeight: 8,
                     percent:
@@ -181,15 +189,15 @@ class HomePage extends StatelessWidget {
                     children: [
                       const Text("Protein   "),
                       Text(
-                          "${percentProtein.toStringAsFixed(1)}%"), // Display percentage with one decimal place
+                          "${(percentProtein * 100).toStringAsFixed(1)}%"), // Display percentage with one decimal place
                     ],
                   ),
                   LinearPercentIndicator(
                     animation: true,
+                    animationDuration: 1000,
                     width: 120,
                     lineHeight: 8,
-                    percent: percentProtein /
-                        100, // Convert percentage to a value between 0 and 1
+                    percent: percentProtein,
                     progressColor: Colors.green,
                   ),
                   Row(
@@ -213,6 +221,7 @@ class HomePage extends StatelessWidget {
                   ),
                   LinearPercentIndicator(
                     animation: true,
+                    animationDuration: 1000,
                     width: 120,
                     lineHeight: 8,
                     percent:
