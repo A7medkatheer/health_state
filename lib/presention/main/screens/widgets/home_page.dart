@@ -4,54 +4,93 @@ import 'package:percent_indicator/linear_percent_indicator.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
+  double calculateBudget() {
+    int weight = 70;
+    int height = 170;
+    int age = 10;
+    return (10 * weight.toDouble()) +
+        (15 * height.toDouble()) -
+        (25 * age.toDouble());
+  }
 
   @override
   Widget build(BuildContext context) {
+    Food food = Food(lunch: 100, breakFast: 500, dinner: 200, snacks: 100);
+    int totalEat() {
+      return food.breakFast + food.lunch + food.dinner + food.snacks;
+    }
+
+    int currentCarb = 70;
+    int totalCarb = 350; // Adjusted to include the initial 50g in the total
+    double percentCarb = currentCarb / totalCarb;
+    int currentFat = 30;
+    int totalFat = 134;
+    double percentFat = currentFat / totalFat;
+    int currentProtein = 101;
+    int totalProtein = 201;
+    double percentProtein;
+    double budget = calculateBudget();
+    percentProtein = currentProtein / totalProtein * 100;
     return Container(
       padding: const EdgeInsets.all(10),
       margin: const EdgeInsets.only(top: 10),
       child: Column(
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(
-                width: 100,
-              ),
-              const Text('calorie budget\n       2000'),
-              const SizedBox(
-                width: 50,
-              ),
-              IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert))
+              // SizedBox(
+              //   width: 100,
+              // ),
+              RichText(
+                text: TextSpan(
+                  style: const TextStyle(
+                      fontSize: 22, color: Colors.black), // Default text style
+                  children: <TextSpan>[
+                    const TextSpan(text: 'calorie budget\n'),
+                    TextSpan(
+                        text: '       ${budget.round()}',
+                        style: const TextStyle(
+                            color: Colors.green)), // Green text style
+                  ],
+                ),
+              )
             ],
           ),
           const SizedBox(
             height: 20,
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              const Column(children: [
-                Text('exercise'),
-                Text('0'),
-                Text('Steps'),
-                Text('0'),
-                Text('Water'),
-                Text('0'),
-                Text('Notes'),
-                Text('0'),
-              ]),
-              // const SizedBox(
-              //   width: 50,
-              // ),
               Padding(
-                padding: const EdgeInsets.only(left: 60, right: 30),
+                padding: const EdgeInsets.only(left: 30, right: 30),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     CircularPercentIndicator(
                       radius: 90,
                       lineWidth: 12,
-                      percent: 0.6,
-                      center: const Text('   500   \n   left   \n  1500'),
+                      percent: totalEat() / budget.round(),
+                      center: RichText(
+                        text: TextSpan(
+                          style: const TextStyle(
+                              fontSize: 22,
+                              color: Colors.green), // Default text style
+                          children: <TextSpan>[
+                            TextSpan(text: ' ${totalEat()}\n '),
+                            const TextSpan(
+                                text: 'left\n',
+                                style: TextStyle(
+                                    fontSize: 18, color: Colors.black)),
+                            TextSpan(
+                                text: '${budget.round() - totalEat()}',
+                                style: const TextStyle(
+                                    fontSize: 22, color: Colors.grey)),
+                            // Green text style
+                          ],
+                        ),
+                      ),
                       progressColor: Colors.green,
                       animation: true,
                       animationDuration: 1000,
@@ -60,17 +99,44 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
-
-              const Column(
+              Column(
                 children: [
-                  Text('breakfast'),
-                  Text('100'),
-                  Text('lunch'),
-                  Text('300'),
-                  Text('Dinner'),
-                  Text('50'),
-                  Text('Snacks'),
-                  Text('50'),
+                  const Text(
+                    'breakFast',
+                    style: TextStyle(fontSize: 22),
+                  ),
+                  Text(
+                    "${food.breakFast}",
+                    style: const TextStyle(fontSize: 22, color: Colors.green),
+                  ),
+                  const Text(
+                    'lunch',
+                    style: TextStyle(
+                      fontSize: 22,
+                    ),
+                  ),
+                  Text(
+                    "${food.lunch}",
+                    style: const TextStyle(fontSize: 22, color: Colors.green),
+                  ),
+                  const Text(
+                    'Dinner',
+                    style: TextStyle(
+                      fontSize: 22,
+                    ),
+                  ),
+                  Text(
+                    "${food.dinner}",
+                    style: const TextStyle(fontSize: 22, color: Colors.green),
+                  ),
+                  const Text(
+                    'Snacks',
+                    style: TextStyle(fontSize: 22),
+                  ),
+                  Text(
+                    "${food.snacks}",
+                    style: const TextStyle(fontSize: 22, color: Colors.green),
+                  ),
                 ],
               ),
             ],
@@ -80,71 +146,83 @@ class HomePage extends StatelessWidget {
           ),
           Row(
             children: [
+              // Define the variables
+
               Column(
                 children: [
-                  const Row(
+                  Row(
                     children: [
-                      Text("Carbs   "),
-                      Text("60%"),
+                      const Text("Carbs   "),
+                      Text(
+                          "${(percentCarb * 100).toStringAsFixed(1)}%"), // Display percentage with one decimal place
                     ],
                   ),
                   LinearPercentIndicator(
                     animation: true,
                     width: 120,
                     lineHeight: 8,
-                    percent: 0.6,
+                    percent:
+                        percentCarb, // Use the calculated percent directly as it's already a value between 0 and 1
                     progressColor: Colors.green,
                   ),
-                  const Row(
+                  Row(
                     children: [
-                      Text("50g     "),
-                      Text("left 301g"),
+                      Text("${currentCarb}g     "),
+                      Text("left ${totalCarb - currentCarb}g"),
                     ],
                   ),
                 ],
               ),
+              // Define the variables
+
               Column(
                 children: [
-                  const Row(
+                  Row(
                     children: [
-                      Text("Protein   "),
-                      Text("50%"),
+                      const Text("Protein   "),
+                      Text(
+                          "${percentProtein.toStringAsFixed(1)}%"), // Display percentage with one decimal place
                     ],
                   ),
                   LinearPercentIndicator(
                     animation: true,
                     width: 120,
                     lineHeight: 8,
-                    percent: 0.5,
+                    percent: percentProtein /
+                        100, // Convert percentage to a value between 0 and 1
                     progressColor: Colors.green,
                   ),
-                  const Row(
+                  Row(
                     children: [
-                      Text("0g     "),
-                      Text("left 134g"),
+                      Text("${currentProtein}g     "),
+                      Text("left ${totalProtein - currentProtein}g"),
                     ],
                   ),
                 ],
               ),
+              // Define the variables
+
               Column(
                 children: [
-                  const Row(
+                  Row(
                     children: [
-                      Text("Fat   "),
-                      Text("30%"),
+                      const Text("Fat   "),
+                      Text(
+                          "${(percentFat * 100).toStringAsFixed(1)}%"), // Display percentage with one decimal place
                     ],
                   ),
                   LinearPercentIndicator(
                     animation: true,
                     width: 120,
                     lineHeight: 8,
-                    percent: 0.3,
+                    percent:
+                        percentFat, // Use the calculated percent directly as it's already a value between 0 and 1
                     progressColor: Colors.green,
                   ),
-                  const Row(
+                  Row(
                     children: [
-                      Text("30g     "),
-                      Text("left 104g"),
+                      Text("${currentFat}g     "),
+                      Text("left ${totalFat - currentFat}g"),
                     ],
                   ),
                 ],
@@ -157,4 +235,17 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+}
+
+class Food {
+  final int lunch;
+  final int breakFast;
+  final int dinner;
+  final int snacks;
+
+  Food(
+      {required this.lunch,
+      required this.breakFast,
+      required this.dinner,
+      required this.snacks});
 }
