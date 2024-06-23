@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:healthystate/presention/main/screens/widgets/cubit/cubit.dart';
+import '../../resources/color_manager.dart';
 import 'widgets/cubit/state.dart';
 
 class MainView extends StatelessWidget {
@@ -37,6 +38,7 @@ class MainView extends StatelessWidget {
                   onPressed: () {},
                 ),
               ]),
+
           body: cubit.pages[cubit.currentPage],
           bottomNavigationBar: cubit.bottomNav(),
         );
