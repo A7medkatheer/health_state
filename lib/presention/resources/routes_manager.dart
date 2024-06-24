@@ -19,6 +19,7 @@ import '../forgot_password/newpass.dart';
 import '../forgot_password/verification.dart';
 import '../main/screens/widgets/ex_private.dart';
 import '../main/screens/widgets/exercises.dart';
+import '../main/screens/widgets/searchScreen.dart';
 import '../onboarding/on_boarding_screen.dart';
 import '../register/registerScreen.dart';
 import '../store_details/store_details_screen.dart';
@@ -36,7 +37,7 @@ class Routes {
   static const String GenderSelectionScreenRoute = "/GenderSelectionScreen";
   static const String weightuserRoute = "/weightuser";
   static const String hightuserRoute = "/hightuser";
-  // static const String itemExRoute = "/itemEx";
+  static const String searchScreenRoute = "/searchScreen";
   static const String onBoardingRoute = "/onBoarding";
   static const String forgotPasswordRoute = "/forgotPassword";
   static const String mainRoute = "/main";
@@ -69,8 +70,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const Olduser());
       case Routes.weightuserRoute:
         return MaterialPageRoute(builder: (_) => const WeightUser());
-      // case Routes.itemExRoute:
-      //   return MaterialPageRoute(builder: (_) => const ItemEx());
+      case Routes.searchScreenRoute:
+        return MaterialPageRoute(builder: (_) => const searchScreen());
       case Routes.hightuserRoute:
         return MaterialPageRoute(builder: (_) => const hightuser());
       case Routes.onBoardingRoute:
