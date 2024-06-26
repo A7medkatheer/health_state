@@ -1,14 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:healthystate/presention/main/screens/diets/widgets/model_diets.dart';
+import 'package:healthystate/presention/main/screens/widgets/cubit/cubit.dart';
+import 'package:healthystate/presention/main/screens/widgets/cubit/state.dart';
 import 'package:healthystate/presention/resources/routes_manager.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class HomePage extends StatefulWidget {
+  HomePage({
+    super.key,
+    required this.diet,
+  });
+  Diets diet;
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   double calculateBudget() {
+    print(context.read<AppCubit>().index);
     int weight = 70;
     int height = 170;
-    int age = 10;
+    int age = 20;
     int gend;
     String gender = "male"; // Assign an initial value to the 'gender' variable
     if (gender == "male") {
@@ -23,40 +38,51 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    late var totalfat = widget.diet.totalFat ?? 1;
+    late var totalprotein = widget.diet.totalProtein ?? 1;
+    late var totalcarb = widget.diet.totalCarb ?? 1;
+    int totalFat = totalfat;
+    int totalProtein = totalprotein;
+    // Adjusted to include the initial 50g in the total
+    int totalCarb = totalcarb;
     Food food = Food(lunch: 300, breakFast: 300, dinner: 200, snacks: 100);
     int totalEat() {
       return food.breakFast + food.lunch + food.dinner + food.snacks;
     }
 
-    int currentCarb = 80;
-    int totalCarb = 130; // Adjusted to include the initial 50g in the total
-    double percentCarb = currentCarb / totalCarb;
-    int currentProtein = 101;
-    int totalProtein = 260;
+    int currentCarb = 0;
+    int currentFat = 0;
+    int currentProtein = 0;
+    double percentCarb = (currentCarb / 100) / (totalCarb / 100);
     double percentProtein = currentProtein / totalProtein;
-    int currentFat = 30;
-    int totalFat = 101;
     double percentFat = currentFat / totalFat;
 
     double budget = calculateBudget();
+
     return Scaffold(
       body: Column(
         children: [
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: GestureDetector(
-              onTap: (){
-                Navigator.pushNamed(context, Routes.searchScreenRoute );
+              onTap: () {
+                Navigator.pushNamed(context, Routes.searchScreenRoute);
               },
               child: Container(
                 height: 45,
                 width: double.infinity,
-                decoration: BoxDecoration(color: Colors.grey[200],borderRadius:BorderRadius.circular(30) ),
-                child: Row(
+                decoration: BoxDecoration(
+                    color: Colors.grey[200],
+                    borderRadius: BorderRadius.circular(30)),
+                child: const Row(
                   children: [
-                    SizedBox(width: 10,),
+                    SizedBox(
+                      width: 10,
+                    ),
                     Icon(Icons.search),
-                    SizedBox(width: 10,),
+                    SizedBox(
+                      width: 10,
+                    ),
                     Text('entre the your food ')
                   ],
                 ),
@@ -77,9 +103,15 @@ class HomePage extends StatelessWidget {
                     RichText(
                       text: TextSpan(
                         style: const TextStyle(
-                            fontSize: 22, color: Colors.black), // Default text style
+                            fontSize: 22,
+                            color: Colors.black), // Default text style
                         children: <TextSpan>[
-                          const TextSpan(text: 'calorie budget\n'),
+                          const TextSpan(text: 'calorie budget '),
+                          TextSpan(
+                              text: '${widget.diet.nameDiet ?? ""} \n',
+                              style: const TextStyle(
+                                  fontSize: 18,
+                                  color: Colors.green)), // Green text style
                           TextSpan(
                               text: '       ${budget.round()}',
                               style: const TextStyle(
@@ -139,7 +171,8 @@ class HomePage extends StatelessWidget {
                         ),
                         Text(
                           "${food.breakFast}",
-                          style: const TextStyle(fontSize: 22, color: Colors.green),
+                          style: const TextStyle(
+                              fontSize: 22, color: Colors.green),
                         ),
                         const Text(
                           'lunch',
@@ -149,7 +182,8 @@ class HomePage extends StatelessWidget {
                         ),
                         Text(
                           "${food.lunch}",
-                          style: const TextStyle(fontSize: 22, color: Colors.green),
+                          style: const TextStyle(
+                              fontSize: 22, color: Colors.green),
                         ),
                         const Text(
                           'Dinner',
@@ -159,7 +193,8 @@ class HomePage extends StatelessWidget {
                         ),
                         Text(
                           "${food.dinner}",
-                          style: const TextStyle(fontSize: 22, color: Colors.green),
+                          style: const TextStyle(
+                              fontSize: 22, color: Colors.green),
                         ),
                         const Text(
                           'Snacks',
@@ -167,7 +202,8 @@ class HomePage extends StatelessWidget {
                         ),
                         Text(
                           "${food.snacks}",
-                          style: const TextStyle(fontSize: 22, color: Colors.green),
+                          style: const TextStyle(
+                              fontSize: 22, color: Colors.green),
                         ),
                       ],
                     ),
@@ -179,7 +215,7 @@ class HomePage extends StatelessWidget {
                 Row(
                   children: [
                     // Define the variables
-          
+
                     Column(
                       children: [
                         Row(
@@ -195,7 +231,7 @@ class HomePage extends StatelessWidget {
                           width: 120,
                           lineHeight: 8,
                           percent:
-                          percentCarb, // Use the calculated percent directly as it's already a value between 0 and 1
+                              percentCarb, // Use the calculated percent directly as it's already a value between 0 and 1
                           progressColor: Colors.green,
                         ),
                         Row(
@@ -207,7 +243,7 @@ class HomePage extends StatelessWidget {
                       ],
                     ),
                     // Define the variables
-          
+
                     Column(
                       children: [
                         Row(
@@ -234,7 +270,7 @@ class HomePage extends StatelessWidget {
                       ],
                     ),
                     // Define the variables
-          
+
                     Column(
                       children: [
                         Row(
@@ -250,7 +286,7 @@ class HomePage extends StatelessWidget {
                           width: 120,
                           lineHeight: 8,
                           percent:
-                          percentFat, // Use the calculated percent directly as it's already a value between 0 and 1
+                              percentFat, // Use the calculated percent directly as it's already a value between 0 and 1
                           progressColor: Colors.green,
                         ),
                         Row(
@@ -282,7 +318,7 @@ class Food {
 
   Food(
       {required this.lunch,
-        required this.breakFast,
-        required this.dinner,
-        required this.snacks});
+      required this.breakFast,
+      required this.dinner,
+      required this.snacks});
 }

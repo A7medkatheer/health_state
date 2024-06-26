@@ -51,6 +51,7 @@ dependencies:
   numberpicker: ^2.1.2
   percent_indicator: ^4.2.3
   pretty_animated_buttons: ^0.0.1
+  shared_preferences: ^2.2.3
   smooth_page_indicator: ^1.1.0
 dev_dependencies:
   flutter_lints: ^2.0.0

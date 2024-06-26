@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:healthystate/presention/main/screens/diets/widgets/model_diets.dart';
 import 'package:healthystate/presention/main/screens/widgets/cubit/cubit.dart';
 import '../../resources/color_manager.dart';
 import 'widgets/cubit/state.dart';
 
 class MainView extends StatelessWidget {
-  const MainView({Key? key}) : super(key: key);
+  const MainView({
+    super.key,
+    // required this.diet, required this.index,
+  });
+  // final Diets diet;
+  // final int index;
 
   @override
   Widget build(BuildContext context) {
-    var cubit = AppCubit.get(context);
+    var cubit = BlocProvider.of<AppCubit>(context).get(context);
     return BlocConsumer<AppCubit, AppState>(
       builder: (context, state) {
         return Scaffold(
