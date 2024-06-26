@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                     SizedBox(
                       width: 10,
                     ),
-                    Text('entre the your food ')
+                    Text('enter your food ')
                   ],
                 ),
               ),
