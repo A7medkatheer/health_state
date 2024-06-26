@@ -183,6 +183,9 @@ class StartDiet extends StatelessWidget {
 
                       context.read<AppCubit>().index = index;
 
+                      print('index: $index');
+
+                      CacheHelper().saveData(key: "index", value: index);
                       CacheHelper().saveData(key: "diet", value: diet);
                       Navigator.push(
                         context,

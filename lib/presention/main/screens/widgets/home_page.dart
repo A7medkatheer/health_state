@@ -108,7 +108,7 @@ class _HomePageState extends State<HomePage> {
                         children: <TextSpan>[
                           const TextSpan(text: 'calorie budget '),
                           TextSpan(
-                              text: '${widget.diet.nameDiet ?? ""} \n',
+                              text: '${widget.diet.nameDiet } \n',
                               style: const TextStyle(
                                   fontSize: 18,
                                   color: Colors.green)), // Green text style
