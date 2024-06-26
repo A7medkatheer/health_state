@@ -6,46 +6,41 @@ import '../../resources/color_manager.dart';
 import 'widgets/cubit/state.dart';
 
 class MainView extends StatelessWidget {
-  const MainView({
-    super.key,
-    // required this.diet, required this.index,
-  });
-  // final Diets diet;
-  // final int index;
+  const MainView({super.key});
 
   @override
   Widget build(BuildContext context) {
     var cubit = BlocProvider.of<AppCubit>(context).get(context);
     return BlocConsumer<AppCubit, AppState>(
       builder: (context, state) {
+        var pages = cubit.getPages(context);
         return Scaffold(
-          // backgroundColor: Color(0xff000000),
           appBar: AppBar(
-              leading: Row(
-                children: [
-                  IconButton(
-                    icon: const Icon(Icons.menu),
-                    onPressed: () {},
-                  ),
-                ],
+            leading: Row(
+              children: [
+                IconButton(
+                  icon: const Icon(Icons.menu),
+                  onPressed: () {},
+                ),
+              ],
+            ),
+            title: const Text('Health State'),
+            actions: [
+              IconButton(
+                icon: Image.asset(
+                  'assets/images/health.png',
+                  height: 50,
+                  width: 50,
+                ),
+                onPressed: () {},
               ),
-              title: const Text('Health State'),
-              actions: [
-                IconButton(
-                  icon: Image.asset(
-                    'assets/images/health.png',
-                    height: 50,
-                    width: 50,
-                  ),
-                  onPressed: () {},
-                ),
-                IconButton(
-                  icon: const Icon(Icons.more_vert),
-                  onPressed: () {},
-                ),
-              ]),
-
-          body: cubit.pages[cubit.currentPage],
+              IconButton(
+                icon: const Icon(Icons.more_vert),
+                onPressed: () {},
+              ),
+            ],
+          ),
+          body: pages[cubit.currentPage],
           bottomNavigationBar: cubit.bottomNav(),
         );
       },
