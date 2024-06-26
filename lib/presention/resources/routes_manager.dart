@@ -59,7 +59,7 @@ class RouteGenerator {
       case Routes.HomePage:
         return MaterialPageRoute(
             builder: (_) => HomePage(
-                  // diet: settings.arguments as Diets,
+                  diet: settings.arguments as Diets,
                   // index: CacheHelper().getData(
                   //   key: "index",
                   // ),
