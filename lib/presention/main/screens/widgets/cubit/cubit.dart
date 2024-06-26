@@ -19,7 +19,8 @@ class AppCubit extends Cubit<AppState> {
   AppCubit get(context) => BlocProvider.of(context);
   List<Widget> pages = [
     HomePage(
-      diet: diet[context.read<AppCubit>().index],
+      diet: diet[CacheHelper().getData(key: "index")],
+      // context.read<AppCubit>().index
       // index: CacheHelper().getData(key: "index"),
     ),
     const Exercisespage(),
