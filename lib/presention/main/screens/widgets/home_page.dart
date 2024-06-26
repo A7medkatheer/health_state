@@ -8,12 +8,13 @@ import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({
-    super.key,
-    required this.diet,
-  });
-  Diets diet;
-
+  // HomePage(
+  //     {
+  //   super.key,
+  //   required this.diet,
+  // }
+  // );
+  late Diets diet;
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -24,7 +25,7 @@ class _HomePageState extends State<HomePage> {
     int weight = 70;
     int height = 170;
     int age = 20;
-    int gend;
+    int gend=5;
     String gender = "male"; // Assign an initial value to the 'gender' variable
     if (gender == "male") {
       gend = 5;

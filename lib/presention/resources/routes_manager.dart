@@ -59,7 +59,7 @@ class RouteGenerator {
       case Routes.HomePage:
         return MaterialPageRoute(
             builder: (_) => HomePage(
-                  diet: settings.arguments as Diets,
+                  // diet: settings.arguments as Diets,
                   // index: CacheHelper().getData(
                   //   key: "index",
                   // ),
@@ -104,7 +104,7 @@ class RouteGenerator {
         // final Diets diet = settings.arguments as Diets;
         // final int index = settings.arguments as int;
         return MaterialPageRoute(
-            builder: (_) => const MainView(
+            builder: (_) =>  MainView(
                 // diet: diet,
                 // index: index,
                 ));
