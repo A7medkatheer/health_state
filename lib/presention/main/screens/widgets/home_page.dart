@@ -3,7 +3,6 @@ import 'dart:math' as math;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:healthystate/presention/main/screens/diets/widgets/model_diets.dart';
 import 'package:healthystate/presention/main/screens/widgets/cubit/cubit.dart';
-import 'package:healthystate/presention/main/screens/widgets/cubit/state.dart';
 import 'package:healthystate/presention/resources/routes_manager.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';

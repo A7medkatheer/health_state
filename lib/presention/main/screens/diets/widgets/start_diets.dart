@@ -9,9 +9,7 @@ import 'package:healthystate/presention/main/screens/diets/widgets/simple_recipe
 import 'package:healthystate/presention/main/screens/diets/widgets/sized_text.dart';
 import 'package:healthystate/presention/main/screens/widgets/cubit/cubit.dart';
 import 'package:healthystate/presention/main/screens/widgets/cubit/state.dart';
-import 'package:healthystate/presention/main/screens/widgets/home_page.dart';
 import 'package:healthystate/presention/resources/routes_manager.dart';
-import 'package:healthystate/presention/start/start.dart';
 
 class StartDiet extends StatelessWidget {
   const StartDiet({super.key, required this.diet, required this.index});
