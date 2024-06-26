@@ -19,7 +19,7 @@ final List<Diets> diet = [
   Diets(
     images: "assets/images/Rectangle 3.png",
     title: "Time-tested and proven, No food os off-limits",
-    nameDiet: "Premium",
+    nameDiet: " ",
     totalCarb: 1,
     totalProtein: 1,
     totalFat: 1,

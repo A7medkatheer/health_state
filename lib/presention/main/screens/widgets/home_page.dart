@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:healthystate/presention/main/screens/diets/widgets/model_diets.dart';
 import 'package:healthystate/presention/main/screens/widgets/cubit/cubit.dart';
@@ -37,9 +38,9 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    late var totalfat = widget.diet.totalFat ?? 1;
-    late var totalprotein = widget.diet.totalProtein ?? 1;
-    late var totalcarb = widget.diet.totalCarb ?? 1;
+    late var totalfat = widget.diet.totalFat;
+    late var totalprotein = widget.diet.totalProtein;
+    late var totalcarb = widget.diet.totalCarb;
     int totalFat = totalfat;
     int totalProtein = totalprotein;
     // Adjusted to include the initial 50g in the total
@@ -49,10 +50,10 @@ class _HomePageState extends State<HomePage> {
       return food.breakFast + food.lunch + food.dinner + food.snacks;
     }
 
-    int currentCarb = 0;
-    int currentFat = 0;
-    int currentProtein = 0;
-    double percentCarb = (currentCarb / 100) / (totalCarb / 100);
+    int currentCarb = 150;
+    int currentFat = 130;
+    int currentProtein = 111;
+    double percentCarb = currentCarb / totalCarb;
     double percentProtein = currentProtein / totalProtein;
     double percentFat = currentFat / totalFat;
 
@@ -220,8 +221,9 @@ class _HomePageState extends State<HomePage> {
                         Row(
                           children: [
                             const Text("Carbs   "),
-                            Text(
-                                "${(percentCarb * 100).toStringAsFixed(1)}%"), // Display percentage with one decimal place
+                            Text(currentCarb > totalCarb
+                                ? "${(percentCarb * 100 - 100).round()}%"
+                                : "${(percentCarb * 100).round()}%"), // Display percentage with one decimal place
                           ],
                         ),
                         LinearPercentIndicator(
@@ -229,14 +231,16 @@ class _HomePageState extends State<HomePage> {
                           animationDuration: 1000,
                           width: 120,
                           lineHeight: 8,
-                          percent:
-                              percentCarb, // Use the calculated percent directly as it's already a value between 0 and 1
+                          percent: math.min(percentCarb,
+                              1.0), // Use the calculated percent directly as it's already a value between 0 and 1
                           progressColor: Colors.green,
                         ),
                         Row(
                           children: [
                             Text("${currentCarb}g     "),
-                            Text("left ${totalCarb - currentCarb}g"),
+                            currentCarb > totalCarb
+                                ? Text("over ${currentCarb - totalCarb}g")
+                                : Text("left ${totalCarb - currentCarb}g"),
                           ],
                         ),
                       ],
@@ -248,8 +252,9 @@ class _HomePageState extends State<HomePage> {
                         Row(
                           children: [
                             const Text("Protein   "),
-                            Text(
-                                "${(percentProtein * 100).toStringAsFixed(1)}%"), // Display percentage with one decimal place
+                            Text(currentProtein > totalProtein
+                                ? "${(percentProtein * 100 - 100).round()}%"
+                                : "${(percentProtein * 100).round()}%"), // Display percentage with one decimal place
                           ],
                         ),
                         LinearPercentIndicator(
@@ -257,13 +262,16 @@ class _HomePageState extends State<HomePage> {
                           animationDuration: 1000,
                           width: 120,
                           lineHeight: 8,
-                          percent: percentProtein,
+                          percent: math.min(percentProtein, 1.0),
                           progressColor: Colors.green,
                         ),
                         Row(
                           children: [
                             Text("${currentProtein}g     "),
-                            Text("left ${totalProtein - currentProtein}g"),
+                            currentProtein > totalProtein
+                                ? Text("over ${currentProtein - totalProtein}g")
+                                : Text(
+                                    "left ${totalProtein - currentProtein}g"),
                           ],
                         ),
                       ],
@@ -275,8 +283,10 @@ class _HomePageState extends State<HomePage> {
                         Row(
                           children: [
                             const Text("Fat   "),
-                            Text(
-                                "${(percentFat * 100).toStringAsFixed(1)}%"), // Display percentage with one decimal place
+                            Text(currentFat > totalFat
+                                ? "${(percentFat * 100 - 100).round()}%"
+                                : "${(percentFat * 100).round()}%"), // Display percentage with one decimal place
+                            // Display percentage with one decimal place
                           ],
                         ),
                         LinearPercentIndicator(
@@ -284,14 +294,16 @@ class _HomePageState extends State<HomePage> {
                           animationDuration: 1000,
                           width: 120,
                           lineHeight: 8,
-                          percent:
-                              percentFat, // Use the calculated percent directly as it's already a value between 0 and 1
+                          percent: math.min(percentFat,
+                              1.0), // Use the calculated percent directly as it's already a value between 0 and 1
                           progressColor: Colors.green,
                         ),
                         Row(
                           children: [
                             Text("${currentFat}g     "),
-                            Text("left ${totalFat - currentFat}g"),
+                            currentFat > totalFat
+                                ? Text("over ${currentFat - totalFat}g")
+                                : Text("left ${totalFat - currentFat}g"),
                           ],
                         ),
                       ],
