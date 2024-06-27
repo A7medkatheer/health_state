@@ -190,7 +190,6 @@ class StartDiet extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) => const MainView(
-
                               // diet: diet,
                               // index: index,
                               ),

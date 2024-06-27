@@ -136,11 +136,16 @@ Widget buildItemex(ExModel model, context) => GestureDetector(
                     height: 400,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        image: const DecorationImage(
-                          image: AssetImage('assets/images/arm.jpg'),
-                          fit: BoxFit.fill,
-                        ),
+                        // image:  DecorationImage(
+                        //   image: AssetImage(model.image),
+                        //   fit: BoxFit.fill,
+                        // ),
+
                         color: Colors.white),
+                    child:   Lottie.asset(
+                      model.image,
+                      // height: 90,
+                    ),
                   ),
                   Row(
                     children: [
