@@ -311,6 +311,8 @@ class _HomePageState extends State<HomePage> {
                 ),
                 const Row(),
                 // const BottonNavWithAnimatedIcons(),
+                                FloatingActionButton(onPressed: (){},child: Icon(Icons.add),),
+
               ],
             ),
           ),
