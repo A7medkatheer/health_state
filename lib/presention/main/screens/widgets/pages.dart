@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:healthystate/presention/main/screens/diets/widgets/card_diets.dart';
 import 'package:healthystate/presention/main/screens/diets/widgets/model_diets.dart';
 import 'package:healthystate/presention/main/screens/diets/widgets/start_diets.dart';
-import 'package:healthystate/presention/resources/routes_manager.dart';
 
 class DietsPage extends StatelessWidget {
   const DietsPage({super.key});
@@ -11,17 +10,20 @@ class DietsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView.builder(
-        itemBuilder: (context, index) => Padding(
+        itemBuilder: (context, index) {
+          final itemIndex = index + 1; // Move this line here
+          return Padding(
             padding: const EdgeInsets.only(left: 20, top: 30, right: 20),
             child: NavCardsDiet(
-              diet: diet[index],
+              diet: diet[itemIndex],
               index: index, // Pass the index here
-            )),
-        itemCount: diet.length,
+            ),
+          );
+        },
+        itemCount: diet.length - 1,
       ),
     );
   }
-  
 }
 
 class NavCardsDiet extends StatelessWidget {

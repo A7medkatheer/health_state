@@ -179,7 +179,7 @@ class StartDiet extends StatelessWidget {
                       // await saveDietChanges(diet);
                       // After saving, navigate to the HomePage
 
-                      context.read<AppCubit>().index = index;
+                      context.read<AppCubit>().index = index + 1;
                       context.read<AppCubit>().currentPage = 0;
 
                       print('index: $index');
