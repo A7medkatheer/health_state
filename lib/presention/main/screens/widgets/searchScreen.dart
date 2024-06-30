@@ -1,6 +1,8 @@
 
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:healthystate/presention/main/screens/widgets/search_model.dart';
 
 class searchScreen extends StatelessWidget {
   const searchScreen({super.key});
@@ -64,17 +66,18 @@ class searchScreen extends StatelessWidget {
               condition: true,
               builder: (context) => ListView.separated(
                   physics: const BouncingScrollPhysics(),
-                  itemBuilder: (context, index) {
-                    return null;
-                  },
+                  itemBuilder: (context, index) =>buildsearchitem(meals[index]),
                   separatorBuilder: (context, index) {
-                    return Container(
-                      height: 2,
-                      width: double.infinity,
-                      color: Colors.grey,
+                    return Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: Container(
+                        height: 2,
+                        width: double.infinity,
+                        color: Colors.grey[400],
+                      ),
                     );
                   },
-                  itemCount: 10),
+                  itemCount: meals.length),
               fallback: (context) =>
                   const Center(child: CircularProgressIndicator()),
             ),
@@ -92,3 +95,18 @@ List<String> food = [
   'meat',
   'chiken',
 ];
+
+Widget buildsearchitem(meal model)=>Padding(
+  padding: const EdgeInsets.all(8.0),
+  child: Row(children: [
+    Image(image: AssetImage(model.images),height: 50,width: 50,fit: BoxFit.cover,),
+    SizedBox(width: 20,),
+    Column(
+      mainAxisAlignment:MainAxisAlignment.start,
+      children: [
+      Text(model.nameDiet,),
+      Text('${model.totalProtein}'),
+    ],),
+
+  ],),
+);
