@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:healthystate/presention/main/screens/widgets/cubit/cubit.dart';
-import 'widgets/cubit/state.dart';
+import 'package:healthystate/core/cubit/cubit.dart';
+import '../../../core/cubit/state.dart';
 
 class MainView extends StatelessWidget {
   const MainView({super.key});

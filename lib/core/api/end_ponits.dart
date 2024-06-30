@@ -1,8 +1,8 @@
 class EndPoint {
   static String baseUrl =
-      "https://graduation-project-2q7g.onrender.com/api/v1/";
+      "https://app-q7cd.onrender.com/api/v1/";
   static String signIn = "auth/login";
-  static String signUp = "auth/signup";
+  static String signUp = "users";
   static String sendCode = "auth/sendcode";
   static String forgotPassword = "auth/forgotPassword";
   static String verifyCode = "auth/verifyemail";

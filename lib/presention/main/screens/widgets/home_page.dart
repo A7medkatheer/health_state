@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:healthystate/presention/main/screens/diets/widgets/model_diets.dart';
-import 'package:healthystate/presention/main/screens/widgets/cubit/cubit.dart';
+import 'package:healthystate/core/cubit/cubit.dart';
 import 'package:healthystate/presention/resources/routes_manager.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
@@ -220,105 +221,110 @@ class _HomePageState extends State<HomePage> {
                       const SizedBox(
                         height: 20,
                       ),
-                      Row(
-                        children: [
-                          // Define the variables
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            // Define the variables
 
-                          Column(
-                            children: [
-                              Row(
-                                children: [
-                                  const Text("Carbs   "),
-                                  Text(currentCarb > totalCarb
-                                      ? "${(percentCarb * 100 - 100).round()}%"
-                                      : "${(percentCarb * 100).round()}%"), // Display percentage with one decimal place
-                                ],
-                              ),
-                              LinearPercentIndicator(
-                                animation: true,
-                                animationDuration: 1000,
-                                width: 120,
-                                lineHeight: 8,
-                                percent: math.min(percentCarb,
-                                    1.0), // Use the calculated percent directly as it's already a value between 0 and 1
-                                progressColor: Colors.green,
-                              ),
-                              Row(
-                                children: [
-                                  Text("${currentCarb}g     "),
-                                  currentCarb > totalCarb
-                                      ? Text("over ${currentCarb - totalCarb}g")
-                                      : Text(
-                                          "left ${totalCarb - currentCarb}g"),
-                                ],
-                              ),
-                            ],
-                          ),
-                          // Define the variables
+                            Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    const Text("Carbs   "),
+                                    Text(currentCarb > totalCarb
+                                        ? "${(percentCarb * 100 - 100).round()}%"
+                                        : "${(percentCarb * 100).round()}%"), // Display percentage with one decimal place
+                                  ],
+                                ),
+                                LinearPercentIndicator(
+                                  animation: true,
+                                  animationDuration: 1000,
+                                  width: 120.w,
+                                  lineHeight: 8,
+                                  percent: math.min(percentCarb,
+                                      1.0), // Use the calculated percent directly as it's already a value between 0 and 1
+                                  progressColor: Colors.green,
+                                ),
+                                Row(
+                                  children: [
+                                    Text("${currentCarb}g     "),
+                                    currentCarb > totalCarb
+                                        ? Text(
+                                            "over ${currentCarb - totalCarb}g")
+                                        : Text(
+                                            "left ${totalCarb - currentCarb}g"),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            // Define the variables
 
-                          Column(
-                            children: [
-                              Row(
-                                children: [
-                                  const Text("Protein   "),
-                                  Text(currentProtein > totalProtein
-                                      ? "${(percentProtein * 100 - 100).round()}%"
-                                      : "${(percentProtein * 100).round()}%"), // Display percentage with one decimal place
-                                ],
-                              ),
-                              LinearPercentIndicator(
-                                animation: true,
-                                animationDuration: 1000,
-                                width: 120,
-                                lineHeight: 8,
-                                percent: math.min(percentProtein, 1.0),
-                                progressColor: Colors.green,
-                              ),
-                              Row(
-                                children: [
-                                  Text("${currentProtein}g     "),
-                                  currentProtein > totalProtein
-                                      ? Text(
-                                          "over ${currentProtein - totalProtein}g")
-                                      : Text(
-                                          "left ${totalProtein - currentProtein}g"),
-                                ],
-                              ),
-                            ],
-                          ),
-                          // Define the variables
+                            Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    const Text("Protein   "),
+                                    Text(currentProtein > totalProtein
+                                        ? "${(percentProtein * 100 - 100).round()}%"
+                                        : "${(percentProtein * 100).round()}%"), // Display percentage with one decimal place
+                                  ],
+                                ),
+                                LinearPercentIndicator(
+                                  animation: true,
+                                  animationDuration: 1000,
+                                  width: 120.w,
+                                  lineHeight: 8,
+                                  percent: math.min(percentProtein, 1.0),
+                                  progressColor: Colors.green,
+                                ),
+                                Row(
+                                  children: [
+                                    Text("${currentProtein}g     "),
+                                    currentProtein > totalProtein
+                                        ? Text(
+                                            "over ${currentProtein - totalProtein}g")
+                                        : Text(
+                                            "left ${totalProtein - currentProtein}g"),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            // Define the variables
 
-                          Column(
-                            children: [
-                              Row(
-                                children: [
-                                  const Text("Fat   "),
-                                  Text(currentFat > totalFat
-                                      ? "${(percentFat * 100 - 100).round()}%"
-                                      : "${(percentFat * 100).round()}%"), // Display percentage with one decimal place
-                                  // Display percentage with one decimal place
-                                ],
-                              ),
-                              LinearPercentIndicator(
-                                animation: true,
-                                animationDuration: 1000,
-                                width: 120,
-                                lineHeight: 8,
-                                percent: math.min(percentFat,
-                                    1.0), // Use the calculated percent directly as it's already a value between 0 and 1
-                                progressColor: Colors.green,
-                              ),
-                              Row(
-                                children: [
-                                  Text("${currentFat}g     "),
-                                  currentFat > totalFat
-                                      ? Text("over ${currentFat - totalFat}g")
-                                      : Text("left ${totalFat - currentFat}g"),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ],
+                            Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    const Text("Fat   "),
+                                    Text(currentFat > totalFat
+                                        ? "${(percentFat * 100 - 100).round()}%"
+                                        : "${(percentFat * 100).round()}%"), // Display percentage with one decimal place
+                                    // Display percentage with one decimal place
+                                  ],
+                                ),
+                                LinearPercentIndicator(
+                                  animation: true,
+                                  animationDuration: 1000,
+                                  width: 120.w,
+                                  lineHeight: 8,
+                                  percent: math.min(percentFat,
+                                      1.0), // Use the calculated percent directly as it's already a value between 0 and 1
+                                  progressColor: Colors.green,
+                                ),
+                                Row(
+                                  children: [
+                                    Text("${currentFat}g     "),
+                                    currentFat > totalFat
+                                        ? Text("over ${currentFat - totalFat}g")
+                                        : Text(
+                                            "left ${totalFat - currentFat}g"),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                       const SizedBox(
                         height: 120,

@@ -1,4 +1,6 @@
 
+// ignore_for_file: camel_case_types
+
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 
