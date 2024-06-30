@@ -100,15 +100,20 @@ List<String> food = [
 
 Widget buildsearchitem(meal model)=>Padding(
   padding: const EdgeInsets.all(8.0),
-  child: Row(children: [
-    Image(image: AssetImage(model.images),height: 50,width: 50,fit: BoxFit.cover,),
-    SizedBox(width: 20,),
-    Column(
-      mainAxisAlignment:MainAxisAlignment.start,
-      children: [
-      Text(model.nameDiet,),
-      Text('${model.totalProtein}'),
-    ],),
+  child: GestureDetector(
+    child: Row(children: [
+      Image(image: AssetImage(model.images),height: 50,width: 50,fit: BoxFit.cover,),
+      SizedBox(width: 20,),
+      Column(
+        mainAxisAlignment:MainAxisAlignment.start,
+        children: [
+        Text(model.nameFood,),
+        Text('${model.Protein}'),
+      ],),
 
-  ],),
+    ],),
+    onTap: (){
+
+    },
+  ),
 );

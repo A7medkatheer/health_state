@@ -4,6 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:healthystate/presention/main/screens/diets/widgets/model_diets.dart';
 import 'package:healthystate/core/cubit/cubit.dart';
+import 'package:healthystate/presention/main/screens/widgets/searchScreen.dart';
+import 'package:healthystate/presention/main/screens/widgets/search_model.dart';
 import 'package:healthystate/presention/resources/routes_manager.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
@@ -14,9 +16,11 @@ class HomePage extends StatefulWidget {
     required this.diet,
   });
   Diets diet;
+
   @override
   State<HomePage> createState() => _HomePageState();
 }
+
 
 class _HomePageState extends State<HomePage> {
   double calculateBudget() {
@@ -325,7 +329,7 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),),
                 // const BottonNavWithAnimatedIcons(),
-                                FloatingActionButton(onPressed: (){},child: Icon(Icons.add),),
+                //                 FloatingActionButton(onPressed: (){},child: Icon(Icons.add),),
 
               ],
             ),

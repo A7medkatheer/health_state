@@ -8,12 +8,11 @@ class Image{
 }
 List<Image>photo=[
 
-  Image('assets/images/e1.jpeg'),
-  Image('assets/images/e2.jpeg'),
-  Image('assets/images/e3.jpeg'),
-  Image('assets/images/e5.jpeg'),
-  Image('assets/images/e6.jpeg'),
-  Image('assets/images/e8.jpeg'),
+  Image('assets/images/cat1.jpg'),
+  Image('assets/images/cat2.jpg'),
+  Image('assets/images/cat3.jpg'),
+  Image('assets/images/cat4.jpg'),
+  Image('assets/images/cat5.jpg'),
 ];
 class Exercisespage extends StatelessWidget {
   const Exercisespage({Key? key}) : super(key: key);

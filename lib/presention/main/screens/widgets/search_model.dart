@@ -1,70 +1,70 @@
 class meal {
   final String images;
-  final String nameDiet;
+  final String nameFood;
   final String title;
-  final int totalCarb;
-  final int totalProtein;
-  final int totalFat;
+  final int Carb;
+  final int Protein;
+  final int Fat;
 
   meal(
       {required this.images,
-        required this.nameDiet,
+        required this.nameFood,
         required this.title,
-        required this.totalCarb,
-        required this.totalProtein,
-        required this.totalFat});
+        required this.Carb,
+        required this.Protein,
+        required this.Fat});
 }
 
 final List<meal> meals = [
   meal(
     images: "assets/images/Rectangle 3.png",
     title: "Time-tested and proven, No food os off-limits",
-    nameDiet: "chickin grilled ",
-    totalCarb: 1,
-    totalProtein: 199,
-    totalFat: 1,
+    nameFood: "chickin grilled ",
+    Carb: 1,
+    Protein: 199,
+    Fat: 1,
   ),
   meal(
       images: "assets/images/Rectangle 6.png",
-      nameDiet: "High-Protein",
+      nameFood: "fish",
       title: "Power with protein to curb hunger and build strong muscles",
-      totalCarb: 414,
-      totalProtein: 105,
-      totalFat: 58),
+      Carb: 414,
+      Protein: 105,
+      Fat: 58),
   meal(
       images: "assets/images/Rectangle 4.png",
-      nameDiet: "Low-Carb",
+      nameFood: "eggs",
       title: "Pump up protein and put brakes on carbs to get faster results",
-      totalCarb: 130,
-      totalProtein: 259,
-      totalFat: 115),
+      Carb: 130,
+      Protein: 259,
+      Fat: 115),
   meal(
       images: "assets/images/Rectangle 5.png",
-      nameDiet: "Keto",
+      nameFood: "shawrma",
       title: "Limit carbs and pump up fats to burn fat more effectively",
-      totalCarb: 32,
-      totalProtein: 130,
-      totalFat: 216),
+      Carb: 32,
+      Protein: 130,
+      Fat: 216),
   meal(
       images: "assets/images/Rectangle 7.png",
-      nameDiet: "Low-Fat",
+      nameFood: "spagitte",
       title: "Naturally low-fat and nutrient-rich foods for weight loss.",
-      totalCarb: 357,
-      totalProtein: 130,
-      totalFat: 72),
+      Carb: 357,
+      Protein: 130,
+      Fat: 72),
   meal(
       images: "assets/images/Rectangle 8.png",
-      nameDiet: "Mediterranean",
+      nameFood: "steak",
       title: "enjoy mediterranean flavors, promote whole-body health",
-      totalCarb: 324,
-      totalProtein: 97,
-      totalFat: 101),
+      Carb: 324,
+      Protein: 97,
+      Fat: 101),
   meal(
       images: "assets/images/Rectangle 9.png",
-      nameDiet: "Vegetarian",
+      nameFood: "salad",
       title: "Eat deliciously without meat. Get healthier with more veggies",
-      totalCarb: 292,
-      totalProtein: 130,
-      totalFat: 101),
+      Carb: 292,
+      Protein: 130,
+      Fat: 101),
 
 ];

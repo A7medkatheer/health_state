@@ -8,34 +8,51 @@ class ExModel {
   final String title;
   final String body;
   final String image;
-  ExModel({required this.title, required this.body, required this.image});
+  final String image2;
+  ExModel({required this.image2, required this.title, required this.body, required this.image});
 }
 
 List<ExModel> exs = [
-  ExModel(
-      title: 'jump ',
-      body: 'Keep your body fit',
-      image: 'assets/images/lottie1.json'),
+
   ExModel(
       title: 'pushing',
       body: 'Choose the appropriate diet',
-      image: 'assets/images/lotte1.json'),
+      image: 'assets/images/lotte1.json',
+      image2: 'assets/images/pr2.gif'
+
+  ),
   ExModel(
       title: 'leg',
       body: 'Choose the appropriate diet',
-      image: 'assets/images/lotte2.json'),
-  ExModel(
-      title: 'jump ',
-      body: 'Keep your body fit',
-      image: 'assets/images/lottie1.json'),
+      image: 'assets/images/lotte2.json',
+      image2:'assets/images/pr3.jpg'
+  ),
   ExModel(
       title: 'pushing',
       body: 'Choose the appropriate diet',
-      image: 'assets/images/lotte1.json'),
+      image: 'assets/images/lotte3.json',
+      image2: 'assets/images/pr2.gif'
+
+  ),
+  ExModel(
+      title: 'jump ',
+      body: 'Keep your body fit',
+      image: 'assets/images/lotte4.json',
+      image2: 'assets/images/pr4.jpg'
+  ),
+
   ExModel(
       title: 'leg',
       body: 'Choose the appropriate diet',
-      image: 'assets/images/lotte2.json'),
+      image: 'assets/images/lotte5.json',
+      image2:'assets/images/pr3.jpg'
+  ),
+  ExModel(
+      title: 'leg',
+      body: 'Choose the appropriate diet',
+      image: 'assets/images/lotte6.json',
+      image2:'assets/images/pr3.jpg'
+  ),
 ];
 
 class ExPrivate extends StatefulWidget {
@@ -136,16 +153,16 @@ Widget buildItemex(ExModel model, context) => GestureDetector(
                     height: 400,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        // image:  DecorationImage(
-                        //   image: AssetImage(model.image),
-                        //   fit: BoxFit.fill,
-                        // ),
+                        image:  DecorationImage(
+                          image: AssetImage(model.image2),
+                          fit: BoxFit.fill,
+                        ),
 
                         color: Colors.white),
-                    child:   Lottie.asset(
-                      model.image,
-                      // height: 90,
-                    ),
+                    // child:   Lottie.asset(
+                    //   model.image,
+                    //   // height: 90,
+                    // ),
                   ),
                   Row(
                     children: [
