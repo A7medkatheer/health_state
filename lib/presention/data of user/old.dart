@@ -1,12 +1,12 @@
 // ignore_for_file: library_private_types_in_public_api
 
-
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:healthystate/core/cubit/cubit.dart';
 import 'package:healthystate/presention/resources/color_manager.dart';
 import 'package:healthystate/presention/resources/routes_manager.dart';
 
 import 'package:numberpicker/numberpicker.dart';
-
 
 class Olduser extends StatefulWidget {
   const Olduser({super.key});
@@ -42,7 +42,7 @@ class _Olduser extends State<Olduser> {
             ],
           ),
           SizedBox(
-            height: 400,
+            height: 410,
             width: 350,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -62,15 +62,24 @@ class _Olduser extends State<Olduser> {
                       onChanged: (value) {
                         setState(() {
                           integerValue = value;
+                          context.read<AppCubit>().old = integerValue;
                         });
                       }),
                 ),
               ],
             ),
           ),
-          ElevatedButton( child:Text ('continue',style: TextStyle(color:ColorManager.primary,)), onPressed: () {
-            Navigator.pushReplacementNamed(context, Routes.startRoute);
-          }) // Row(
+
+          ElevatedButton(
+              child: Text('Submit',
+                  style: TextStyle(
+                    color: ColorManager.primary,
+                  )),
+              onPressed: () {
+                context.read<AppCubit>().old = integerValue;
+                print(integerValue);
+                Navigator.pushReplacementNamed(context, Routes.startRoute);
+              }) // Row(
         ],
       ),
     );

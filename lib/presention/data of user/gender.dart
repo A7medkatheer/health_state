@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:healthystate/core/cubit/cubit.dart';
 import 'package:healthystate/presention/resources/color_manager.dart';
 import 'package:healthystate/presention/resources/routes_manager.dart';
 
@@ -11,11 +13,13 @@ class GenderSelectionScreen extends StatefulWidget {
 }
 
 class _GenderSelectionScreenState extends State<GenderSelectionScreen> {
-  String? _selectedGender;
+  String? selectedGender;
 
   void _handleGenderChange(String gender) {
     setState(() {
-      _selectedGender = gender;
+      selectedGender = gender;
+      context.read<AppCubit>().gender = selectedGender!;
+      print(selectedGender);
     });
   }
 
@@ -37,21 +41,26 @@ class _GenderSelectionScreenState extends State<GenderSelectionScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Select Your Gender'),
+        backgroundColor: ColorManager.primary,
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const Text(
+              'Select Your Gender',
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
+              children: [
                 GestureDetector(
                   onTap: () => _handleGenderChange('Male'),
                   child: Container(
                     decoration: BoxDecoration(
                       border: Border.all(
-                        color: _selectedGender == 'Male'
+                        color: selectedGender == 'Male'
                             ? Colors.blue
                             : Colors.grey,
                         width: 2,
@@ -84,7 +93,7 @@ class _GenderSelectionScreenState extends State<GenderSelectionScreen> {
                   child: Container(
                     decoration: BoxDecoration(
                       border: Border.all(
-                        color: _selectedGender == 'Female'
+                        color: selectedGender == 'Female'
                             ? Colors.blue
                             : Colors.grey,
                         width: 2,
@@ -94,7 +103,7 @@ class _GenderSelectionScreenState extends State<GenderSelectionScreen> {
                     // padding: const EdgeInsets.all(10),
                     margin: const EdgeInsets.symmetric(horizontal: 10),
                     child: Column(
-                      children: <Widget>[
+                      children: [
                         Container(
                           height: 160,
                           width: 150,
@@ -120,7 +129,7 @@ class _GenderSelectionScreenState extends State<GenderSelectionScreen> {
                 decoration: BoxDecoration(
                   color: const Color(0xFFD8EFD3),
                   border: Border.all(
-                    color: _selectedGender == 'croissants'
+                    color: selectedGender == 'croissants'
                         ? Colors.blue
                         : Colors.grey,
                     width: 2,
@@ -130,7 +139,7 @@ class _GenderSelectionScreenState extends State<GenderSelectionScreen> {
                 // padding: const EdgeInsets.all(10),
                 margin: const EdgeInsets.symmetric(vertical: 10),
                 child: Column(
-                  children: <Widget>[
+                  children: [
                     Container(
                       height: 123,
                       width: 300,
@@ -156,9 +165,20 @@ class _GenderSelectionScreenState extends State<GenderSelectionScreen> {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, Routes.hightuserRoute);
+                if (selectedGender == "Female" || selectedGender == "Male") {
+                  Navigator.pushNamed(context, Routes.hightuserRoute);
+                  selectedGender = context.read<AppCubit>().gender;
+                  print(selectedGender);
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                    content: Text("Please select your real gender "),
+                  ));
+                }
               },
-              child:  Text('Submit',style: TextStyle(color: ColorManager.primary),),
+              child: Text(
+                'Next',
+                style: TextStyle(color: ColorManager.primary),
+              ),
             ),
           ],
         ),

@@ -1,6 +1,8 @@
 // ignore_for_file: library_private_types_in_public_api, camel_case_types
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:healthystate/core/cubit/cubit.dart';
 import 'package:healthystate/presention/resources/routes_manager.dart';
 import 'package:numberpicker/numberpicker.dart';
 
@@ -8,7 +10,6 @@ import '../resources/color_manager.dart';
 
 class hightuser extends StatefulWidget {
   const hightuser({super.key});
-
   @override
   _hightuser createState() => _hightuser();
 }
@@ -19,13 +20,13 @@ class _hightuser extends State<hightuser> {
   // double decimalValue = 0;
   int selectedHeightCm = 30;
   int selectedHeightM = 1;
+  int hightuser = 130;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: ColorManager.primary,
-
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -99,9 +100,16 @@ class _hightuser extends State<hightuser> {
           ),
           ElevatedButton(
               onPressed: () {
+                int hightuser = selectedHeightM * 100 + selectedHeightCm;
+                print(hightuser);
+                context.read<AppCubit>().hight = hightuser;
+
                 Navigator.pushNamed(context, Routes.weightuserRoute);
               },
-              child:  Text('Next',style: TextStyle(color:ColorManager.primary,))),
+              child: Text('Next',
+                  style: TextStyle(
+                    color: ColorManager.primary,
+                  ))),
         ],
       ),
     );

@@ -63,6 +63,8 @@
 // }
 import 'package:animated_weight_picker/animated_weight_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:healthystate/core/cubit/cubit.dart';
 import 'package:healthystate/presention/resources/routes_manager.dart';
 
 import '../resources/color_manager.dart';
@@ -77,13 +79,13 @@ class WeightUser extends StatefulWidget {
 class _WeightUserState extends State<WeightUser> {
   final double min = 0;
   final double max = 150;
-  String selectedValue = '';
+  String selectedWieght = '50';
 
   @override
-  void initState() {
-    selectedValue = min.toString();
-    super.initState();
-  }
+  // void initState() {
+  //   selectedWieght = min.toString();
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -93,40 +95,44 @@ class _WeightUserState extends State<WeightUser> {
         title: const Text('Animated Weight Picker'),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Center(
-            child: SizedBox(
-              width: 500,
-              child: AnimatedWeightPicker(
-                
-                min: 50,
-                max: 150,
-                onChange: (newValue) {
-                  setState(() {
-                    selectedValue = newValue;
-                  });
-                },
-              ),
+          const SizedBox(
+            height: 300,
+          ),
+          SizedBox(
+            width: 500,
+            child: AnimatedWeightPicker(
+              min: 50,
+              max: 150,
+              onChange: (newValue) {
+                setState(() {
+                  selectedWieght = newValue;
+                  context.read<AppCubit>().weight = selectedWieght;
+                });
+              },
             ),
           ),
-          const SizedBox(height: 20),
+
+          const SizedBox(height: 190),
           // Text(
           //   'Selected Value: $selectedValue',
           //   style: const TextStyle(fontSize: 20),
           // ),
-          const SizedBox(height: 20),
+          // const SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {
+              context.read<AppCubit>().weight = selectedWieght;
+              print('Selected Weight: $selectedWieght');
               Navigator.pushNamed(context, Routes.OlduserRoute);
             },
-            child:  Text('Continue',style: TextStyle(color:ColorManager.primary,)),
+            child: Text('Next',
+                style: TextStyle(
+                  color: ColorManager.primary,
+                )),
           ),
         ],
       ),
     );
   }
 }
-
-
-

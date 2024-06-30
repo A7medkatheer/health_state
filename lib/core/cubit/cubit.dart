@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
 import 'package:flutter/cupertino.dart';
@@ -8,8 +10,10 @@ import 'package:healthystate/cache_helper.dart';
 import 'package:healthystate/core/api/api_consumer.dart';
 import 'package:healthystate/core/api/end_ponits.dart';
 import 'package:healthystate/core/errors/exceptions.dart';
+import 'package:healthystate/core/models/sign_in_model.dart';
 import 'package:healthystate/presention/main/screens/diets/widgets/model_diets.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:jwt_decoder/jwt_decoder.dart';
 
 import '../../presention/main/screens/widgets/exercises.dart';
 import '../../presention/main/screens/widgets/home_page.dart';
@@ -19,8 +23,15 @@ import 'state.dart';
 
 class AppCubit extends Cubit<AppState> {
   AppCubit(this.api) : super(AppInitial());
- final ApiConsumer api;
+  final ApiConsumer api;
+  SignInModel? user;
+
   int index = 0;
+  String gender = '';
+  int hight = 0;
+  String weight = "";
+  int old = 0;
+
   AppCubit get(context) => BlocProvider.of(context);
 
   int currentPage = 0;
@@ -70,7 +81,6 @@ class AppCubit extends Cubit<AppState> {
         },
       );
 
-
   signUp(
       {required String name,
       required String email,
@@ -90,10 +100,30 @@ class AppCubit extends Cubit<AppState> {
       emit(SignUpSuccess());
       print(response);
     } on ServerException catch (e) {
-      emit(SignUpFailure(errMessage: e.errModel.errorMessage));
+      emit(SignInFailure(errMessage: e.errModel.errorMessage));
     }
   }
 
+  signIn({required String email, required String password}) async {
+    try {
+      emit(SignInLoading());
+      final response = await api.post(
+        EndPoint.signIn,
+        data: {
+          ApiKey.email: email,
+          ApiKey.password: password,
+        },
+      );
+      user = SignInModel.fromJson(response);
+      final decodedToken = JwtDecoder.decode(user!.token);
+      CacheHelper().saveData(key: ApiKey.token, value: user!.token);
+      CacheHelper()
+          .saveData(key: ApiKey.userId, value: decodedToken[ApiKey.userId]);
+      print(decodedToken[ApiKey.userId]);
 
-
+      emit(SignInSuccess());
+    } on ServerException catch (e) {
+      emit(SignInFailure(errMessage: e.errModel.errorMessage));
+    }
+  }
 }

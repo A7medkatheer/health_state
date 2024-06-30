@@ -8,7 +8,6 @@ class CardDiet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      // textDirection: TextDirection.rtl,
       children: [
         Column(
           children: [
@@ -26,6 +25,7 @@ class CardDiet extends StatelessWidget {
         // const Text('Chat',
         //     style: TextStyle(fontSize: 30, color: Colors.black)),
         Container(
+          height: 336.h,
           // padding: const EdgeInsets.only(left: 30, top: 30),
           margin: const EdgeInsets.only(left: 30, top: 30),
           // alignment: Alignment.topLeft,
@@ -52,7 +52,7 @@ class CardDiet extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     fontSize: 19.0),
               ),
-              const SizedBox(height: 290),
+              const Spacer(),
               Text(
                 diet.title,
                 style: const TextStyle(
