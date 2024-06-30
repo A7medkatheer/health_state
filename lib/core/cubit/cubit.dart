@@ -5,19 +5,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 // ignore: unused_import
 import 'package:healthystate/cache_helper.dart';
+import 'package:healthystate/core/api/api_consumer.dart';
+import 'package:healthystate/core/api/end_ponits.dart';
+import 'package:healthystate/core/errors/exceptions.dart';
 import 'package:healthystate/presention/main/screens/diets/widgets/model_diets.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../exercises.dart';
-import '../home_page.dart';
-import '../pages.dart';
-import '../profilePage.dart';
+import '../../presention/main/screens/widgets/exercises.dart';
+import '../../presention/main/screens/widgets/home_page.dart';
+import '../../presention/main/screens/widgets/pages.dart';
+import '../../presention/main/screens/widgets/profilePage.dart';
 import 'state.dart';
 
 class AppCubit extends Cubit<AppState> {
-  AppCubit() : super(AppInitial());
+  AppCubit(this.api) : super(AppInitial());
+ final ApiConsumer api;
   int index = 0;
-
   AppCubit get(context) => BlocProvider.of(context);
 
   int currentPage = 0;
@@ -66,4 +69,31 @@ class AppCubit extends Cubit<AppState> {
           emit(AppChangeBottomNav());
         },
       );
+
+
+  signUp(
+      {required String name,
+      required String email,
+      required String password,
+      required String confirmPassword}) async {
+    try {
+      emit(SignUpLoading());
+      final response = await api.post(
+        EndPoint.signUp,
+        data: {
+          ApiKey.name: name,
+          ApiKey.email: email,
+          ApiKey.password: password,
+          ApiKey.confirmPassword: confirmPassword,
+        },
+      );
+      emit(SignUpSuccess());
+      print(response);
+    } on ServerException catch (e) {
+      emit(SignUpFailure(errMessage: e.errModel.errorMessage));
+    }
+  }
+
+
+
 }

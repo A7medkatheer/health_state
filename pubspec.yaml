@@ -38,6 +38,7 @@ dependencies:
   conditional_builder_null_safety: ^0.0.6
   cupertino_icons: ^1.0.2
   curved_labeled_navigation_bar: ^2.0.2
+  dio: ^5.4.3+1
   equatable: ^2.0.5
   flutter:
     sdk: flutter
@@ -46,6 +47,7 @@ dependencies:
   flutter_svg: ^2.0.9
   font_awesome_flutter: ^10.5.0
   iconsax: ^0.0.8
+  image_picker: ^1.1.2
   interactive_bottom_sheet: ^1.0.0
   lottie: ^3.1.0
   numberpicker: ^2.1.2

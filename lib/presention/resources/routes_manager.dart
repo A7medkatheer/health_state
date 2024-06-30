@@ -1,7 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
 import 'package:flutter/material.dart';
-import 'package:healthystate/cache_helper.dart';
 import 'package:healthystate/presention/login/login_screen.dart';
 import 'package:healthystate/presention/main/screens/dashboard.dart';
 import 'package:healthystate/presention/main/screens/diets/widgets/intgredients.dart';

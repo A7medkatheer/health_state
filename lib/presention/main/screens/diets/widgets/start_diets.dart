@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:healthystate/cache_helper.dart';
 import 'package:healthystate/presention/main/screens/dashboard.dart';
 import 'package:healthystate/presention/main/screens/diets/widgets/card_diets.dart';
@@ -7,8 +8,8 @@ import 'package:healthystate/presention/main/screens/diets/widgets/check_text.da
 import 'package:healthystate/presention/main/screens/diets/widgets/model_diets.dart';
 import 'package:healthystate/presention/main/screens/diets/widgets/simple_recipes.dart';
 import 'package:healthystate/presention/main/screens/diets/widgets/sized_text.dart';
-import 'package:healthystate/presention/main/screens/widgets/cubit/cubit.dart';
-import 'package:healthystate/presention/main/screens/widgets/cubit/state.dart';
+import 'package:healthystate/core/cubit/cubit.dart';
+import 'package:healthystate/core/cubit/state.dart';
 import 'package:healthystate/presention/resources/routes_manager.dart';
 
 class StartDiet extends StatelessWidget {
@@ -28,49 +29,53 @@ class StartDiet extends StatelessWidget {
               children: [
                 CardDiet(diet: diet),
                 const SizedBox(height: 20),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 30.0),
-                  child: Row(
-                    children: [
-                      CircleAvatar(
-                        radius: 50,
-                        foregroundImage: AssetImage('assets/images/coach.png'),
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Health State Dietitian ',
-                            style: TextStyle(
-                                color: Colors.grey,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15.0),
-                          ),
-                          Text(
-                            'Ahmed katheer',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20.0),
-                          ),
-                          Text(
-                            'mS.RD.bC-ADE.ACE-PT.CDE',
-                            style: TextStyle(
-                                color: Colors.grey,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15.0),
-                          ),
-                          Text(
-                            'Don’t shortchange yourself on protein\n in order to save calories,Boosting your\n protein helps you feel full and maintain\n muscle mass as you lose weight,',
-                            style:
-                                TextStyle(color: Colors.grey, fontSize: 12.0),
-                          ),
-                        ],
-                      )
-                    ],
+                const SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 30.0),
+                    child: Row(
+                      children: [
+                        CircleAvatar(
+                          radius: 50,
+                          foregroundImage:
+                              AssetImage('assets/images/coach.png'),
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Health State Dietitian ',
+                              style: TextStyle(
+                                  color: Colors.grey,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15.0),
+                            ),
+                            Text(
+                              'Ahmed katheer',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20.0),
+                            ),
+                            Text(
+                              'mS.RD.bC-ADE.ACE-PT.CDE',
+                              style: TextStyle(
+                                  color: Colors.grey,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15.0),
+                            ),
+                            Text(
+                              'Don’t shortchange yourself on protein\n in order to save calories,Boosting your\n protein helps you feel full and maintain\n muscle mass as you lose weight,',
+                              style:
+                                  TextStyle(color: Colors.grey, fontSize: 12.0),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(
@@ -179,7 +184,7 @@ class StartDiet extends StatelessWidget {
                       // await saveDietChanges(diet);
                       // After saving, navigate to the HomePage
 
-                      context.read<AppCubit>().index = index;
+                      context.read<AppCubit>().index = index + 1;
                       context.read<AppCubit>().currentPage = 0;
 
                       print('index: $index');
