@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:healthystate/cache_helper.dart';
 import 'package:healthystate/presention/main/screens/dashboard.dart';
 import 'package:healthystate/presention/main/screens/diets/widgets/card_diets.dart';
@@ -10,6 +9,7 @@ import 'package:healthystate/presention/main/screens/diets/widgets/simple_recipe
 import 'package:healthystate/presention/main/screens/diets/widgets/sized_text.dart';
 import 'package:healthystate/core/cubit/cubit.dart';
 import 'package:healthystate/core/cubit/state.dart';
+import 'package:healthystate/presention/resources/color_manager.dart';
 import 'package:healthystate/presention/resources/routes_manager.dart';
 
 class StartDiet extends StatelessWidget {
@@ -203,7 +203,7 @@ class StartDiet extends StatelessWidget {
                       // Navigator.pop(context);
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xff7BB3E8),
+                      backgroundColor: ColorManager.primary,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15),
                       ),

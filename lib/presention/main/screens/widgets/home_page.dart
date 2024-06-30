@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,7 +22,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   double calculateBudget() {
-    print(context.read<AppCubit>().index);
+    // print(context.read<AppCubit>().index);
     // double weight = 125;
     // int height = 124;
     // int age = 30;
