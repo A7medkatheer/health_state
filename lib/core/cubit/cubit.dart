@@ -47,9 +47,7 @@ class AppCubit extends Cubit<AppState> {
         ),
         const Exercisespage(),
         const DietsPage(),
-        // const FoodListView(
-        //   foodList: [],
-        // ),
+        const ProfilePage(),
       ];
 
   dynamic bottomNav() => CurvedNavigationBar(

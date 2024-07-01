@@ -73,12 +73,12 @@ class StartView extends StatelessWidget {
                     ),
                     onPressed: () {
                       context.read<AppCubit>().getFood();
-                      //  Navigator.pushNamed(context, Routes.mainRoute);
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const FoodListView(),
-                          ));
+                      Navigator.pushNamed(context, Routes.mainRoute);
+                      // Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //       builder: (context) => const FoodListView(),
+                      //     ));
                     }),
               ),
               const SizedBox(
