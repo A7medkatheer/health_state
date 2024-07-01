@@ -1,19 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:healthystate/presention/resources/routes_manager.dart';
-class Image{
-  final String images;
 
-  Image(this.images);
+import 'ex_model.dart';
 
-}
-List<Image>photo=[
-
-  Image('assets/images/cat1.jpg'),
-  Image('assets/images/cat2.jpg'),
-  Image('assets/images/cat3.jpg'),
-  Image('assets/images/cat4.jpg'),
-  Image('assets/images/cat5.jpg'),
-];
 class Exercisespage extends StatelessWidget {
   const Exercisespage({Key? key}) : super(key: key);
 
@@ -29,11 +18,13 @@ class Exercisespage extends StatelessWidget {
     );
   }
 }
-Widget buildItem (Image model,context)=>Column(
+Widget buildItem (CONTAINER model,context)=>Column(
   crossAxisAlignment: CrossAxisAlignment.start,
   children: [ GestureDetector(
     onTap: (){
-      Navigator.pushNamed(context, Routes.exPrivateRoute);
+      // if(photo[index]==0)
+        Navigator.pushNamed(context, Routes.exPrivateRoute);
+
     },
     child: Padding(
       padding: const EdgeInsets.all(8.0),

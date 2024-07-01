@@ -2,58 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
+import 'ex_model.dart';
+
 // Add this line to import the 'lottie' package
-
-class ExModel {
-  final String title;
-  final String body;
-  final String image;
-  final String image2;
-  ExModel({required this.image2, required this.title, required this.body, required this.image});
-}
-
-List<ExModel> exs = [
-
-  ExModel(
-      title: 'pushing',
-      body: 'Choose the appropriate diet',
-      image: 'assets/images/lotte1.json',
-      image2: 'assets/images/pr2.gif'
-
-  ),
-  ExModel(
-      title: 'leg',
-      body: 'Choose the appropriate diet',
-      image: 'assets/images/lotte2.json',
-      image2:'assets/images/pr3.jpg'
-  ),
-  ExModel(
-      title: 'pushing',
-      body: 'Choose the appropriate diet',
-      image: 'assets/images/lotte3.json',
-      image2: 'assets/images/pr2.gif'
-
-  ),
-  ExModel(
-      title: 'jump ',
-      body: 'Keep your body fit',
-      image: 'assets/images/lotte4.json',
-      image2: 'assets/images/pr4.jpg'
-  ),
-
-  ExModel(
-      title: 'leg',
-      body: 'Choose the appropriate diet',
-      image: 'assets/images/lotte5.json',
-      image2:'assets/images/pr3.jpg'
-  ),
-  ExModel(
-      title: 'leg',
-      body: 'Choose the appropriate diet',
-      image: 'assets/images/lotte6.json',
-      image2:'assets/images/pr3.jpg'
-  ),
-];
 
 class ExPrivate extends StatefulWidget {
   const ExPrivate({Key? key}) : super(key: key);
@@ -61,7 +12,6 @@ class ExPrivate extends StatefulWidget {
   @override
   State<ExPrivate> createState() => _ExPrivateState();
 }
-
 class _ExPrivateState extends State<ExPrivate> {
   @override
   Widget build(BuildContext context) {
@@ -99,7 +49,7 @@ class _ExPrivateState extends State<ExPrivate> {
               child: ListView.separated(
                   scrollDirection: Axis.vertical,
                   itemBuilder: (context, index) =>
-                      buildItemex(exs[index], context),
+                      buildItemex(exs[index], context,),
                   separatorBuilder: (context, index) => Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8.0),
                         child: Container(
@@ -116,17 +66,23 @@ class _ExPrivateState extends State<ExPrivate> {
     );
   }
 }
-
-Widget buildItemex(ExModel model, context) => GestureDetector(
+// CONTAINER modell=CONTAINER(images], uniqe);
+Widget buildItemex(ExModel model, context,) => GestureDetector(
       child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Row(
           children: [
+            // if(modelll.uniqe=='1')
             Lottie.asset(
               model.image,
               height: 90,
             ),
-            const SizedBox(
+            // if(modelll.uniqe=='2')
+            //   Lottie.asset(
+            //     model.image2,
+            //     height: 90,
+            //   ),
+              const SizedBox(
               width: 30,
             ),
             Text(
