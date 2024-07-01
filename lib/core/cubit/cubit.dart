@@ -1,4 +1,3 @@
-
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
 import 'package:flutter/cupertino.dart';
@@ -10,6 +9,8 @@ import 'package:healthystate/core/api/api_consumer.dart';
 import 'package:healthystate/core/api/end_ponits.dart';
 import 'package:healthystate/core/errors/exceptions.dart';
 import 'package:healthystate/core/models/sign_in_model.dart';
+import 'package:healthystate/presention/main/screens/diets/food_list_view.dart';
+import 'package:healthystate/presention/main/screens/diets/food_model.dart';
 import 'package:healthystate/presention/main/screens/diets/widgets/model_diets.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
@@ -46,7 +47,9 @@ class AppCubit extends Cubit<AppState> {
         ),
         const Exercisespage(),
         const DietsPage(),
-        const ProfilePage(),
+        // const FoodListView(
+        //   foodList: [],
+        // ),
       ];
 
   dynamic bottomNav() => CurvedNavigationBar(
@@ -123,6 +126,28 @@ class AppCubit extends Cubit<AppState> {
       emit(SignInSuccess());
     } on ServerException catch (e) {
       emit(SignInFailure(errMessage: e.errModel.errorMessage));
+    }
+  }
+
+  getFood() async {
+    try {
+      final response = await api.get(
+        EndPoint.categories,
+      );
+      final getData = FoodModel.fromJson(response);
+      print(getData);
+
+      // CacheHelper().saveData(key: ApiKey.nameFood, value: getData.nameFood);
+      // CacheHelper().saveData(key: ApiKey.iconFood, value: getData.iconFood);
+      // CacheHelper().saveData(key: ApiKey.fatFood, value: getData.fatFood);
+      // CacheHelper().saveData(key: ApiKey.fatFood, value: getData.carbFood);
+      // CacheHelper().saveData(key: ApiKey.proteinFood, value: getData.proteinFood);
+      // CacheHelper().saveData(key: ApiKey.calsFood, value: getData.calsFood);
+
+      // print("${getData.name} ${getData.email} ${getData.profilePic}");
+      emit(GetFoodSuccess(foodList: [getData]));
+    } on ServerException catch (e) {
+      emit(GetFoodFailure(errMessage: e.errModel.errorMessage));
     }
   }
 }

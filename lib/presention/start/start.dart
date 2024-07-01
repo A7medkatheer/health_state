@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:healthystate/core/cubit/cubit.dart';
+import 'package:healthystate/presention/main/screens/diets/food_list_view.dart';
+import 'package:healthystate/presention/main/screens/diets/food_model.dart';
 import 'package:healthystate/presention/resources/assets_manager.dart';
 import 'package:healthystate/presention/resources/color_manager.dart';
 import 'package:healthystate/presention/resources/fonts_manager.dart';
@@ -68,7 +72,13 @@ class StartView extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
-                      Navigator.pushNamed(context, Routes.mainRoute);
+                      context.read<AppCubit>().getFood();
+                      //  Navigator.pushNamed(context, Routes.mainRoute);
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const FoodListView(),
+                          ));
                     }),
               ),
               const SizedBox(

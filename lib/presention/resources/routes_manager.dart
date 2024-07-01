@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:healthystate/presention/login/login_screen.dart';
 import 'package:healthystate/presention/main/screens/dashboard.dart';
+import 'package:healthystate/presention/main/screens/diets/food_list_view.dart';
 import 'package:healthystate/presention/main/screens/diets/widgets/intgredients.dart';
 import 'package:healthystate/presention/main/screens/diets/widgets/list_of_food.dart';
 import 'package:healthystate/presention/main/screens/diets/widgets/model_diets.dart';
@@ -48,6 +49,7 @@ class Routes {
   static const String verfyRoute = "/verfy";
   static const String newpassRoute = "/newpass";
   static const String storeRoute = "/store";
+  // static const String FoodListView = "/FoodListView";
 }
 
 class RouteGenerator {
@@ -79,6 +81,8 @@ class RouteGenerator {
             builder: (_) => StartDiet(diet: diet, index: index));
       case Routes.startRoute:
         return MaterialPageRoute(builder: (_) => const StartView());
+
+
       case Routes.loginRoute:
         return MaterialPageRoute(builder: (_) => const LoginView());
       case Routes.OlduserRoute:
@@ -103,7 +107,7 @@ class RouteGenerator {
         // final Diets diet = settings.arguments as Diets;
         // final int index = settings.arguments as int;
         return MaterialPageRoute(
-            builder: (_) =>  MainView(
+            builder: (_) => const MainView(
                 // diet: diet,
                 // index: index,
                 ));

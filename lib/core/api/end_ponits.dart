@@ -2,6 +2,7 @@ class EndPoint {
   static String baseUrl =
       "https://app-q7cd.onrender.com/api/v1/";
   static String signIn = "auth/login";
+  static String categories = "categories";
   static String signUp = "users";
   static String sendCode = "auth/sendcode";
   static String forgotPassword = "auth/forgotPassword";
@@ -49,4 +50,10 @@ class ApiKey {
   static String phone = "phone";
   static String location = "location";
   static String profilePic = "profileImage";
+  static String iconFood = "iconFood";
+  static String calsFood = "calsFood";
+  static String proteinFood = "proteinFood";
+  static String carbFood = "carbFood";
+  static String fatFood = "fatFood";
+  static String nameFood = "nameFood";
 }
